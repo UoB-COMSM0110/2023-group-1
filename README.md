@@ -1,7 +1,7 @@
 # 2023-group-1
 ### Team
 Alex Cockrean, ... 
-+ team photo.
+![Preview Image](https://UoB-COMSM0110.github.io/2023-group-1/images/logo.PNG)
 
 ### Introduction (5% ~250 words)
 Describe your game, what is based on, what makes it novel?
