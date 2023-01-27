@@ -2,7 +2,7 @@
 ### Team
 Alex Cockrean, ... 
 
-<img src='/images/Group-1.png' width="128"/>
+<img src='/images/Group-1.png' width="512"/>
 
 ### Introduction (5% ~250 words)
 Describe your game, what is based on, what makes it novel?
