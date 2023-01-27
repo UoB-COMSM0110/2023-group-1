@@ -1,6 +1,7 @@
 # 2023-group-1
 ### Team
-Who’s in your team + team photo.
+Alex Cockrean, ... 
++ team photo.
 
 ### Introduction (5% ~250 words)
 Describe your game, what is based on, what makes it novel?
