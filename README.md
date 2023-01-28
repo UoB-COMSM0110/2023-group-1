@@ -1,6 +1,6 @@
 # 2023-group-1
 ### Team
-Alex Cockrean, ... 
+Alex Cockrean, Zoe Clark,  ... 
 + team photo.
 
 ### Introduction (5% ~250 words)
