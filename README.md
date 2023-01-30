@@ -1,7 +1,7 @@
 # 2023-group-1
 ### Team
 Alex Cockrean, Zoe Clark,  ... 
-+ team photo.
+<img src='https://github.com/UoB-COMSM0110/2023-group-1/images/Group-1.png'/>
 
 ### Introduction (5% ~250 words)
 Describe your game, what is based on, what makes it novel?
