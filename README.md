@@ -1,8 +1,10 @@
 # 2023-group-1
 ### Team
-Alex Cockrean, ... 
+
+Alex Cockrean, Zoe Clark,  ... 
 
 <img src='/images/Group-1.png' width="512"/>
+
 
 ### Introduction (5% ~250 words)
 Describe your game, what is based on, what makes it novel?
