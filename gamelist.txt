@@ -1,0 +1,6 @@
+Main Idea: 
+Mario style game but the twist is that gravity changes 
+
+Other Possible Ideas:
+Connect four but the bottom row will drop out after a time 
+Golf but the grass is sticky sometimes 
