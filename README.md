@@ -1,27 +1,7 @@
 # 2023-group-1
 ### Team
-<<<<<<< HEAD
-
 Alex Cockrean, Zoe Clark,  ... 
-![Preview Image](https://UoB-COMSM0110.github.io/2023-group-1/images/logo.PNG)
-=======
-Alex Cockrean, ... 
-
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 <img src='https://github.com/UoB-COMSM0110/2023-group-1/images/Group-1.png'/>
->>>>>>> f98521f (adding image to readme)
-
-=======
-<img src='/images/Group-1.png'/>
->>>>>>> fa7ad46 (fixing image link)
-=======
-<img src='/images/Group-1.png' width="128"/>
->>>>>>> b0d3ed7 (changing image size)
-=======
-<img src='/images/Group-1.png' width="512"/>
->>>>>>> 4d5d333 (changing image size)
 
 ### Introduction (5% ~250 words)
 Describe your game, what is based on, what makes it novel?
