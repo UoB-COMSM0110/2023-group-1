@@ -13,11 +13,9 @@ public class Character{
     move_x = 0;
     move_y = 0;
   }
-
   public Character(String filename, float scale){
     this(filename, scale, 0, 0); 
   }
-
   public Character(PImage img, float scale){
     image = img;
     w = image.width * scale;
@@ -31,9 +29,9 @@ public class Character{
   public void display(){
     image(image,character_x, character_y, w, h);
   }
-
   public void update(){
     character_x += move_x;
     character_y += move_y;
   }
+  
 }
