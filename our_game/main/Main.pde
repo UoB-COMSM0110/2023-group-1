@@ -7,7 +7,7 @@ PImage bg, float_brick, grass, mushroom;
 ArrayList<Character> platforms;
 
 void setup(){
-  size(1500,800);
+  size(1500,750);
   bg = loadImage("../map.png");
   c = new Character("../maleAdventurer.png", 1.0, 100, 570);
   c.move_x = 0;
@@ -21,7 +21,6 @@ void setup(){
 
 void draw(){
   background(255);
-  image(bg,0,0,1500,800);
   c.display();
   c.update();
   
@@ -37,19 +36,19 @@ void createPlatforms(String filename){
     for(int col = 0; col < values.length; col++){
       if(values[col].equals("1")){
         Character s = new Character(float_brick, CHARACTER_SCALE);
-        s.character_x = CHARACTER_SIZE/2 + col * CHARACTER_SIZE;
+        s.character_x = col * CHARACTER_SIZE;
         s.character_y = CHARACTER_SIZE/2 + row * CHARACTER_SIZE;
         platforms.add(s);
       }
       else if(values[col].equals("2")){
         Character s = new Character(grass, CHARACTER_SCALE);
-        s.character_x = CHARACTER_SIZE/2 + col * CHARACTER_SIZE;
+        s.character_x = col * CHARACTER_SIZE;
         s.character_y = CHARACTER_SIZE/2 + row * CHARACTER_SIZE;
         platforms.add(s);
       }
       else if(values[col].equals("3")){
         Character s = new Character(mushroom, CHARACTER_SCALE);
-        s.character_x = CHARACTER_SIZE/2 + col * CHARACTER_SIZE;
+        s.character_x = col * CHARACTER_SIZE;
         s.character_y = CHARACTER_SIZE/2 + row * CHARACTER_SIZE;
         platforms.add(s);
       }
