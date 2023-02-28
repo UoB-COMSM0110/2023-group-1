@@ -3,9 +3,7 @@ final static float CHARACTER_SCALE = 50.0/128;
 final static float CHARACTER_SIZE = 50;
 final static float GRAVITY = 1.0;
 
-Character c;
-PImage bg, float_brick, grass, mushroom;
-ArrayList<Character> platforms;
+Game game;
 
 void setup(){
   size(1500,800);
