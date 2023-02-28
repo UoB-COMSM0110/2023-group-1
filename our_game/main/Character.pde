@@ -32,8 +32,9 @@ public class Character{
     image(image,character_x, character_y, w, h);
   }
 
-  public void update(){
+  public void update(float gravity){
     character_x += move_x;
     character_y += move_y;
+    move_y += gravity;
   }
 }
