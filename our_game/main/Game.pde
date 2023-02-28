@@ -14,9 +14,9 @@ public class Game {
         c.move_x = 0;
         c.move_y = 0;
         platforms = new ArrayList<>();
-        float_brick = loadImage("../mapPictures/ground_grass_small.png");
-        mushroom = loadImage("../mapPictures/mushroom_red.png");
-        grass = loadImage("../mapPictures/grass_brown2.png");
+        float_brick = loadImage("../ground_grass_small.png");
+        mushroom = loadImage("../mushroom_red.png");
+        grass = loadImage("../grass_brown2.png");
         this.createPlatforms("map.csv");
     }
 
@@ -24,7 +24,7 @@ public class Game {
         float gravity = 0.3;
         float inertia = 0.1;
         c.display();
-        c.update(gravity, inertia);
+        //c.update(gravity, inertia);
         for(Character s: platforms) {
             s.display();
         }
@@ -78,4 +78,3 @@ public class Game {
         }
     }
 }
-
