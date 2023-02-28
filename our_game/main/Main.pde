@@ -24,8 +24,9 @@ void setup(){
 
 void draw(){
   background(255);
+  float gravity = 0.1;
   c.display();
-  c.update();
+  c.update(gravity);
   
   for(Character s: platforms){
     s.display();
