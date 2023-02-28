@@ -15,7 +15,7 @@ public class Character{
   }
 
   public Character(String filename, float scale){
-    this(filename, scale, 0, 0); 
+    this(filename, scale, 0, 0);
   }
 
   public Character(PImage img, float scale){
@@ -32,9 +32,14 @@ public class Character{
     image(image,character_x, character_y, w, h);
   }
 
-  public void update(float gravity){
+  public void update(float gravity, float inertia){
     character_x += move_x;
     character_y += move_y;
     move_y += gravity;
+    if (move_x > 0) {
+      move_x = max(move_x - inertia, 0); 
+    } else {
+      move_x = min(move_x + inertia, 0);
+    }
   }
 }
