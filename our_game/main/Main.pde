@@ -1,6 +1,9 @@
 final static float MOVE_SPEED = 15;
 final static float CHARACTER_SCALE = 50.0/128;
 final static float CHARACTER_SIZE = 50;
+final static float SCREEN_HEIGHT = 15;
+final static float SCREEN_WIDTH = 25;
+
 
 Character c;
 PImage bg, float_brick, grass, mushroom;
@@ -13,9 +16,9 @@ void setup(){
   c.move_x = 0;
   c.move_y = 0;
   platforms = new ArrayList<Character>();
-  float_brick = loadImage("../ground_grass_small.png");
-  mushroom = loadImage("../mushroom_red.png");
-  grass = loadImage("../grass_brown2.png");
+  float_brick = loadImage("../mapPictures/ground_grass_small.png");
+  mushroom = loadImage("../mapPictures/mushroom_red.png");
+  grass = loadImage("../mapPictures/grass_brown2.png");
   createPlatforms("map.csv");
 }
 
