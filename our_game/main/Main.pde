@@ -1,11 +1,19 @@
-final static float MOVE_SPEED = 15;
+final static float MOVE_SPEED = 8;
+final static float JUMP_SPEED = 14;
 final static float CHARACTER_SCALE = 50.0/128;
 final static float CHARACTER_SIZE = 50;
-final static float GRAVITY = 1.0;
+final static float GRAVITY = 1.5;
+
+final static float MAGRINRIGHT = 800;
+final static float MAGRINLEFT = 200;
+final static float MAGRINVERTICAL = 60;
 
 Character c;
 PImage bg, float_brick, grass, mushroom;
 ArrayList<Character> platforms;
+
+float screenX = 0;
+float screenY = 0;
 
 void setup(){
   size(1500,800);
@@ -14,9 +22,13 @@ void setup(){
   imageMode(CENTER);
   //c = new Character("../maleAdventurer.png", 1.0, 100, 570);
   c = new Character("../maleAdventurer.png", 1.0, 900, 100);
+  //c.characterX = 100;
+  //c.characterY = 200;
   c.moveX = 0;
   c.moveY = 0;
   platforms = new ArrayList<Character>();
+  
+  
   float_brick = loadImage("../ground_grass_small.png");
   mushroom = loadImage("../mushroom_red.png");
   grass = loadImage("../grass_brown2.png");
@@ -26,7 +38,9 @@ void setup(){
 void draw(){
   background(255);
   //image(bg,width/2,height/2,bg.width*1.2,bg.height*1.2);
-  image(bg,0,0,bg.width*1.2,bg.height*1.1);
+  //image(bg,0,0,bg.width*1.2,bg.height*1.1);
+  
+  scroll();//////////////
   c.display();
   solveCollisions(c,platforms);
   //c.update();
@@ -35,6 +49,27 @@ void draw(){
     a.display();
   }
 }
+
+void scroll(){
+  float right = screenX + width - MAGRINRIGHT;
+  if(c.getRightBoundary() > right){
+    screenX += c.getRightBoundary() - right;
+  }
+  float left = screenX + MAGRINLEFT;
+  if(c.getLeftBoundary() < left){
+    screenX -= left - c.getLeftBoundary();
+  }
+  float bottom = screenY + height - MAGRINVERTICAL;
+  if(c.getBottomBoundary() > bottom){
+    screenY += c.getBottomBoundary() - bottom;
+  }
+  float top = screenY + MAGRINVERTICAL;
+  if(c.getTopBoundary() < top){
+    screenY -= top - c.getTopBoundary();
+  }
+  translate(-screenX, -screenY);
+}
+
 
 public void solveCollisions(Character c, ArrayList<Character> walls){
   c.moveY += GRAVITY;
@@ -87,6 +122,17 @@ public ArrayList<Character> collisionListTest(Character c, ArrayList<Character> 
   return listCollision;
 }
 
+public boolean isOnGround(Character c, ArrayList<Character> walls){
+  c.characterY += 5;
+  ArrayList<Character> list = collisionListTest(c, walls);
+  c.characterY -= 5;
+  if(list.size()>0){
+    return true;
+  }else {
+    return false;
+  }
+}
+
 void createPlatforms(String filename){
   String[] lines = loadStrings(filename);
   for(int row = 0; row <lines.length; row++){
@@ -127,8 +173,8 @@ void keyPressed(){
   else if(keyCode == LEFT){
     c.moveX = -MOVE_SPEED;
   }
-  else if(keyCode == UP){
-    c.moveY = -MOVE_SPEED;
+  else if(keyCode == UP && isOnGround(c,platforms)){
+    c.moveY = -JUMP_SPEED;
   }
   else if(keyCode == DOWN){
     c.moveY = MOVE_SPEED;
@@ -142,7 +188,7 @@ void keyReleased(){
   else if(keyCode == LEFT){
     c.moveX = 0;
   }
-  else if(keyCode == UP){
+  else if(keyCode == UP && isOnGround(c,platforms)){
     c.moveY = 0;
   }
   else if(keyCode == DOWN){
