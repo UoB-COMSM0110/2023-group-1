@@ -1,17 +1,17 @@
 public class Character{
   PImage image;
-  float characterX, characterY;
-  float moveX, moveY;
-  float w, h;//width and height
+  float character_x, character_y;
+  float move_x, move_y;
+  float w, h;
   
   public Character(String filename, float scale, float x, float y){
     image = loadImage(filename);
     w = image.width * scale;
     h = image.height * scale;
-    characterX = x;
-    characterY = y;
-    moveX = 0;
-    moveY = 0;
+    character_x = x;
+    character_y = y;
+    move_x = 0;
+    move_y = 0;
   }
 
   public Character(String filename, float scale){
@@ -22,48 +22,24 @@ public class Character{
     image = img;
     w = image.width * scale;
     h = image.height * scale;
-    characterX = 0;
-    characterY = 0;
-    moveX = 0;
-    moveY = 0;
+    character_x = 0;
+    character_y = 0;
+    move_x = 0;
+    move_y = 0;
   }
   
   public void display(){
-    image(image,characterX, characterY, w, h);
-  }
-  
-  public void update(){
-    characterX += moveX;
-    characterY += moveY;
-  }
-  
-  //get the old boundary
-  float getTopBoundary(){
-    return characterY - h/2;
-  }
-  void setTopBoundary(float top){
-    characterY = top + h/2;
-  }
-  float getBottomBoundary(){
-    return characterY + h/2;
-  }
-  void setBottomBoundary(float bottom){
-    characterY = bottom - h/2;
+    image(image,character_x, character_y, w, h);
   }
 
-  float getLeftBoundary(){
-    return characterX - w/2;
+  public void update(float gravity, float inertia){
+    character_x += move_x;
+    character_y += move_y;
+    move_y += gravity;
+    if (move_x > 0) {
+      move_x = max(move_x - inertia, 0); 
+    } else {
+      move_x = min(move_x + inertia, 0);
+    }
   }
-  void setLeftBoundary(float left){
-    characterX = left + w/2;
-  }
-  float getRightBoundary(){
-    return characterX + w/2;
-  }
-  
-  //update the new boundary
-  void setRightBoundary(float right){
-    characterX = right - w/2;
-  }
-
 }
