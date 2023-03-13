@@ -19,7 +19,7 @@ float screenY = 0;
 void setup(){
   size(1500,800);
   page = new Page();
-  pageNum = 3;
+  pageNum = 1;
   bg = loadImage("../map.png");
   //bg = new Character("../map.png",1.0,0,0);
   

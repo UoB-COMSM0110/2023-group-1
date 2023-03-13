@@ -4,7 +4,7 @@ public class Page {
   public void gameStart(){
     int playerNum = 1;
     bg = loadImage("../map.png");
-    image(bg,0,0,1500,800);
+    image(bg,750,400,1500,800);
     textSize(100);
     text("M A R I O",590,200);
     mario = loadImage("../mario.png");
