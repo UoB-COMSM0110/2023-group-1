@@ -1,0 +1,6 @@
+Game Ideas:
+1 - Mario but gravity changes 
+    Paper prototype video here: https://youtu.be/0fppWHDHL3Y
+
+2 - Connect four but the bottom row is emptied periodically at intervals 
+
