@@ -9,7 +9,7 @@ final static float MAGRINLEFT = 200;
 final static float MAGRINVERTICAL = 60;
 
 Character c;
-PImage bg, float_brick, grass, mushroom, button1, button2, mario, sun;
+PImage bg, float_brick, grass, mushroom, button1, button2, mario, sun, flag;
 ArrayList<Character> platforms;
 int pageNum;
 Page page;
@@ -20,7 +20,7 @@ void setup(){
   size(1500,800);
   page = new Page();
   pageNum = 1;
-  bg = loadImage("../map.png");
+  //bg = loadImage("../map.png");
   //bg = new Character("../map.png",1.0,0,0);
   
   imageMode(CENTER);
@@ -37,6 +37,8 @@ void setup(){
   mushroom = loadImage("../mushroom_red.png");
   grass = loadImage("../grass_brown2.png");
   sun = loadImage("../sun1.png");
+  bg = loadImage("../download1.jpg");
+  flag = loadImage("../flag.png");
   createPlatforms("map.csv");
 }
 
@@ -51,8 +53,12 @@ void draw(){
   if(pageNum == 3){
     //game.drawGame();
       scroll();//////////////
+      background(98,150,255,255);
   c.display();
   solveCollisions(c,platforms);
+  
+
+  
   //c.update();
   
   for(Character a: platforms){
@@ -170,6 +176,12 @@ void createPlatforms(String filename){
       }
       else if(values[col].equals("4")){
         Character s = new Character(sun, CHARACTER_SCALE);
+        s.characterX = CHARACTER_SIZE/2 + col * CHARACTER_SIZE;
+        s.characterY = CHARACTER_SIZE/2 + row * CHARACTER_SIZE;
+        platforms.add(s);
+      }
+       else if(values[col].equals("5")){
+        Character s = new Character(flag, CHARACTER_SCALE);
         s.characterX = CHARACTER_SIZE/2 + col * CHARACTER_SIZE;
         s.characterY = CHARACTER_SIZE/2 + row * CHARACTER_SIZE;
         platforms.add(s);
