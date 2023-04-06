@@ -8,9 +8,22 @@ final static float MAGRINRIGHT = 800;
 final static float MAGRINLEFT = 200;
 final static float MAGRINVERTICAL = 60;
 
+final static int MIDDLE_FACING = 0;
+final static int RIGHT_FACING = 1;
+final static int LEFT_FACING = 2;
+
+final static float WIDTH = CHARACTER_SIZE * 30;
+final static float HEIGHT = CHARACTER_SIZE * 16;
+final static float GROUND_LEVEL = HEIGHT - CHARACTER_SIZE;
+
 Character c;
-PImage bg, float_brick, grass, mushroom, button1, button2, mario, sun, flag;
+PImage bg, float_brick, grass, mushroom, button1, button2, mario, sun, gold, zombie;
 ArrayList<Character> platforms;
+ArrayList<Character> coins;
+Enemy enemy;
+
+int pointNums;
+
 int pageNum;
 Page page;
 float screenX = 0;
@@ -20,7 +33,7 @@ void setup(){
   size(1500,800);
   page = new Page();
   pageNum = 1;
-  //bg = loadImage("../map.png");
+  bg = loadImage("../map.png");
   //bg = new Character("../map.png",1.0,0,0);
   
   imageMode(CENTER);
@@ -31,14 +44,15 @@ void setup(){
   c.moveX = 0;
   c.moveY = 0;
   platforms = new ArrayList<Character>();
+  coins = new ArrayList<Character>();
   
   
   float_brick = loadImage("../ground_grass_small.png");
   mushroom = loadImage("../mushroom_red.png");
   grass = loadImage("../grass_brown2.png");
   sun = loadImage("../sun1.png");
-  bg = loadImage("../download1.jpg");
-  flag = loadImage("../flag.png");
+  gold = loadImage("../bronze_1.png");
+  zombie = loadImage("../Zombie/zombie_walkl0.png");
   createPlatforms("map.csv");
 }
 
@@ -53,17 +67,23 @@ void draw(){
   if(pageNum == 3){
     //game.drawGame();
       scroll();//////////////
-      background(98,150,255,255);
   c.display();
   solveCollisions(c,platforms);
-  
-
-  
   //c.update();
   
   for(Character a: platforms){
     a.display();
   }
+
+  for(Character c: coins){
+    c.display();
+    ((Animate)c).updateAnimation();
+  }
+
+  //TODO 
+  //enemy.display();
+  //enemy.update();
+  //enemy.updateAnimation();
   }
 
 }
@@ -180,11 +200,18 @@ void createPlatforms(String filename){
         s.characterY = CHARACTER_SIZE/2 + row * CHARACTER_SIZE;
         platforms.add(s);
       }
-       else if(values[col].equals("5")){
-        Character s = new Character(flag, CHARACTER_SCALE);
+      else if(values[col].equals("5")){
+        Gold s = new Gold(gold, CHARACTER_SCALE);
         s.characterX = CHARACTER_SIZE/2 + col * CHARACTER_SIZE;
         s.characterY = CHARACTER_SIZE/2 + row * CHARACTER_SIZE;
-        platforms.add(s);
+        coins.add(s);
+      }
+      else if(values[col].equals("6")){
+        float bLeft = col * CHARACTER_SIZE;
+        float bRight = bLeft + 4 * CHARACTER_SIZE;
+        enemy = new Enemy(zombie, 50/72.0, bLeft, bRight);
+        enemy.characterX = CHARACTER_SIZE/2 + col * CHARACTER_SIZE;
+        enemy.characterY = CHARACTER_SIZE/2 + row * CHARACTER_SIZE;
       }
     }
   }

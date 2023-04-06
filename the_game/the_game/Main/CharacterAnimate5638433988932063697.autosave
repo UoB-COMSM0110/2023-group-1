@@ -1,0 +1,20 @@
+public class CharacterAnimate extends Animate{
+
+    int lives;
+    boolean isOnGround, inPlace;
+    PImage[] standLeft; 
+    PImage[] standRight; 
+    PImage[] jumpLeft;
+    PImage[] jumpRight;
+    public CharacterAnimate (PImage img, float scale) {
+        super(img, scale);
+        lives = 3;
+        facing = RIGHT_FACING;
+        isOnGround = false;
+        inPlace = true;
+        standLeft = new PImage[1];
+        standLeft[0] = loadImage("../male/maleAdventurer_walk0.png");
+        
+    }
+
+}
