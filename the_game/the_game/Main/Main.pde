@@ -19,7 +19,7 @@ final static float GROUND_LEVEL = HEIGHT - CHARACTER_SIZE;
 // Character c;
 // CharacterAnimate player;
 CharacterAnimate c;
-PImage bg, float_brick, grass, mushroom, button1, button2, mario, sun, gold, zombie, p;
+PImage bg, float_brick, grass, mushroom, button1, button2, mario, sun, gold, zombie, p, flag;
 ArrayList<Character> platforms;
 ArrayList<Character> coins;
 Enemy enemy;
@@ -35,7 +35,7 @@ void setup(){
   size(1500,800);
   page = new Page();
   pageNum = 1;
-  bg = loadImage("../map.png");
+  //bg = loadImage("../map.png");
   //bg = new Character("../map.png",1.0,0,0);
   
   imageMode(CENTER);
@@ -64,6 +64,8 @@ void setup(){
   mushroom = loadImage("../mushroom_red.png");
   grass = loadImage("../grass_brown2.png");
   sun = loadImage("../sun1.png");
+  bg = loadImage("../download1.jpg");
+  flag = loadImage("../flag.png");
   gold = loadImage("../bronze_1.png");
   zombie = loadImage("../Zombie/zombie_walkl0.png");
   createPlatforms("map.csv");
@@ -80,7 +82,7 @@ void draw(){
   if(pageNum == 3){
     //game.drawGame();
     scroll();//////////////
-    
+    background(98, 150, 255, 255);
 
     displayAll();
     if(!isGameOver){
@@ -301,7 +303,7 @@ void createPlatforms(String filename){
         platforms.add(s);
       }
       else if(values[col].equals("4")){
-        Character s = new Character(sun, CHARACTER_SCALE);
+        Character s = new Character(flag, CHARACTER_SCALE);
         s.characterX = CHARACTER_SIZE/2 + col * CHARACTER_SIZE;
         s.characterY = CHARACTER_SIZE/2 + row * CHARACTER_SIZE;
         platforms.add(s);
@@ -319,6 +321,7 @@ void createPlatforms(String filename){
         enemy.characterX = CHARACTER_SIZE/2 + col * CHARACTER_SIZE;
         enemy.characterY = CHARACTER_SIZE/2 + row * CHARACTER_SIZE;
       }
+      
     }
   }
 }
