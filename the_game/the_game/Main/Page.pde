@@ -26,6 +26,7 @@ public class Page {
     // reset the colour so that the text is not messed up
     fill(#FFFFFF);
 
+
     textSize(60);
     text("GAME START", 590, 535);
     textSize(30);
