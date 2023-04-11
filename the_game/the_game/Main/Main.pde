@@ -161,17 +161,27 @@ void updateAll(){
 }
 
 void collectCoins() {
-  // What does this do?  I've not updated to include logic for a second player.  Should I?
-  ArrayList<Character> coinList = collisionListTest(playerA, coins);
-  if(coinList.size() > 0){
-    for(Character coin: coinList){
+  ArrayList<Character> coinListA = collisionListTest(playerA, coins);
+  if(coinListA.size() > 0){
+    for(Character coin: coinListA){
       scoreNum++;
       coins.remove(coin);
     }
   }
 
+  if (twoPlayers) {
+    ArrayList<Character> coinListB = collisionListTest(playerB, coins);
+
+    if(coinListB.size() > 0){
+      for(Character coin: coinListB){
+        scoreNum++;
+        coins.remove(coin);
+      }
+    }  
+  }
+
   //win,get all the coins
-  if(coins.size() == 0){
+  if (coins.size() == 0) {
     isGameOver = true;
   }
 }
