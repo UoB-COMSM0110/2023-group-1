@@ -11,9 +11,9 @@ public class Page {
     image(mario,700,260,150,200);
     button1 = loadImage("../pic/platformPack_tile001.png");
     button2 = loadImage("../pic/platformPack_tile004.png");
-    image(button1,550,450,400,110);//start
-    image(button2,590,600,130,50);//1 player
-    image(button2,760,600,130,50);//2 player
+    image(button1, (550 + (400/2)), (450 + (110 / 2)), 400, 110);//start
+    image(button2, (590 + (130/2)), (600 + (50/2)), 130, 50);//1 player
+    image(button2, (760 + (130/2)), (600 + (50/2)), 130, 50);//2 player
     textSize(60);
     text("GAME START",590,535);
     textSize(30);
