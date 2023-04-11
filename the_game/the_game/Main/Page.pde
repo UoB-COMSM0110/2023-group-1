@@ -22,28 +22,26 @@ public class Page {
     fill(240,210,200);
   
     //1 player
-    if(mouseX>590 && mouseX<720 && mouseY>600 && mouseY<650){
-      if(mouseButton == LEFT){
+    if (mouseX>590 && mouseX<720 && mouseY>600 && mouseY<650) {
+      if (mouseButton == LEFT) {
           playerNum = 1;
           //triangle(18, 18, 18, 360, 81, 360);
           println("Player Number is : " + playerNum);
+          twoPlayers = false;
        }
     }
     //2 player
-    if(mouseX>760 && mouseX<890 && mouseY>600 && mouseY<650){
-      if(mouseButton == LEFT){
+    if (mouseX>760 && mouseX<890 && mouseY>600 && mouseY<650) {
+      if (mouseButton == LEFT) {
           playerNum = 2;
           println("Player Number is : " + playerNum);
+          twoPlayers = true;
       }
     } 
     //game start
     if(mouseX>550 && mouseX<950 && mouseY>450 && mouseY<560){
       if(mouseButton == LEFT){
-        if(playerNum == 1){
-          pageNum = 3;
-        }else if(playerNum == 2){
-          pageNum = 4;
-        }
+        pageNum = 3;
       }
     }
   }
