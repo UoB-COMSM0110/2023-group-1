@@ -15,9 +15,7 @@ final static int LEFT_FACING = 2;
 final static float WIDTH = CHARACTER_SIZE * 30;
 final static float HEIGHT = CHARACTER_SIZE * 16;
 final static float GROUND_LEVEL = HEIGHT - CHARACTER_SIZE;
- 
-// Character c;
-// CharacterAnimate player;
+
 CharacterAnimate playerA, playerB;
 PImage bg, float_brick, grass, mushroom, button1, button2, mario, sun, gold, zombie, p1, p2, flag;
 ArrayList<Character> platforms;
@@ -36,16 +34,8 @@ void setup(){
   size(1500,800);
   page = new Page();
   pageNum = 1;
-  //bg = loadImage("../map.png");
-  //bg = new Character("../map.png",1.0,0,0);
   
   imageMode(CENTER);
-  //c = new Character("../maleAdventurer.png", 1.0, 100, 570);
-  // c = new Character("../Character/maleAdventurer_standright.png", 0.8, 900, 100);
-  // //c.characterX = 100;
-  // //c.characterY = 200;
-  // c.moveX = 0;
-  // c.moveY = 0;
   p1 = loadImage("../Character/maleAdventurer_standright.png");
   p2 = loadImage("../CharacterTwo/femaleAdventurer_idle.png");
   playerA = new CharacterAnimate(p1, 0.8);
@@ -54,13 +44,7 @@ void setup(){
   playerB = new CharacterAnimate(p2, 0.8);
   playerB.characterX = 110;
   playerB.moveY = GROUND_LEVEL;
-  twoPlayers = true;
-  // c.setBottomBoundary(GROUND_LEVEL - 5);
-  // c.characterX = 300;
-  // c.characterY = 200;
-  // player = new CharacterAnimate(p, 0.8);
-  // player.setBottomBoundary(GROUND_LEVEL);
-  // player.characterX = 100;
+  twoPlayers = false;
   platforms = new ArrayList<Character>();
   coins = new ArrayList<Character>();
   scoreNum = 0;
@@ -86,8 +70,7 @@ void draw(){
     page.gameOver();
   }
   if(pageNum == 3){
-    //game.drawGame();
-    scroll();//////////////
+    scroll();
     background(98, 150, 255, 255);
 
     displayAll();
@@ -96,23 +79,6 @@ void draw(){
       collectCoins();
       checkDeath();
     }
-    // // c.updateAnimation();
-    // solveCollisions(c,platforms);
-    // enemy.update();
-    // enemy.updateAnimation();
-    
-    // //TODO
-    // // collectCoins();
-    // // checkDeath();
-  
-
-
-    // player.display();
-    // solveCollisions(c,platforms);
-    //c.update();
-    // player.updateAnimation();
-    // solveCollisions(player,platforms);
-
   }
 
 }
@@ -123,7 +89,6 @@ void displayAll(){
   }
   for(Character c: coins){
     c.display();
-    // ((Animate)c).updateAnimation();
   }
   playerA.display();
   if (twoPlayers) {
@@ -142,7 +107,6 @@ void displayAll(){
 }
 
 void updateAll(){
-  // c.updateAnimation();
     solveCollisions(playerA, platforms);
     if (twoPlayers) {
       solveCollisions(playerB, platforms);
@@ -151,13 +115,8 @@ void updateAll(){
     enemy.updateAnimation();
     
   for(Character c: coins){
-    // c.display();
     ((Animate)c).updateAnimation();
   }
-
-    //TODO
-    // collectCoins();
-    // checkDeath();
 }
 
 void collectCoins() {
@@ -210,39 +169,22 @@ void checkDeath(){
 
 void scroll(){
   float right = screenX + width - MAGRINRIGHT;
-  if(playerA.getRightBoundary() > right){
+  if (playerA.getRightBoundary() > right) {
     screenX += playerA.getRightBoundary() - right;
   }
   float left = screenX + MAGRINLEFT;
-  if(playerA.getLeftBoundary() < left){
+  if (playerA.getLeftBoundary() < left) {
     screenX -= left - playerA.getLeftBoundary();
   }
   float bottom = screenY + height - MAGRINVERTICAL;
-  if(playerA.getBottomBoundary() > bottom){
+  if (playerA.getBottomBoundary() > bottom) {
     screenY += playerA.getBottomBoundary() - bottom;
   }
   float top = screenY + MAGRINVERTICAL;
-  if(playerA.getTopBoundary() < top){
+  if (playerA.getTopBoundary() < top) {
     screenY -= top - playerA.getTopBoundary();
   }
   translate(-screenX, -screenY);
-  // float right = screenX + width - MAGRINRIGHT;
-  // if(player.getRightBoundary() > right){
-  //   screenX += player.getRightBoundary() - right;
-  // }
-  // float left = screenX + MAGRINLEFT;
-  // if(player.getLeftBoundary() < left){
-  //   screenX -= left - player.getLeftBoundary();
-  // }
-  // float bottom = screenY + height - MAGRINVERTICAL;
-  // if(player.getBottomBoundary() > bottom){
-  //   screenY += player.getBottomBoundary() - bottom;
-  // }
-  // float top = screenY + MAGRINVERTICAL;
-  // if(player.getTopBoundary() < top){
-  //   screenY -= top - player.getTopBoundary();
-  // }
-  // translate(-screenX, -screenY);
 }
 
 
@@ -250,12 +192,12 @@ public void solveCollisions(Character c, ArrayList<Character> walls){
   c.moveY += GRAVITY;
   c.characterY += c.moveY;
   ArrayList<Character> list = collisionListTest(c, walls);
-  if(list.size() > 0){
+  if (list.size() > 0) {
     Character collided = list.get(0);
-    if(c.moveY > 0){
+    if (c.moveY > 0) {
       c.setBottomBoundary(collided.getTopBoundary());
     }
-    else if(c.moveY < 0){
+    else if (c.moveY < 0) {
       c.setTopBoundary(collided.getBottomBoundary());
     }
     c.moveY = 0;
@@ -263,7 +205,7 @@ public void solveCollisions(Character c, ArrayList<Character> walls){
   
   c.characterX += c.moveX;
   list = collisionListTest(c, walls);
-  if(list.size() > 0){
+  if (list.size() > 0) {
     Character collided = list.get(0);
     if(c.moveX > 0){
       c.setRightBoundary(collided.getLeftBoundary());
@@ -279,17 +221,16 @@ boolean collisionTest(Character c1, Character c2){
   boolean checkX2 = c1.getRightBoundary() <= c2.getLeftBoundary();
   boolean checkY1 = c1.getBottomBoundary() <= c2.getTopBoundary();
   boolean checkY2 = c1.getTopBoundary() >= c2.getBottomBoundary();
-  if(checkX1 || checkX2 || checkY1 || checkY2){
+  if (checkX1 || checkX2 || checkY1 || checkY2) {
     return false;
   }else{
     return true;
   }
-  //return checkX1 || checkX2 || checkY1 || checkY2;
 }
 
 public ArrayList<Character> collisionListTest(Character c, ArrayList<Character> list){
   ArrayList<Character> listCollision = new ArrayList<Character>();
-  for(Character element: list){
+  for (Character element: list){
     if(collisionTest(c,element)){
       listCollision.add(element);
     }
@@ -368,7 +309,7 @@ void keyPressed(){
     playerA.moveY = MOVE_SPEED;
   } 
   
-  // Player 2 controls -- not mutually exclusive, so need to do seperate it statements
+  // Player 2 controls -- not mutually exclusive, so need to do seperate if statements
   if (twoPlayers) {
     if (key == 'd') {
       playerB.moveX = MOVE_SPEED;

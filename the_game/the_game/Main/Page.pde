@@ -25,7 +25,6 @@ public class Page {
     if (mouseX>590 && mouseX<720 && mouseY>600 && mouseY<650) {
       if (mouseButton == LEFT) {
           playerNum = 1;
-          //triangle(18, 18, 18, 360, 81, 360);
           println("Player Number is : " + playerNum);
           twoPlayers = false;
        }
