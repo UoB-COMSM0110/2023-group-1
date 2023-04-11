@@ -309,7 +309,7 @@ void keyPressed(){
     playerA.moveY = MOVE_SPEED;
   } 
   
-  // Player 2 controls -- not mutually exclusive, so need to do seperate if statements
+  // Player 2 controls -- not mutually exclusive, so need to do seperate it statements
   if (twoPlayers) {
     if (key == 'd') {
       playerB.moveX = MOVE_SPEED;
