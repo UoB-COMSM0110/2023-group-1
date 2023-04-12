@@ -250,40 +250,35 @@ public boolean isOnGround(Character c, ArrayList<Character> walls){
 
 void createPlatforms(String filename){
   String[] lines = loadStrings(filename);
-  for(int row = 0; row <lines.length; row++){
+  for (int row = 0; row <lines.length; row++) {
     String[] values = split(lines[row], ",");
-    for(int col = 0; col < values.length; col++){
-      if(values[col].equals("1")){
+    for (int col = 0; col < values.length; col++) {
+      if (values[col].equals("1")) {
         Character s = new Character(float_brick, CHARACTER_SCALE);
         s.characterX = CHARACTER_SIZE/2 + col * CHARACTER_SIZE;
         s.characterY = CHARACTER_SIZE/2 + row * CHARACTER_SIZE;
         platforms.add(s);
-      }
-      else if(values[col].equals("2")){
+      } else if (values[col].equals("2")) {
         Character s = new Character(grass, CHARACTER_SCALE);
         s.characterX = CHARACTER_SIZE/2 + col * CHARACTER_SIZE;
         s.characterY = CHARACTER_SIZE/2 + row * CHARACTER_SIZE;
         platforms.add(s);
-      }
-      else if(values[col].equals("3")){
+      } else if(values[col].equals("3")) {
         Character s = new Character(mushroom, CHARACTER_SCALE);
         s.characterX = CHARACTER_SIZE/2 + col * CHARACTER_SIZE;
         s.characterY = CHARACTER_SIZE/2 + row * CHARACTER_SIZE;
         platforms.add(s);
-      }
-      else if(values[col].equals("4")){
+      } else if(values[col].equals("4")) {
         Character s = new Character(flag, CHARACTER_SCALE);
         s.characterX = CHARACTER_SIZE/2 + col * CHARACTER_SIZE;
         s.characterY = CHARACTER_SIZE/2 + row * CHARACTER_SIZE;
         platforms.add(s);
-      }
-      else if(values[col].equals("5")){
+      } else if(values[col].equals("5")) {
         Gold s = new Gold(gold, CHARACTER_SCALE);
         s.characterX = CHARACTER_SIZE/2 + col * CHARACTER_SIZE;
         s.characterY = CHARACTER_SIZE/2 + row * CHARACTER_SIZE;
         coins.add(s);
-      }
-      else if(values[col].equals("6")){
+      } else if(values[col].equals("6")) {
         float bLeft = col * CHARACTER_SIZE;
         float bRight = bLeft + 7 * CHARACTER_SIZE;
         enemy = new Enemy(zombie, 0.25, bLeft, bRight);
