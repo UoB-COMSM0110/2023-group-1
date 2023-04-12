@@ -23,7 +23,6 @@ ArrayList<Character> coins;
 Enemy enemy;
 
 int scoreNum = 0;
-boolean isGameOver;
 boolean twoPlayers;
 int pageNum;
 Page page;
@@ -42,13 +41,12 @@ void setup(){
   playerA.characterX = 100;
   playerA.moveY = GROUND_LEVEL;
   playerB = new CharacterAnimate(p2, 0.8);
-  playerB.characterX = 110;
+  playerB.characterX = 150;
   playerB.moveY = GROUND_LEVEL;
   twoPlayers = false;
   platforms = new ArrayList<Character>();
   coins = new ArrayList<Character>();
   scoreNum = 0;
-  isGameOver = false;
   
   float_brick = loadImage("../ground_grass_small.png");
   mushroom = loadImage("../mushroom_red.png");
@@ -63,31 +61,31 @@ void setup(){
 
 void draw(){
   background(255);
-  if(pageNum == 1){
+  if (pageNum == 1) { // Welcome screen
     page.gameStart();
-  }
-  if(pageNum == 2){
+  } else if (pageNum == 2) { // game over screen
     page.gameOver();
-  }
-  if(pageNum == 3){
+  } else if (pageNum == 3) { // game screen
     scroll();
     background(98, 150, 255, 255);
 
     displayAll();
-    if(!isGameOver){
+    if (pageNum == 3) {
       updateAll();
       collectCoins();
       checkDeath();
     }
+  } else if (pageNum == 4) { // game won screen
+    page.gameWon();
   }
 
 }
 
 void displayAll(){
-  for(Character a: platforms){
+  for (Character a: platforms) {
     a.display();
   }
-  for(Character c: coins){
+  for (Character c: coins) {
     c.display();
   }
   playerA.display();
@@ -100,7 +98,7 @@ void displayAll(){
   text("Score:" + scoreNum, screenX + 50, screenY + 50);
   text("Lives:" + playerA.lives, screenX + 50, screenY + 100);
 
-  if(isGameOver){
+  if (pageNum == 2) {
     fill(0,0,255);
     text("game over!", screenX + width/2 - 100, screenY + height/2);
   }
@@ -121,8 +119,8 @@ void updateAll(){
 
 void collectCoins() {
   ArrayList<Character> coinListA = collisionListTest(playerA, coins);
-  if(coinListA.size() > 0){
-    for(Character coin: coinListA){
+  if (coinListA.size() > 0) {
+    for (Character coin: coinListA) {
       scoreNum++;
       coins.remove(coin);
     }
@@ -131,17 +129,17 @@ void collectCoins() {
   if (twoPlayers) {
     ArrayList<Character> coinListB = collisionListTest(playerB, coins);
 
-    if(coinListB.size() > 0){
-      for(Character coin: coinListB){
+    if (coinListB.size() > 0) {
+      for (Character coin: coinListB) {
         scoreNum++;
         coins.remove(coin);
       }
     }  
   }
 
-  //win,get all the coins
+  // win, got all the coins
   if (coins.size() == 0) {
-    isGameOver = true;
+    pageNum = 4;
   }
 }
 
@@ -154,7 +152,7 @@ void checkDeath(){
     // We are storing all of the lives data in the player 1 object.  this means that if player 2 dies, then it also kills player 1.  #teamwork
     playerA.lives--;
     if (playerA.lives == 0) {
-      isGameOver = true;
+      pageNum = 2;
     } else {
       playerA.characterX = 100;
       playerA.setBottomBoundary(GROUND_LEVEL);
@@ -320,10 +318,6 @@ void keyPressed(){
     } else if (key == 's') {
       playerB.moveY = JUMP_SPEED;
     }
-  }
-  
-  if (isGameOver && key == ' ') {
-    setup();
   }
 }
 
