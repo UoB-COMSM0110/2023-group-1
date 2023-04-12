@@ -147,7 +147,7 @@ void checkDeath(){
   // If there are two players, then need to check for both collisions.
   // Otherwise, just check for player 1 colliding
   boolean collideEnemy = (twoPlayers) ? (collisionTest(playerA, enemy) || collisionTest(playerB, enemy)) : collisionTest(playerA, enemy);
-  boolean fallOffCliff = (twoPlayers) ? (playerA.getBottomBoundary() > GROUND_LEVEL && playerB.getBottomBoundary() > GROUND_LEVEL) : (playerA.getBottomBoundary() > GROUND_LEVEL);
+  boolean fallOffCliff = (twoPlayers) ? (playerA.getBottomBoundary() > GROUND_LEVEL || playerB.getBottomBoundary() > GROUND_LEVEL) : (playerA.getBottomBoundary() > GROUND_LEVEL);
   if (collideEnemy || fallOffCliff) {
     // We are storing all of the lives data in the player 1 object.  this means that if player 2 dies, then it also kills player 1.  #teamwork
     playerA.lives--;
@@ -157,7 +157,7 @@ void checkDeath(){
       playerA.characterX = 100;
       playerA.setBottomBoundary(GROUND_LEVEL);
       if (twoPlayers) {
-        playerB.characterX = 110;
+        playerB.characterX = 150;
         playerB.setBottomBoundary(GROUND_LEVEL);
       }
     }
