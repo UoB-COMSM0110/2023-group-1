@@ -147,7 +147,7 @@ void checkDeath(){
   // If there are two players, then need to check for both collisions.
   // Otherwise, just check for player 1 colliding
   boolean collideEnemy = (twoPlayers) ? (collisionTest(playerA, enemy) || collisionTest(playerB, enemy)) : collisionTest(playerA, enemy);
-  boolean fallOffCliff = (twoPlayers) ? (playerA.getBottomBoundary() > GROUND_LEVEL && playerB.getBottomBoundary() > GROUND_LEVEL) : (playerA.getBottomBoundary() > GROUND_LEVEL);
+  boolean fallOffCliff = (twoPlayers) ? (playerA.getBottomBoundary() > GROUND_LEVEL || playerB.getBottomBoundary() > GROUND_LEVEL) : (playerA.getBottomBoundary() > GROUND_LEVEL);
   if (collideEnemy || fallOffCliff) {
     // We are storing all of the lives data in the player 1 object.  this means that if player 2 dies, then it also kills player 1.  #teamwork
     playerA.lives--;
@@ -157,7 +157,7 @@ void checkDeath(){
       playerA.characterX = 100;
       playerA.setBottomBoundary(GROUND_LEVEL);
       if (twoPlayers) {
-        playerB.characterX = 110;
+        playerB.characterX = 150;
         playerB.setBottomBoundary(GROUND_LEVEL);
       }
     }
@@ -250,40 +250,35 @@ public boolean isOnGround(Character c, ArrayList<Character> walls){
 
 void createPlatforms(String filename){
   String[] lines = loadStrings(filename);
-  for(int row = 0; row <lines.length; row++){
+  for (int row = 0; row <lines.length; row++) {
     String[] values = split(lines[row], ",");
-    for(int col = 0; col < values.length; col++){
-      if(values[col].equals("1")){
+    for (int col = 0; col < values.length; col++) {
+      if (values[col].equals("1")) {
         Character s = new Character(float_brick, CHARACTER_SCALE);
         s.characterX = CHARACTER_SIZE/2 + col * CHARACTER_SIZE;
         s.characterY = CHARACTER_SIZE/2 + row * CHARACTER_SIZE;
         platforms.add(s);
-      }
-      else if(values[col].equals("2")){
+      } else if (values[col].equals("2")) {
         Character s = new Character(grass, CHARACTER_SCALE);
         s.characterX = CHARACTER_SIZE/2 + col * CHARACTER_SIZE;
         s.characterY = CHARACTER_SIZE/2 + row * CHARACTER_SIZE;
         platforms.add(s);
-      }
-      else if(values[col].equals("3")){
+      } else if(values[col].equals("3")) {
         Character s = new Character(mushroom, CHARACTER_SCALE);
         s.characterX = CHARACTER_SIZE/2 + col * CHARACTER_SIZE;
         s.characterY = CHARACTER_SIZE/2 + row * CHARACTER_SIZE;
         platforms.add(s);
-      }
-      else if(values[col].equals("4")){
+      } else if(values[col].equals("4")) {
         Character s = new Character(flag, CHARACTER_SCALE);
         s.characterX = CHARACTER_SIZE/2 + col * CHARACTER_SIZE;
         s.characterY = CHARACTER_SIZE/2 + row * CHARACTER_SIZE;
         platforms.add(s);
-      }
-      else if(values[col].equals("5")){
+      } else if(values[col].equals("5")) {
         Gold s = new Gold(gold, CHARACTER_SCALE);
         s.characterX = CHARACTER_SIZE/2 + col * CHARACTER_SIZE;
         s.characterY = CHARACTER_SIZE/2 + row * CHARACTER_SIZE;
         coins.add(s);
-      }
-      else if(values[col].equals("6")){
+      } else if(values[col].equals("6")) {
         float bLeft = col * CHARACTER_SIZE;
         float bRight = bLeft + 7 * CHARACTER_SIZE;
         enemy = new Enemy(zombie, 0.25, bLeft, bRight);
