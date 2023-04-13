@@ -22,14 +22,18 @@ ArrayList<Character> platforms;
 ArrayList<Character> coins;
 Enemy enemy;
 
-int scoreNum = 0;
+int scoreNum;
 boolean twoPlayers;
 int pageNum;
 Page page;
 float screenX;
 float screenY;
+int timeTillGravityChanges;
 
-void setup(){
+boolean gravityDown;
+boolean hardMode;
+
+void setup() {
   size(1500,800);
   page = new Page();
   pageNum = 1;
@@ -47,6 +51,9 @@ void setup(){
   platforms = new ArrayList<Character>();
   coins = new ArrayList<Character>();
   scoreNum = 0;
+  gravityDown = true;
+  hardMode = true;
+  resetGravityTimer();
   
   float_brick = loadImage("../ground_grass_small.png");
   mushroom = loadImage("../mushroom_red.png");
@@ -81,26 +88,42 @@ void draw(){
 
 }
 
-void displayAll(){
+void displayAll() {
+  // Handle gravity timer etc., if the difficulty mode is 'hard'
+  if (hardMode) {
+    timeTillGravityChanges -= 1;
+    if (timeTillGravityChanges == 0) {
+      gravityDown = !gravityDown;
+      resetGravityTimer(); // It is important that this function is called AFTER gravity has been flipped!
+    }
+  }
+
+  // Display the map
   for (Character a: platforms) {
     a.display();
   }
+
+  // Display the remaining coins
   for (Character c: coins) {
     c.display();
   }
+
+  // Display the player sprites
   playerA.display();
   if (twoPlayers) {
     playerB.display();
   }
+  
+  // Display the enemy
   enemy.display();
+
+  // Display the score and remaining lives
   fill(255,0,0);
   textSize(32);
-  text("Score:" + scoreNum, screenX + 50, screenY + 50);
-  text("Lives:" + playerA.lives, screenX + 50, screenY + 100);
-
-  if (pageNum == 2) {
-    fill(0,0,255);
-    text("game over!", screenX + width/2 - 100, screenY + height/2);
+  text("Score: " + scoreNum, screenX + 50, screenY + 50);
+  text("Lives: " + playerA.lives, screenX + 50, screenY + 100);
+  if (hardMode) {
+    text("Time till gravity flips: " + timeTillGravityChanges, screenX + 50, screenY + 150);
   }
 }
 
@@ -187,7 +210,7 @@ void scroll(){
 
 
 public void solveCollisions(Character c, ArrayList<Character> walls){
-  c.moveY += GRAVITY;
+  c.moveY += (gravityDown) ? GRAVITY : -GRAVITY;
   c.characterY += c.moveY;
   ArrayList<Character> list = collisionListTest(c, walls);
   if (list.size() > 0) {
@@ -339,4 +362,8 @@ void score() {
   textSize(32);
   fill(255, 0, 0);
   text("Score: " + scoreNum, width-20, 40);
+}
+
+void resetGravityTimer() {
+  timeTillGravityChanges = (gravityDown) ? (int)random(200, 1500) : (int)random(50, 300);
 }
