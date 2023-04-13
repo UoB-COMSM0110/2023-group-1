@@ -10,8 +10,9 @@ public class Page {
     button1 = loadImage("../pic/platformPack_tile001.png");
     button2 = loadImage("../pic/platformPack_tile004.png");
     image(button1, (WIDTH / 2), 500, 400, 110); //start
-    image(button2, ((WIDTH / 2) - 100), (600 + (50/2)), 130, 50); //1 player
-    image(button2, ((WIDTH / 2) + 100), (600 + (50/2)), 130, 50); //2 player
+    image(button2, ((WIDTH / 2) - 100), (600 + (50/2)), 130, 50); // 1 player
+    image(button2, ((WIDTH / 2) + 100), (600 + (50/2)), 130, 50); // 2 player
+    image(button2, (WIDTH / 2) + 320, 500, 130, 50); // Hard Mode
     
     // Set up the colour for the number of player indicator
     fill(#FFFF00);
@@ -21,8 +22,18 @@ public class Page {
     } else {
       triangle(((WIDTH / 2) - 100), 650, ((WIDTH / 2) - 90), 670, ((WIDTH / 2) -110), 670);
     }
+
+    // Set up the colour for the hard mode indicator box
+    if (hardMode) {
+      noFill();
+      stroke(#FFFF00);
+      strokeWeight(10);
+      rect((WIDTH / 2) + 250, 470, 140, 60);
+    }  
+
     // reset the colour so that the text is not messed up
     fill(#FFFFFF);
+    strokeWeight(4);
 
 
     textSize(60);
@@ -30,6 +41,7 @@ public class Page {
     textSize(30);
     text("1 Player", 600, 635);
     text("2 Player", 800, 635);
+    text("Hard", 1036, 512);
     fill(240, 210, 200);
   
     //1 player
@@ -46,6 +58,12 @@ public class Page {
           playerNum = 2;
           println("Player Number is : " + playerNum);
           twoPlayers = true;
+      }
+    } 
+    // Hard mode
+    if (mouseX > ((WIDTH / 2) + 265) && mouseX < ((WIDTH / 2) + 385) && mouseY > 475 && mouseY < 525) {
+      if (mousePressed && mouseButton == LEFT) {
+        hardMode = !hardMode;
       }
     } 
     //game start
@@ -70,6 +88,7 @@ public class Page {
     image(button1, (WIDTH / 2), 500, 400, 110); //start
     image(button2, ((WIDTH / 2) - 100), (600 + (50/2)), 130, 50); //1 player
     image(button2, ((WIDTH / 2) + 100), (600 + (50/2)), 130, 50); //2 player
+    image(button2, (WIDTH / 2) + 320, 500, 130, 50); // Hard Mode
     
     // Set up the colour for the number of player indicator
     fill(#FFFF00);
@@ -79,8 +98,18 @@ public class Page {
     } else {
       triangle(((WIDTH / 2) - 100), 650, ((WIDTH / 2) - 90), 670, ((WIDTH / 2) -110), 670);
     }
+
+    // Set up the colour for the hard mode indicator box
+    if (hardMode) {
+      noFill();
+      stroke(#FFFF00);
+      strokeWeight(10);
+      rect((WIDTH / 2) + 250, 470, 140, 60);
+    }  
+
     // reset the colour so that the text is not messed up
     fill(#FFFFFF);
+    strokeWeight(4);
 
 
     textSize(60);
@@ -88,6 +117,7 @@ public class Page {
     textSize(30);
     text("1 Player", 600, 635);
     text("2 Player", 800, 635);
+    text("Hard", 1036, 512);
     fill(240, 210, 200);
 
     //1 player
@@ -104,6 +134,12 @@ public class Page {
           playerNum = 2;
           println("Player Number is : " + playerNum);
           twoPlayers = true;
+      }
+    } 
+    // Hard mode
+    if (mouseX > ((WIDTH / 2) + 265) && mouseX < ((WIDTH / 2) + 385) && mouseY > 475 && mouseY < 525) {
+      if (mousePressed && mouseButton == LEFT) {
+        hardMode = !hardMode;
       }
     } 
     //game start
@@ -141,6 +177,7 @@ public class Page {
     image(button1, (WIDTH / 2), 500, 400, 110); //start
     image(button2, ((WIDTH / 2) - 100), (600 + (50/2)), 130, 50); //1 player
     image(button2, ((WIDTH / 2) + 100), (600 + (50/2)), 130, 50); //2 player
+    image(button2, (WIDTH / 2) + 320, 500, 130, 50); // Hard Mode
     
     // Set up the colour for the number of player indicator
     fill(#FFFF00);
@@ -150,8 +187,18 @@ public class Page {
     } else {
       triangle(((WIDTH / 2) - 100), 650, ((WIDTH / 2) - 90), 670, ((WIDTH / 2) -110), 670);
     }
+
+    // Set up the colour for the hard mode indicator box
+    if (hardMode) {
+      noFill();
+      stroke(#FFFF00);
+      strokeWeight(10);
+      rect((WIDTH / 2) + 250, 470, 140, 60);
+    }  
+
     // reset the colour so that the text is not messed up
     fill(#FFFFFF);
+    strokeWeight(4);
 
 
     textSize(60);
@@ -159,6 +206,7 @@ public class Page {
     textSize(30);
     text("1 Player", 600, 635);
     text("2 Player", 800, 635);
+    text("Hard", 1036, 512);
     fill(240, 210, 200);
 
     //1 player
@@ -175,6 +223,12 @@ public class Page {
           playerNum = 2;
           println("Player Number is : " + playerNum);
           twoPlayers = true;
+      }
+    } 
+    // Hard mode
+    if (mouseX > ((WIDTH / 2) + 265) && mouseX < ((WIDTH / 2) + 385) && mouseY > 475 && mouseY < 525) {
+      if (mousePressed && mouseButton == LEFT) {
+        hardMode = !hardMode;
       }
     } 
     //game start

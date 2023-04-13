@@ -366,5 +366,5 @@ void score() {
 }
 
 void resetGravityTimer() {
-  timeTillGravityChanges = (gravityDown) ? (int)random(200, 1000) : (int)random(10, 30);
+  timeTillGravityChanges = (gravityDown) ? (int)random(200, 600) : (int)random(15, 40);
 }
