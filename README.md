@@ -26,7 +26,7 @@ We made the decision to only allow the user to move the sprite left, right, and 
 ### Design (15% ~750 words)
 
 **Class diagram**
-To assist us in organissing our ideas, and planning the work that we would need to do, we developed a [class diagram](ReportMaterial/classDiagram) for our game.  This diagram gave us a plan of what we needed to implement, and how we could sensibly divvy up the work.  In the end, our program deviated from it when we became more familiar with Processing, and the requirements that it imposes.  However, the backbone that is illustrated by our class diagram is evident in out final product.
+To assist us in organissing our ideas, and planning the work that we would need to do, we developed a [class diagram](ReportMaterial/classDiagram.pdf) for our game.  This diagram gave us a plan of what we needed to implement, and how we could sensibly divvy up the work.  In the end, our program deviated from it when we became more familiar with Processing, and the requirements that it imposes.  However, the backbone that is illustrated by our class diagram is evident in out final product.
 
 **Modelling behaviour - Communication diagrams**
 
