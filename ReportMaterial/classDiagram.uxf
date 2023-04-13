@@ -1,0 +1,60 @@
+<diagram program="umletino" version="15.1"><zoom_level>10</zoom_level><element><id>UMLClass</id><coordinates><x>530</x><y>70</y><w>210</w><h>210</h></coordinates><panel_attributes>Main
+--
++ score : int
++ lives : int
++ twoPlayers : boolean 
++ pageNumber : int
++ hardMode : boolean
++ gravityDown : boolean
++ timeTillGravityChanges : int
+--
++ checkDeath() : void
++ checkCoins() : void
++ flipGravity() : void
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>830</x><y>190</y><w>210</w><h>110</h></coordinates><panel_attributes>Page
+--
+
+--
++drawStartScreen() : void
++drawGameOver() : void
++drawGameWon() : void
++drawLeaderBoard() : void</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>730</x><y>120</y><w>230</w><h>90</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-
+m1=1
+m2=1</panel_attributes><additional_attributes>10;10;200;10;200;70</additional_attributes></element><element><id>UMLClass</id><coordinates><x>180</x><y>220</y><w>250</w><h>250</h></coordinates><panel_attributes>Character
+--
+- image : Image
+- xPosition : float
+- yPosition : float
+- width : float
+- height : float
+--
++ Character(filename : String, width : float, 
+height : float) : Character
++ display() : void
++ getTopBoundary() : float
++ getBottomBoundary() : float
++ getRightBoundary() : float
++ getLeftBoundary() : float
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>300</x><y>120</y><w>250</w><h>120</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-
+m1=1
+m2=1..*</panel_attributes><additional_attributes>230;10;10;10;10;100</additional_attributes></element><element><id>UMLClass</id><coordinates><x>0</x><y>550</y><w>210</w><h>60</h></coordinates><panel_attributes>Platform
+--
+
+--
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>90</x><y>460</y><w>140</w><h>110</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>120;10;10;90</additional_attributes></element><element><id>UMLClass</id><coordinates><x>80</x><y>700</y><w>210</w><h>110</h></coordinates><panel_attributes>Hero
+--
+- xVelocity : float
+- yVelocity : float
+--
++ setY(coordinate : float) : void
++ setX(coordinate : float) : void
++ updateLocation() : void</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>180</x><y>460</y><w>110</w><h>260</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>90;10;10;240</additional_attributes></element><element><id>UMLClass</id><coordinates><x>310</x><y>700</y><w>210</w><h>80</h></coordinates><panel_attributes>Enemy
+--
+- xVelocity : float
+- yVelocity : float
+--
+- updateLocation() : void</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>330</x><y>460</y><w>90</w><h>260</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;70;240</additional_attributes></element><element><id>UMLClass</id><coordinates><x>390</x><y>550</y><w>210</w><h>60</h></coordinates><panel_attributes>Coin
+--
+
+--
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>400</x><y>460</y><w>110</w><h>110</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;90;90</additional_attributes></element></diagram>
