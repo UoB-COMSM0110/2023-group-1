@@ -40,27 +40,26 @@ public class Character {
   float getTopBoundary() {
     return characterY - h/2;
   }
-  void setTopBoundary(float top) {
-    characterY = top + h/2;
-  }
   float getBottomBoundary() {
     return characterY + h/2;
   }
-  void setBottomBoundary(float bottom) {
-    characterY = bottom - h/2;
-  }
-
   float getLeftBoundary() {
     return characterX - w/2;
-  }
-  void setLeftBoundary(float left) {
-    characterX = left + w/2;
   }
   float getRightBoundary() {
     return characterX + w/2;
   }
   
   //update the new boundary
+  void setBottomBoundary(float bottom) {
+    characterY = bottom - h/2;
+  }
+  void setTopBoundary(float top) {
+    characterY = top + h/2;
+  }
+  void setLeftBoundary(float left) {
+    characterX = left + w/2;
+  }
   void setRightBoundary(float right) {
     characterX = right - w/2;
   }
