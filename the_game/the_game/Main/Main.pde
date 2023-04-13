@@ -122,8 +122,9 @@ void displayAll() {
   textSize(32);
   text("Score: " + scoreNum, screenX + 50, screenY + 50);
   text("Lives: " + playerA.lives, screenX + 50, screenY + 100);
-  if (hardMode) {
-    text("Time till gravity flips: " + timeTillGravityChanges, screenX + 50, screenY + 150);
+  if (hardMode && timeTillGravityChanges < 100) {
+    textSize(64);
+    text("!!GRAVITY ABOUT TO FLIP!!", screenX + 400, screenY + 50);
   }
 }
 
@@ -365,5 +366,5 @@ void score() {
 }
 
 void resetGravityTimer() {
-  timeTillGravityChanges = (gravityDown) ? (int)random(200, 1500) : (int)random(50, 300);
+  timeTillGravityChanges = (gravityDown) ? (int)random(200, 1000) : (int)random(20, 100);
 }
