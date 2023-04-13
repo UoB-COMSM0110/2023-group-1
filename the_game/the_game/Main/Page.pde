@@ -119,6 +119,7 @@ public class Page {
         platforms = new ArrayList<Character>();
         coins = new ArrayList<Character>();
         scoreNum = 0;
+        gravityDown = true;
         createPlatforms("map.csv");
         // Start the game
         pageNum = 3;
@@ -189,6 +190,7 @@ public class Page {
         platforms = new ArrayList<Character>();
         coins = new ArrayList<Character>();
         scoreNum = 0;
+        gravityDown = true;
         createPlatforms("map.csv");
         // Start the game
         pageNum = 3;
