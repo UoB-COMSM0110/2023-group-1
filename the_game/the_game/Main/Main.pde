@@ -6,7 +6,7 @@ final static float GRAVITY = 1.5;
 
 final static float MAGRINRIGHT = 800;
 final static float MAGRINLEFT = 200;
-final static float MAGRINVERTICAL = 60;
+final static float MAGRINVERTICAL = 160;
 
 final static int MIDDLE_FACING = 0;
 final static int RIGHT_FACING = 1;
@@ -229,10 +229,10 @@ public void solveCollisions(Character c, ArrayList<Character> walls){
   list = collisionListTest(c, walls);
   if (list.size() > 0) {
     Character collided = list.get(0);
-    if(c.moveX > 0){
+    if (c.moveX > 0) {
       c.setRightBoundary(collided.getLeftBoundary());
     }
-    else if(c.moveX < 0){
+    else if (c.moveX < 0) {
       c.setLeftBoundary(collided.getRightBoundary());
     }
   }
@@ -245,7 +245,7 @@ boolean collisionTest(Character c1, Character c2){
   boolean checkY2 = c1.getTopBoundary() >= c2.getBottomBoundary();
   if (checkX1 || checkX2 || checkY1 || checkY2) {
     return false;
-  }else{
+  } else {
     return true;
   }
 }
@@ -253,7 +253,7 @@ boolean collisionTest(Character c1, Character c2){
 public ArrayList<Character> collisionListTest(Character c, ArrayList<Character> list){
   ArrayList<Character> listCollision = new ArrayList<Character>();
   for (Character element: list){
-    if(collisionTest(c,element)){
+    if (collisionTest(c,element)) {
       listCollision.add(element);
     }
   }
@@ -265,9 +265,9 @@ public boolean isOnGround(Character c, ArrayList<Character> walls){
   c.characterY += 5;
   ArrayList<Character> list = collisionListTest(c, walls);
   c.characterY -= 5;
-  if(list.size()>0){
+  if (list.size() > 0) {
     return true;
-  }else {
+  } else {
     return false;
   }
 }
