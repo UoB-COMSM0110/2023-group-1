@@ -197,7 +197,7 @@ void scroll() {
   }
   float left = MAGRINLEFT - screenX;
   if (playerA.getLeftBoundary() < left) {
-    screenX += left - playerA.getLeftBoundary();
+    screenX = min(screenY + (left - playerA.getLeftBoundary()), 0);
   }
   float bottom = height - (MAGRINVERTICAL + screenY);
   if (playerA.getBottomBoundary() > bottom) {
