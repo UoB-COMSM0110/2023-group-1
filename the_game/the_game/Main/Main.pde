@@ -28,6 +28,8 @@ int pageNum;
 Page page;
 float screenX;
 float screenY;
+float bottomPlatform = 0;
+
 int timeTillGravityChanges;
 
 boolean gravityDown;
@@ -66,7 +68,7 @@ void setup() {
   createPlatforms("map.csv");
 }
 
-void draw(){
+void draw() {
   background(255);
   if (pageNum == 1) { // Welcome screen
     page.gameStart();
@@ -85,7 +87,6 @@ void draw(){
   } else if (pageNum == 4) { // game won screen
     page.gameWon();
   }
-
 }
 
 void displayAll() {
@@ -120,15 +121,15 @@ void displayAll() {
   // Display the score and remaining lives
   fill(255,0,0);
   textSize(32);
-  text("Score: " + scoreNum, screenX + 50, screenY + 50);
-  text("Lives: " + playerA.lives, screenX + 50, screenY + 100);
+  text("Score: " + scoreNum, 50 - screenX, 50 - screenY);
+  text("Lives: " + playerA.lives, 50 - screenX, 100 - screenY);
   if (hardMode && timeTillGravityChanges < 100) {
     textSize(64);
-    text("!!GRAVITY ABOUT TO FLIP!!", screenX + 400, screenY + 50);
+    text("!!GRAVITY ABOUT TO FLIP!!", 400 - screenX, 50 - screenY);
   }
 }
 
-void updateAll(){
+void updateAll() {
     solveCollisions(playerA, platforms);
     if (twoPlayers) {
       solveCollisions(playerB, platforms);
@@ -167,7 +168,7 @@ void collectCoins() {
   }
 }
 
-void checkDeath(){
+void checkDeath() {
   // If there are two players, then need to check for both collisions.
   // Otherwise, just check for player 1 colliding
   boolean collideEnemy = (twoPlayers) ? (collisionTest(playerA, enemy) || collisionTest(playerB, enemy)) : collisionTest(playerA, enemy);
@@ -189,28 +190,28 @@ void checkDeath(){
 
 }
 
-void scroll(){
-  float right = screenX + width - MAGRINRIGHT;
+void scroll() {
+  float right = width - (MAGRINRIGHT + screenX);
   if (playerA.getRightBoundary() > right) {
-    screenX += playerA.getRightBoundary() - right;
+    screenX -= playerA.getRightBoundary() - right;
   }
-  float left = screenX + MAGRINLEFT;
+  float left = MAGRINLEFT - screenX;
   if (playerA.getLeftBoundary() < left) {
-    screenX -= left - playerA.getLeftBoundary();
+    screenX += left - playerA.getLeftBoundary();
   }
-  float bottom = screenY + height - MAGRINVERTICAL;
+  float bottom = height - (MAGRINVERTICAL + screenY);
   if (playerA.getBottomBoundary() > bottom) {
-    screenY += playerA.getBottomBoundary() - bottom;
+    screenY = max(screenY - (playerA.getBottomBoundary() - bottom), bottomPlatform);
   }
-  float top = screenY + MAGRINVERTICAL;
+  float top = MAGRINVERTICAL - screenY;
   if (playerA.getTopBoundary() < top) {
-    screenY -= top - playerA.getTopBoundary();
+    screenY += top - playerA.getTopBoundary();
   }
-  translate(-screenX, -screenY);
+  translate(screenX, screenY);
 }
 
 
-public void solveCollisions(Character c, ArrayList<Character> walls){
+public void solveCollisions(Character c, ArrayList<Character> walls) {
   c.moveY += (gravityDown) ? GRAVITY : -GRAVITY;
   c.characterY += c.moveY;
   ArrayList<Character> list = collisionListTest(c, walls);
@@ -238,7 +239,7 @@ public void solveCollisions(Character c, ArrayList<Character> walls){
   }
 }
 
-boolean collisionTest(Character c1, Character c2){
+boolean collisionTest(Character c1, Character c2) {
   boolean checkX1 = c1.getLeftBoundary() >= c2.getRightBoundary();
   boolean checkX2 = c1.getRightBoundary() <= c2.getLeftBoundary();
   boolean checkY1 = c1.getBottomBoundary() <= c2.getTopBoundary();
@@ -250,10 +251,10 @@ boolean collisionTest(Character c1, Character c2){
   }
 }
 
-public ArrayList<Character> collisionListTest(Character c, ArrayList<Character> list){
+public ArrayList<Character> collisionListTest(Character c, ArrayList<Character> list) {
   ArrayList<Character> listCollision = new ArrayList<Character>();
-  for (Character element: list){
-    if (collisionTest(c,element)) {
+  for (Character element: list) {
+    if (collisionTest(c, element)) {
       listCollision.add(element);
     }
   }
@@ -261,7 +262,7 @@ public ArrayList<Character> collisionListTest(Character c, ArrayList<Character> 
 }
 
 //test whether on the ground to jump
-public boolean isOnGround(Character c, ArrayList<Character> walls){
+public boolean isOnGround(Character c, ArrayList<Character> walls) {
   c.characterY += 5;
   ArrayList<Character> list = collisionListTest(c, walls);
   c.characterY -= 5;
@@ -272,7 +273,7 @@ public boolean isOnGround(Character c, ArrayList<Character> walls){
   }
 }
 
-void createPlatforms(String filename){
+void createPlatforms(String filename) {
   String[] lines = loadStrings(filename);
   for (int row = 0; row <lines.length; row++) {
     String[] values = split(lines[row], ",");
@@ -282,6 +283,7 @@ void createPlatforms(String filename){
         s.characterX = CHARACTER_SIZE/2 + col * CHARACTER_SIZE;
         s.characterY = CHARACTER_SIZE/2 + row * CHARACTER_SIZE;
         platforms.add(s);
+        bottomPlatform = min(s.characterX - CHARACTER_SIZE/2, bottomPlatform); // This is needed to ensure that we know where to stop the vertical camera scrolling
       } else if (values[col].equals("2")) {
         Character s = new Character(grass, CHARACTER_SCALE);
         s.characterX = CHARACTER_SIZE/2 + col * CHARACTER_SIZE;
@@ -304,17 +306,16 @@ void createPlatforms(String filename){
         coins.add(s);
       } else if(values[col].equals("6")) {
         float bLeft = col * CHARACTER_SIZE;
-        float bRight = bLeft + 7 * CHARACTER_SIZE;
+        float bRight = bLeft + (7 * CHARACTER_SIZE);
         enemy = new Enemy(zombie, 0.25, bLeft, bRight);
         enemy.characterX = CHARACTER_SIZE/2 + col * CHARACTER_SIZE;
         enemy.characterY = CHARACTER_SIZE/2 + row * CHARACTER_SIZE;
       }
-      
     }
   }
 }
 
-void keyPressed(){
+void keyPressed() {
   // Player 1 controls
   if (keyCode == RIGHT){
     playerA.moveX = MOVE_SPEED;
@@ -326,7 +327,7 @@ void keyPressed(){
     playerA.moveY = MOVE_SPEED;
   } 
   
-  // Player 2 controls -- not mutually exclusive, so need to do seperate it statements
+  // Player 2 controls -- not mutually exclusive, so need to do seperate if statements
   if (twoPlayers) {
     if (key == 'd') {
       playerB.moveX = MOVE_SPEED;
@@ -359,7 +360,7 @@ void keyReleased() {
 }
 
 void score() {
-  textAlign(LEFT,TOP);
+  textAlign(LEFT, TOP);
   textSize(32);
   fill(255, 0, 0);
   text("Score: " + scoreNum, width-20, 40);
