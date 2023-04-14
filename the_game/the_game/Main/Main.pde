@@ -205,7 +205,7 @@ void scroll() {
   }
   float top = MAGRINVERTICAL - screenY;
   if (playerA.getTopBoundary() < top) {
-    screenY += top - playerA.getTopBoundary();
+    screenY = min(screenY + (top - playerA.getTopBoundary()), 250);
   }
   translate(screenX, screenY);
 }
