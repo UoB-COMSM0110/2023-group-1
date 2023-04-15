@@ -26,9 +26,10 @@ We made the decision to only allow the user to move the sprite left, right, and 
 ### Design (15% ~750 words)
 
 **Class diagram**
-To assist us in organissing our ideas, and planning the work that we would need to do, we developed a [class diagram](ReportMaterial/classDiagram.pdf) for our game.  This diagram gave us a plan of what we needed to implement, and how we could sensibly divvy up the work.  In the end, our program deviated from it when we became more familiar with Processing, and the requirements that it imposes.  However, the backbone that is illustrated by our class diagram is evident in out final product.
+To assist us in organissing our ideas, and planning the work that we would need to do, we developed a [class diagram](ReportMaterial/classDiagram.pdf) for our game.  This diagram gave us a plan of what we needed to implement, and how we could sensibly divvy up the work.  In the end, our program deviated from it when we became more familiar with Processing, and the requirements that it imposes, and carried out evaluation steps on our intermediate products in order to determine how to improve it.  However, the backbone that is illustrated by our class diagram is still evident in out final product.
 
 **Modelling behaviour - Communication diagrams**
+
 
 **Modelling behaviour - Sequence diagrams**
 
@@ -99,6 +100,18 @@ After these initial evaluations we had some clear goals for the next stages of d
 <br>
 
 <br>
+
+**Quantitative evaluation - NASA TLX**
+
+We carried out a bifurcated quantitative evaluation of our product - one evaluation of the navigability and usability of the naviagation pages around our game (e.g., the welcome screen and the game over screen), and one of the difficulty of the game.  The reason for this is that the aim of navigation pages is always for them to be usable, and so minimising the difficulty of these pages is a goal in and of itself.  Whereas for the gameplay of our game, we do want there to be a degree of difficulty (there is no fun in a game that a child could complete on its first attempt).  Therefore, it made sense to quantitatively evaluate these separately to avoid cross-contamination of results, and the loss of information.  
+
+For both furcations of the evaluation we used weighted NASA TLX scores.  We had the survey complete by ten different people, and analysed the results with the Wilcoxon Signed Rank Test
+
+>**evaluating the navigation pages**
+>
+>*Evaluation 1*
+>
+
 
 
 
