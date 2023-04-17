@@ -42,8 +42,8 @@ void setup() {
   pageNum = 1;
   
   imageMode(CENTER);
-  p1 = loadImage("../Character/maleAdventurer_standright.png");
-  p2 = loadImage("../CharacterTwo/femaleAdventurer_idle.png");
+  p1 = loadImage("../CharacterTwo/femaleAdventurer_idle.png");
+  p2 = loadImage("../Character/maleAdventurer_standright.png");
   playerA = new CharacterAnimate(p1, 0.8);
   playerA.characterX = 100;
   playerA.moveY = GROUND_LEVEL;
