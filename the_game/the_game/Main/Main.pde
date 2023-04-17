@@ -17,6 +17,7 @@ final static float HEIGHT = CHARACTER_SIZE * 16;
 final static float GROUND_LEVEL = HEIGHT - CHARACTER_SIZE;
 
 CharacterAnimate playerA, playerB;
+Character flagCharacter;
 PImage bg, float_brick, grass, mushroom, button1, button2, mario, sun, gold, zombie, p1, p2, flag;
 ArrayList<Character> platforms;
 ArrayList<Character> coins;
@@ -114,6 +115,8 @@ void displayAll() {
   if (twoPlayers) {
     playerB.display();
   }
+
+  flagCharacter.display();
   
   // Display the enemy
   enemy.display();
@@ -163,7 +166,8 @@ void collectCoins() {
   }
 
   // win, got all the coins
-  if (coins.size() == 0) {
+  if (collisionTest(playerA, flagCharacter) || 
+      twoPlayers && collisionTest(playerB, flagCharacter)) {
     pageNum = 4;
   }
 }
@@ -295,10 +299,9 @@ void createPlatforms(String filename) {
         s.characterY = CHARACTER_SIZE/2 + row * CHARACTER_SIZE;
         platforms.add(s);
       } else if(values[col].equals("4")) {
-        Character s = new Character(flag, CHARACTER_SCALE);
-        s.characterX = CHARACTER_SIZE/2 + col * CHARACTER_SIZE;
-        s.characterY = CHARACTER_SIZE/2 + row * CHARACTER_SIZE;
-        platforms.add(s);
+        flagCharacter = new Character(flag, CHARACTER_SCALE);
+        flagCharacter.characterX = CHARACTER_SIZE/2 + col * CHARACTER_SIZE;
+        flagCharacter.characterY = CHARACTER_SIZE/2 + row * CHARACTER_SIZE;
       } else if(values[col].equals("5")) {
         Gold s = new Gold(gold, CHARACTER_SCALE);
         s.characterX = CHARACTER_SIZE/2 + col * CHARACTER_SIZE;
