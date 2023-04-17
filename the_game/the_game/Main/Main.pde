@@ -130,13 +130,13 @@ void displayAll() {
 }
 
 void updateAll() {
-    solveCollisions(playerA, platforms);
-    if (twoPlayers) {
-      solveCollisions(playerB, platforms);
-    }
-    enemy.update();
-    enemy.updateAnimation();
-    
+  solveCollisions(playerA, platforms);
+  if (twoPlayers) {
+    solveCollisions(playerB, platforms);
+  }
+  enemy.update();
+  enemy.updateAnimation();
+      
   for(Character c: coins){
     ((Animate)c).updateAnimation();
   }
