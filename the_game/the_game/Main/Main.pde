@@ -1,3 +1,10 @@
+import controlP5.*;
+import processing.sound.*;
+Sound soundVolume;
+SoundFile play;
+SoundFile win;
+SoundFile fail;
+
 final static float MOVE_SPEED = 8;
 final static float JUMP_SPEED = 19;
 final static float CHARACTER_SCALE = 50.0/128;
@@ -17,7 +24,6 @@ final static float HEIGHT = CHARACTER_SIZE * 16;
 final static float GROUND_LEVEL = HEIGHT - CHARACTER_SIZE;
 
 CharacterAnimate playerA, playerB;
-Character flagCharacter;
 PImage bg, float_brick, grass, mushroom, button1, button2, mario, sun, gold, zombie, p1, p2, flag;
 ArrayList<Character> platforms;
 ArrayList<Character> coins;
@@ -36,10 +42,30 @@ int timeTillGravityChanges;
 boolean gravityDown;
 boolean hardMode;
 
+ControlP5 cp5;
+float volume = 0.5;
+
 void setup() {
   size(1500,800);
   page = new Page();
   pageNum = 1;
+  if(pageNum == 1){
+    play = new SoundFile(this, "play.mp3");
+    play.play();
+  }
+  if(pageNum == 4){
+    win = new SoundFile(this, "win.mp3");
+    win.play();
+  }
+  if(pageNum == 3){
+    play = new SoundFile(this, "play.mp3");
+    play.play();
+  }
+
+  if(pageNum == 2){
+    fail = new SoundFile(this, "fail.mp3");
+    fail.play();
+  }
   
   imageMode(CENTER);
   p1 = loadImage("../Character/maleAdventurer_standright.png");
@@ -67,6 +93,19 @@ void setup() {
   gold = loadImage("../bronze_1.png");
   zombie = loadImage("../Zombie/zombie_walkl0.png");
   createPlatforms("map.csv");
+   soundVolume = new Sound(this);
+  
+  cp5 = new ControlP5(this);
+  cp5.addSlider("volume")
+     .setPosition(50, 50)
+     .setRange(0, 1)
+     .setValue(volume)
+     .setColorBackground(color(100, 100, 100)) 
+     .setColorForeground(color(255, 0, 0)) 
+     .setLabel("Voice Volume")
+     .setSize(150, 20) 
+     .setColorLabel(color(0, 0, 255)) 
+     .setColorValue(color(255, 255, 0)); 
 }
 
 void draw() {
@@ -87,6 +126,12 @@ void draw() {
     }
   } else if (pageNum == 4) { // game won screen
     page.gameWon();
+  }
+  soundVolume.volume(volume);
+}
+void controlEvent(ControlEvent theEvent) {
+  if (theEvent.isFrom("volume")) {
+    volume = theEvent.getValue();
   }
 }
 
@@ -115,8 +160,6 @@ void displayAll() {
   if (twoPlayers) {
     playerB.display();
   }
-
-  flagCharacter.display();
   
   // Display the enemy
   enemy.display();
@@ -133,13 +176,13 @@ void displayAll() {
 }
 
 void updateAll() {
-  solveCollisions(playerA, platforms);
-  if (twoPlayers) {
-    solveCollisions(playerB, platforms);
-  }
-  enemy.update();
-  enemy.updateAnimation();
-      
+    solveCollisions(playerA, platforms);
+    if (twoPlayers) {
+      solveCollisions(playerB, platforms);
+    }
+    enemy.update();
+    enemy.updateAnimation();
+    
   for(Character c: coins){
     ((Animate)c).updateAnimation();
   }
@@ -166,8 +209,7 @@ void collectCoins() {
   }
 
   // win, got all the coins
-  if (collisionTest(playerA, flagCharacter) || 
-      twoPlayers && collisionTest(playerB, flagCharacter)) {
+  if (coins.size() == 0) {
     pageNum = 4;
   }
 }
@@ -299,9 +341,10 @@ void createPlatforms(String filename) {
         s.characterY = CHARACTER_SIZE/2 + row * CHARACTER_SIZE;
         platforms.add(s);
       } else if(values[col].equals("4")) {
-        flagCharacter = new Character(flag, CHARACTER_SCALE);
-        flagCharacter.characterX = CHARACTER_SIZE/2 + col * CHARACTER_SIZE;
-        flagCharacter.characterY = CHARACTER_SIZE/2 + row * CHARACTER_SIZE;
+        Character s = new Character(flag, CHARACTER_SCALE);
+        s.characterX = CHARACTER_SIZE/2 + col * CHARACTER_SIZE;
+        s.characterY = CHARACTER_SIZE/2 + row * CHARACTER_SIZE;
+        platforms.add(s);
       } else if(values[col].equals("5")) {
         Gold s = new Gold(gold, CHARACTER_SCALE);
         s.characterX = CHARACTER_SIZE/2 + col * CHARACTER_SIZE;
