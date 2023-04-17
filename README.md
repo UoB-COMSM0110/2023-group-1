@@ -85,9 +85,10 @@ We made the decision to only allow the user to move the sprite left, right, and 
 ### Design (15% ~750 words)
 
 **Class diagram**
-To assist us in organissing our ideas, and planning the work that we would need to do, we developed a [class diagram](ReportMaterial/classDiagram.pdf) for our game.  This diagram gave us a plan of what we needed to implement, and how we could sensibly divvy up the work.  In the end, our program deviated from it when we became more familiar with Processing, and the requirements that it imposes.  However, the backbone that is illustrated by our class diagram is evident in out final product.
+To assist us in organissing our ideas, and planning the work that we would need to do, we developed a [class diagram](ReportMaterial/classDiagram.pdf) for our game.  This diagram gave us a plan of what we needed to implement, and how we could sensibly divvy up the work.  In the end, our program deviated from it when we became more familiar with Processing, and the requirements that it imposes, and carried out evaluation steps on our intermediate products in order to determine how to improve it.  However, the backbone that is illustrated by our class diagram is still evident in out final product.
 
 **Modelling behaviour - Communication diagrams**
+
 
 **Modelling behaviour - Sequence diagrams**
 
@@ -164,7 +165,53 @@ After these initial evaluations we had some clear goals for the next stages of d
 <br>
 
 <br>
+
 A month after our initital evaluations, it was encouraging to see that many of the points raised in the first stage evaluations had been addressed. The concerns in the second stage evaluations also required smaller changes. 
+
+**Quantitative evaluation - NASA TLX**
+
+We carried out a bifurcated quantitative evaluation of our product - one evaluation of the navigability and usability of the naviagation pages around our game (e.g., the welcome screen and the game over screen), and one of the difficulty of the game.  The reason for this is that the aim of navigation pages is always for them to be usable, and so minimising the difficulty of these pages is always a good thing.  Whereas for the gameplay of our game, we do want there to be a degree of difficulty (there is no fun in a game that a child could complete on its first attempt).  Therefore, it made sense to quantitatively evaluate these separately to avoid cross-contamination of results, and the loss of information.  
+
+For both furcations of the evaluation we used weighted NASA TLX scores.  For the navigation page, we had the survey complete by ten different people at two different points of development - the first being after we had developed a minimum viable product, and the second being after our sprints in Easter when the product was in a more final state.  We compared these two sets of results using the Wilcoxon Signed Rank Test to see if the changes we had made to the navigation pages had made a meaningful difference to their usability.  
+
+For the game itself, we had the survey completed at only one point (adter the sprtins in easter), but we had it completed in relation to both the hard and easy difficulty settings of our game.  Again, we compared the results of these two difficulty settings to see if the differences in the two settings made the game meangingfully nore difficult.  The results for both evaluations are provided below, and the calculations shown.
+
+>**Evaluating the navigation pages**
+>
+>The first quantitative evaluation was carried out between 12/3/2023 and 14/3/2023. 
+>
+>>***Evaluation 1***
+>>
+>>*Scores*
+>>| Participant Number | Mental demand | Physical demand | Temporal demand | Performance | Effort | Frustration | 
+>>| ----------- | ------- | ------- | ------- | ------- | ------- | ------- |
+>>| 1 |
+>>| 2 |
+>>| 3 |
+>>| 4 |
+>>| 5 |
+>>| 6 |
+>>| 7 |
+>>| 8 |
+>>| 9 |
+>>| 10 |
+>>
+>>*Dimension weighting*
+>>| Participant Number | Mental demand | Physical demand | Temporal demand | Performance | Effort | Frustration | 
+>>| ----------- | ------- | ------- | ------- | ------- | ------- | ------- |
+>>| 1 |
+>>| 2 |
+>>| 3 |
+>>| 4 |
+>>| 5 |
+>>| 6 |
+>>| 7 |
+>>| 8 |
+>>| 9 |
+>>| 10 |
+>
+><br>
+
 
 
 ### Process (15% ~750 words)
