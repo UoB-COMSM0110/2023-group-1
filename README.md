@@ -10,8 +10,14 @@ Our game is a simple 2D platformer, a la Mario etc.  It allows one-player and tw
 ### Requirements (15% ~750 words)
 
 **Ideation, Use-Cases and User Stories**  
-To start the ideation process, we had an in-person brain-storming session.  In this session we came up with a short list of six games that we thought we could make.  With a vote, we trimmed this to two games (a connect-four game where the rows are sometimes destroyed, and a platformer game where gravity inverts).  For both of these games we gathered initial requirements by preparing a [use-case diagram](ReportMaterial/Our_game_use_case_diagram.pdf) and [user stories](ReportMaterial/UserStories.pdf).  We then used these reasources to mock-up paper prototypes for both games.  We used these paper prototypes to prepared videos demonstrations of how both the [Connect4](https://youtu.be/wAT3H2MjvIE) and the [MarioStyle](https://youtu.be/0fppWHDHL3Y) games should work.
+To start the ideation process, we had an in-person brain-storming session.  In this session we came up with a short list of six games that we thought we could make.  With a vote, we trimmed this to two games (a connect-four game where the rows are sometimes destroyed, and a platformer game where gravity inverts).  For both of these games we gathered initial requirements by preparing a [use-case diagram](#use-case-diagram), [use-case specifications](#use-case-specifications) and [user stories](#user-stories).  We then used these reasources to mock-up paper prototypes for both games.  We used these paper prototypes to prepared videos demonstrations of how both the [Connect4](https://youtu.be/wAT3H2MjvIE) and the [MarioStyle](https://youtu.be/0fppWHDHL3Y) games should work.
 <br>
+
+
+**Use-Case Diagram**
+
+<img src='/ReportMaterial/Use-Case-Diagram.jpg'/>
+
 
 **Use-Case Specifications**
 
@@ -38,8 +44,8 @@ To start the ideation process, we had an in-person brain-storming session.  In t
 | ---------------- | ------------------ | ----------------|
 | Description      |  A run through of the game on hard mode where gravity flips occasionally with one player |  A run through of the game on hard mode where gravity flips occasionally with two players |    
 | Basic Flow:      | 
-| 1.  |  |  |
-| 2. |  |
+| 1.  | The user navigates around the map using the left, right and up arrow keys |  |
+| 2. | The gravity warning appears and the user tries to make sure they are under another platform to be protected then they are returned to normal gravity |
 | 3. |   |
 | Alternative Flow: | |
 | 1. | |
@@ -47,6 +53,22 @@ To start the ideation process, we had an in-person brain-storming session.  In t
 | 3. | |
 
 
+<br>
+
+**User Stories**
+
+>“As a player, I want to be able to play a satisfyingly challenging game that requires some skill so that I feel engaged, interested and entertained.” 
+
+
+>“As a second player, I want to be able to have fun racing against my friend to complete a level so that I can have just as much fun or more playing with two players than on my own.”
+
+
+>“As a player, I want to be able to view my scores so that I can see myself improve as I learn the skills of the game.”
+
+>"As a player, I want to be able to see how many lives I have left during the game, so that I feel a sense of urgency while playing"
+
+
+<br>
 <br>
 
 **Statement of Services**  
