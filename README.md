@@ -109,36 +109,32 @@ We collected think aloud evaluations at two stages in the development process. T
 
 **Stage 1 Qualitative Evaluations:**
 
->*Think Aloud Evaluation 1: 13/03/23*
->
->Postitives:
-> The character design is good. The character has a realistic jumping and falling motion 
-> 
-> Negatives:
-> The level design makes the game quite hard to play. The character cannot yet collect the boost items though the items still appear on the screen blocking the character's movements. There are also no background graphics yet. 
+>*Think Aloud Evaluation 1: 13/03/23*   
+>>Postitives:
+>> The character design is good. The character has a realistic jumping and falling motion 
+>> 
+>> Negatives:
+>> The level design makes the game quite hard to play. The character cannot yet collect the boost items though the items still appear on the screen blocking the character's movements. There are also no background graphics yet. 
 
 <br> 
->*Think Aloud Evaluation 2: 13/03/23*
->   
->Postitives:
-> The graphics are generally good. 
-> 
-> Negatives:
-> The map is very small and some parts are too hard to navigate. The buttons on the start screen do not align with the places you have to click which is confusing i.e. you have to click the text rather than the buttons. And, you cannot die, you just fall off the map and fall indefinitely.
-<br>
+>*Think Aloud Evaluation 2: 13/03/23*    
+>>Postitives:
+>> The graphics are generally good. 
+>> 
+>> Negatives:
+>> The map is very small and some parts are too hard to navigate. The buttons on the start screen do not align with the places you have to click which is confusing i.e. you have to click the text rather than the buttons. And, you cannot die, you just fall off the map and fall indefinitely.
 
 
 <br>
->*Heuristic Evaluation 1: 13/03/23*
-
->| Interface | Issue | Heuristic | Frequency | Impact | Persistence | Severity |
->|---------- |------- | --------- | --------------- | ------------ | ----------------- | -------------------- |
->| Start Page| Clicked and no feedback about state change on the first page one player or two player buttons | Visibility of System Status | 2 | 3 | 3 | 2.6 |
->| Start Page | The buttons should look more like buttons | Consistency | 3 | 2| 2| 2.3 |
->| Main Game | No labels for which keys to use (though immediately used the correct ones) | Help and documentation | 4 | 2| 2| 2.6 |
->| Main Game | Expect a drop before you actually do — sometimes you can walk on thin air | Consistency | 3 | 3| 2| 2.6|
->|Main Game | Make gravity a bit lighter so that it is less difficult initially | User Control and Freedom | 2|2|2| 2|
->| Main Game | You can't see the score | Visibility of System Status | 4|2|2|2.6|
+>*Heuristic Evaluation 1: 13/03/23*    
+>>| Interface | Issue | Heuristic | Frequency | Impact | Persistence | Severity |
+>>|---------- |------- | --------- | --------------- | ------------ | ----------------- | -------------------- |
+>>| Start Page| Clicked and no feedback about state change on the first page one player or two player buttons | Visibility of System Status | 2 | 3 | 3 | 2.6 |
+>>| Start Page | The buttons should look more like buttons | Consistency | 3 | 2| 2| 2.3 |
+>>| Main Game | No labels for which keys to use (though immediately used the correct ones) | Help and documentation | 4 | 2| 2| 2.6 |
+>>| Main Game | Expect a drop before you actually do — sometimes you can walk on thin air | Consistency | 3 | 3| 2| 2.6|
+>>|Main Game | Make gravity a bit lighter so that it is less difficult initially | User Control and Freedom | 2|2|2| 2|
+>>| Main Game | You can't see the score | Visibility of System Status | 4|2|2|2.6|
 
 <br>
 Sorting the results from our first stage think alouds and heuristic evaluation into categories we saw that some key areas of focus stood out:
