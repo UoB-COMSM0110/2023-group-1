@@ -114,9 +114,10 @@ We collected think aloud evaluations at two stages in the development process. T
 >> The character design is good. The character has a realistic jumping and falling motion 
 >> 
 >> Negatives:
->> The level design makes the game quite hard to play. The character cannot yet collect the boost items though the items still appear on the screen blocking the character's movements. There are also no background graphics yet. 
-
-<br> 
+>> The level design makes the game quite hard to play. The character cannot yet collect the boost items though the items still appear on the screen blocking the character's movements. There are also no background graphics yet.    
+  
+     
+  
 >*Think Aloud Evaluation 2: 13/03/23*    
 >>Postitives:
 >> The graphics are generally good. 
@@ -124,8 +125,8 @@ We collected think aloud evaluations at two stages in the development process. T
 >> Negatives:
 >> The map is very small and some parts are too hard to navigate. The buttons on the start screen do not align with the places you have to click which is confusing i.e. you have to click the text rather than the buttons. And, you cannot die, you just fall off the map and fall indefinitely.
 
-
-<br>
+   
+     
 >*Heuristic Evaluation 1: 13/03/23*    
 >>| Interface | Issue | Heuristic | Frequency | Impact | Persistence | Severity |
 >>|---------- |------- | --------- | --------------- | ------------ | ----------------- | -------------------- |
