@@ -21,7 +21,7 @@ To start the ideation process, we had an in-person brain-storming session.  In t
 
 **Use-Case Specifications**
 
-*Easy Mode:*
+*Easy Mode: No Gravity Flips*
 
 | Use-Case Section | Single Player Game | Two Player Game |
 | ---------------- | ------------------ | ----------------|
@@ -43,14 +43,14 @@ To start the ideation process, we had an in-person brain-storming session.  In t
 | Use-Case Section | Single Player Game | Two Player Game |
 | ---------------- | ------------------ | ----------------|
 | Description      |  A run through of the game on hard mode where gravity flips occasionally with one player |  A run through of the game on hard mode where gravity flips occasionally with two players |    
-| Basic Flow:      | 
-| 1.  | The user navigates around the map using the left, right and up arrow keys |  |
-| 2. | The gravity warning appears and the user tries to make sure they are under another platform to be protected, gravity flips and the character flies up into the sky, then they are returned to normal gravity |
-| 3. |  The user navigates through the map collecting coins until they get to the flag to end the game |
-| Alternative Flow: | |
-| 1. | |
-| 2. | |
-| 3. | |
+| Basic Flow:   |  The player completes the map unharmed by the periodic gravity flips | The players use the gravity flips to their advantage and are able to complete the map succesfully |
+| 1.  | The user navigates around the map using the left, right and up arrow keys | The two players navigate the map using the up, right and left keys and W, D, and A keys  |
+| 2. | The gravity warning appears and the user tries to make sure they are under another platform to be protected, gravity flips and the character flies up into the sky, then they are returned to normal gravity | The gravity warning appears and both players must find somewhere safe before gravit flips and they fly up into the sky, the players use gravity to their advantage and are able to collect more coins using the gravity flip assist in jumping |
+| 3. |  The user navigates through the map collecting coins until they get to the flag to end the game | The two players work together to collect coins and navigate the map until they cross the finish flag - both players must survive in order to reach the end |
+| Alternative Flow: | The gravity flip leads to the player losing a life | One of both players loses lives through the gravity flip but they are returned and bale to try again |
+| 1. | The user navigates through the map using the keys | Both players use their respective keys to navigate through the map |
+| 2. | The gravity warning appears but the player is not ready they fly up into the sky mid jump and are knocked off the platforms losing a life | One of both of the players does not prepare for the gravity flip and loses a life, both players are returned to the start of the map |
+| 3. | The player loses all of their lives and the game is over | Although one or both of the players lose a life they survive with their remaining life and make it all the way to the flag | 
 
 
 <br>
@@ -131,7 +131,7 @@ We collected think aloud evaluations at two stages in the development process. T
 <br>
 >*Heuristic Evaluation 1: 13/03/23*
 
->| Interface | <div style="width:260px">Issue</div> | Heuristic | Frequency | Impact | Persistence | Severity |
+>| Interface | Issue | Heuristic | Frequency | Impact | Persistence | Severity |
 |---------- |------- | --------- | --------------- | ------------ | ----------------- | -------------------- |
 | Start Page| Clicked and no feedback about state change on the first page one player or two player buttons | Visibility of System Status | 2 | 3 | 3 | 2.6 |
 | Start Page | The buttons should look more like buttons | Consistency | 3 | 2| 2| 2.3 |
