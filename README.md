@@ -4,7 +4,7 @@ Alex Cockrean, Zoe Clark,  Leon Chen, Li Hanyu, ...
 <img src='/images/Group-1.png'/>
 
 ### Introduction (5% ~250 words)
-Our game is a simple 2D platformer, a la Mario etc.  It allows one-player and two-player modes.  It is novel because gravity randomly flips during gameplay from down to up, and vice versa.
+Our game is a one or two player platform game inspired by Super Mario Bros. Our twist on this classic game was to add the feature of gravity flipping at intervals of time to increase the difficulty of the game. 
 [Describe your game, what is based on, what makes it novel?]
 
 ### Requirements (15% ~750 words)
@@ -45,8 +45,8 @@ To start the ideation process, we had an in-person brain-storming session.  In t
 | Description      |  A run through of the game on hard mode where gravity flips occasionally with one player |  A run through of the game on hard mode where gravity flips occasionally with two players |    
 | Basic Flow:      | 
 | 1.  | The user navigates around the map using the left, right and up arrow keys |  |
-| 2. | The gravity warning appears and the user tries to make sure they are under another platform to be protected then they are returned to normal gravity |
-| 3. |   |
+| 2. | The gravity warning appears and the user tries to make sure they are under another platform to be protected, gravity flips and the character flies up into the sky, then they are returned to normal gravity |
+| 3. |  The user navigates through the map collecting coins until they get to the flag to end the game |
 | Alternative Flow: | |
 | 1. | |
 | 2. | |
@@ -59,14 +59,13 @@ To start the ideation process, we had an in-person brain-storming session.  In t
 
 >“As a player, I want to be able to play a satisfyingly challenging game that requires some skill so that I feel engaged, interested and entertained.” 
 
-
 >“As a second player, I want to be able to have fun racing against my friend to complete a level so that I can have just as much fun or more playing with two players than on my own.”
-
 
 >“As a player, I want to be able to view my scores so that I can see myself improve as I learn the skills of the game.”
 
 >"As a player, I want to be able to see how many lives I have left during the game, so that I feel a sense of urgency while playing"
 
+>"As a player, I want a warning before gravity flips in the game, so that I can prepare and make progress in the game"
 
 <br>
 <br>
@@ -99,9 +98,8 @@ To assist us in organissing our ideas, and planning the work that we would need 
 Describe implementation of your game, in particular highlighting the three areas of challenge in developing your game.
 
 ### Evaluation (15% ~750 words)
-One qualitative evaluation (your choice)
-One quantitative evaluation (of your choice)
-Description of how code was tested.
+
+NEED TO ADD: Description of how code was tested.
 
 
 **Think Aloud and Heuristic Evaluations**  
@@ -109,20 +107,18 @@ We collected think aloud evaluations at two stages in the development process. T
 <br>
 <br>
 
-**Stage 1:**
+**Stage 1 Qualitative Evaluations:**
 
->*Evaluation 1: 13/03/23*
+>*Think Aloud Evaluation 1: 13/03/23*
 >
 >Postitives:
 > The character design is good. The character has a realistic jumping and falling motion 
 > 
 > Negatives:
 > The level design makes the game quite hard to play. The character cannot yet collect the boost items though the items still appear on the screen blocking the character's movements. There are also no background graphics yet. 
-<br>
 
 <br> 
- 
->*Evaluation 2: 13/03/23*
+>*Think Aloud Evaluation 2: 13/03/23*
 >   
 >Postitives:
 > The graphics are generally good. 
@@ -131,20 +127,65 @@ We collected think aloud evaluations at two stages in the development process. T
 > The map is very small and some parts are too hard to navigate. The buttons on the start screen do not align with the places you have to click which is confusing i.e. you have to click the text rather than the buttons. And, you cannot die, you just fall off the map and fall indefinitely.
 <br>
 
+
 <br>
-At this stage we also completed our first [heuristic evaluation](ReportMaterial/HeuristicEvaluation1.pdf). This confirmed what had been raised in the think aloud evaluations: that the start screen needed to be changed as it was giving incorrect or sometimes no feedback to the user when they clicked certain buttons. We also learned through the heuristic evaluation that we may need to add some more documentation to the game including instructions about precisely how to play and what to expect.
+>*Heuristic Evaluation 1: 13/03/23*
+
+>| Interface | <div style="width:260px">Issue</div> | Heuristic | Frequency | Impact | Persistence | Severity |
+|---------- |------- | --------- | --------------- | ------------ | ----------------- | -------------------- |
+| Start Page| Clicked and no feedback about state change on the first page one player or two player buttons | Visibility of System Status | 2 | 3 | 3 | 2.6 |
+| Start Page | The buttons should look more like buttons | Consistency | 3 | 2| 2| 2.3 |
+| Main Game | No labels for which keys to use (though immediately used the correct ones) | Help and documentation | 4 | 2| 2| 2.6 |
+| Main Game | Expect a drop before you actually do — sometimes you can walk on thin air | Consistency | 3 | 3| 2| 2.6|
+|Main Game | Make gravity a bit lighter so that it is less difficult initially | User Control and Freedom | 2|2|2| 2|
+| Main Game | You can't see the score | Visibility of System Status | 4|2|2|2.6|
+
+<br>
+Sorting the results from our first stage think alouds and heuristic evaluation into categories we saw that some key areas of focus stood out:
+
+ * The map/level design made the game very hard 
+ *  Start screen buttons need redesigning 
+ *  You cannot collect items/there is no score 
+
+These stood out because they were all raised multiple times but other issues stood out because of the emphasis placed on them during the evaluations. A concern was raised about a lack of documentation around which keys to use and this was given a 4/4 score for frequency of the issue. As was the inability to view the score throughout the game. This suggested to us that these areas should be key areas to focus on. 
+
+We also conducted a short focus group at this stage. [Research suggested](http://dx.doi.org/10.1109/ISESE.2004.1334914) this would be a resource-effective approach to collecting qualitative feedback especially with accessible software such as a game. 
+
+>*Focus Group Evaluation: 25/03/23 (5 Participants 1 Facilitator)*
+>     
+> How did you find playing the game?  
+> P1: “I found the game quite frustrating as it was really difficult to get beyond the first few platform levels."   
+> P2: “yeah I agree."    
+> P4: “yeah same, the jumping was super frustrating I just couldn’t make that jump to the diagonal platform really near the start.”   
+> P5: “yeah I did end up doing it but the platforms stopped really shortly after that and there just wasn’t anymore of the level from there.”   
+>    
+> Is there anything you found confusing about the game?    
+> P3: “I mean it doesn’t specifically say which keys to use but I guess we all just guess correctly because they use the same keys on like every platform game.”     
+> P2: “I found it quite strange that the start page had buttons which firstly didn’t align with where you had to click and secondly there was buttons for 1 or 2 players but you couldn’t actually click them the only one which worked was start game.”    
+> P1: “Oh yeah I didn’t like the start screen buttons the text was also off centre from the button background which looked kind of weird.”   
+>     
+> What could be better about the visual design of the game?    
+> P4: “There is no background it’s just plain white which is a bit boring.”  
+> P3:  “I think once there is a background and the buttons actually line up with the text it will look quite good.”    
+> P2: “Yeah I agree, I guess also it still needs an end screen.”   
+>    
+> What one thing would you change about the game?      
+> P1: “It would be cool if the 2 player function actually worked.”   
+> P5: “Yeah and also you have to be able to collect points otherwise there doesn’t seem to be much point to the game and the level needs to be longer.”   
+>       
+> What thing do you like about the game that you think makes it stand out from other games?    
+> P2: “I really like the concept of gravity flipping but that doesn’t work yet, but when it does that would be cool.”    
+> P1: “Yeah I don’t think I have heard of another game like that but right now it doesn’t really have much that sets it apart from similar platform games”
+
+
+After these initial evaluations we had some clear goals for the next stages of development. Firstly, the map needed to be changed as it was too small and very difficult. The design feedback was generally good apart from our start and end screens. Finally, we needed to add features to interact with other game elements (to collect objects or be damaged or blocked by them). It was clear that people liked our idea but that at the moment the execution was not delivering what the game promised.
+<br>
 <br>
 
-We also conducted a focus group at this stage. [Research suggested](http://dx.doi.org/10.1109/ISESE.2004.1334914) this would be a resource-effective approach to collecting qualitative feedback especially with accessible software such as a game. The results from our focus group suggested...
 
-After these initial evaluations we had some clear goals for the next stages of development. Firstly, the map needed to be changed as it was too small and very difficult. The design feedback was generally good apart from our start and end screens. Finally, we needed to add features to interact with other game elements —to collect objects or be damaged or blocked by them. 
-<br>
-<br>
+**Stage 2 Qualitative Evaluations:**
 
-
-**Stage 2:**
-
->*Evaluation 3: 12/04/23*
+>*Think Aloud Evaluation 3: 12/04/23*
 >
 >Postitives:
 > The start screen looks good. You can collect points by collecting coins and lose lives when you fall off the map. The map is challenging but possible to complete. You can play with two players and when the game is over you have the option to play again.
@@ -155,7 +196,7 @@ After these initial evaluations we had some clear goals for the next stages of d
 
 <br> 
  
->*Evaluation 4: 12/04/23*
+>*Think Aloud Evaluation 4: 12/04/23*
 >   
 >Postitives: The game is much clearer in its layout and the feedback you get as a user. You can see the score and how many lives you have left. You can play with two players now. 
 > 
@@ -166,7 +207,7 @@ After these initial evaluations we had some clear goals for the next stages of d
 
 <br>
 
-A month after our initital evaluations, it was encouraging to see that many of the points raised in the first stage evaluations had been addressed. The concerns in the second stage evaluations also required smaller changes. 
+In our second stage qualitative evaluations we recieved more positive feedback than negative. A month after our initital evaluations, we had worked on improving our game in the areas suggested by the prior evaluations. It was encouraging to see that many of the points raised in the first stage evaluations had been addressed. The concerns in the second stage evaluations also required much smaller changes than those raised in the first stage. We were able to address some of the negatives very easily making sure to fix the map so that platforms which should be accesible are and that the response times between button presses and reactions was faster. 
 
 **Quantitative evaluation - NASA TLX**
 
@@ -215,11 +256,15 @@ For the game itself, we had the survey completed at only one point (adter the sp
 
 
 ### Process (15% ~750 words)
-Our team worked together effectively.  We used [Kanban boards](ReportMaterial/KanbanBoards) to keep a track of the outstanding tasks (We used Atlassian to host these, but saved PDFs of the board at various stages of development for our report). We used GitHub to host our work, as was required by the unit.  However, the way we used it developed throughout the project.  We had a game-jam in reading week.  This was a whole-day affair, and was the first significant chunk of time we spent as a team developing the game.  While we were using GitHub to keep a track of our changes, we ran into problems because we had not formalised an agreed-upon workflow.  Therefore, noone was using branches.  Rather we we commiting straight to 'main', or even dropping files directly into the github repo via the gui.  This lead to the situation where people were making great features on their local copy of the repo, but that this was completely different to everyone else's local copy.  Therefore, even though we had managed to make a minimum-viable-product locally, this was not reflected on the GitHub, and took a lot of work to fix (many thanks to Ollie, the TA for helping us untabgle the knots).  Fortunately we were able to recover our work, and this mishap prompted us to  use a standardised Git workflow.  Everyone had a personal branch.  When they were ready with a feature, they had to checkout their local main, pull from origin, checkout their personal branch, merge with main, and only when all conflicts were resolved could they push.  When pushed they had to make a pull request to get their changes into main.  This system worked for us, and we didn't have any other Git mishaps.
+Our team worked together effectively throughout the design process.  We used [Kanban boards](ReportMaterial/KanbanBoards) to keep a track of the outstanding tasks (We used Atlassian to host these, but saved PDFs of the board at various stages of development for our report). We used GitHub to host our work, as was required by the unit.  However, the way we used it developed throughout the project. 
 
-Throughout the project we continually delegated tasks between ourselves. We used Whatsapp to stay connected and updated with any changes or concerns we ran into through the development process. This allowed us to address anything which was a "quick fix" over message without the need to organise a scheduled team meeting. We found this helped us work efficiently and with a greater degree of freedom. We split up different features between ourselves so that we could work independently. Though, during our game-jam we found the practise of pair-programming helpful to get started on setting up the foundations of the game. Working together in one room allowed us to talk about and share code so that we all understood and were in agreement about what the first key features of the game should be. 
+Throughout the project we continually delegated tasks between ourselves. We used WhatsApp to stay connected and updated with any changes or concerns we ran into through the development process. This allowed us to address anything which was a "quick fix" over message without the need to organise a scheduled team meeting. We found this helped us work efficiently and with a greater degree of freedom. However, this meant that sometimes our Kanban boards got quite out of sync with what needed doing at any given time as we would organise ourselves over WhatsApp. Reflecting on this — for future projects we thought it would be worth designating someone to be in charge of updating and maintaining the Kansan boards so that everyone has access to a clear view of what needs doing and which tasks have been assigned to which person. 
 
-Teamwork. How did you work together, what tools did you use. Did you have team roles? Reflection on how you worked together.
+We had a game-jam in reading week.  This was a whole-day affair, and was the first significant chunk of time we spent as a team developing the game.  While we were using GitHub to keep a track of our changes, we ran into problems because we had not formalised an agreed-upon workflow.  Therefore, no-one was using branches.  Rather we we committing straight to 'main', or even dropping files directly into the GitHub repo via the gui.  This lead to the situation where people were making great features on their local copy of the repo, but that this was completely different to everyone else's local copy.  Therefore, even though we had managed to make a minimum-viable-product locally, this was not reflected on the GitHub, and took a lot of work to fix (many thanks to Ollie, the TA for helping us untangle the knots).  Fortunately, we were able to recover our work, and this mishap prompted us to use a standardised Git workflow.  Everyone had a personal branch.  When they were ready with a feature, they had to checkout their local main, pull from origin, checkout their personal branch, merge with main, and only when all conflicts were resolved could they push.  When pushed they had to make a pull request to get their changes into main.  This system worked for us, and we didn't have any other Git mishaps.
+
+We split up different features between ourselves so that we could work independently. Though, during our game-jam we found the practice of pair-programming helpful to get started on setting up the foundations of the game. Working together in one room allowed us to talk about and share code so that we all understood and were in agreement about what the first key features of the game should be. 
+
+We found that meeting up in person was an invaluable tool through the development process. We would meet for a short period of time after our Software Engineering lab to check in on the project and make sure we all knew what the next sections to focus on were. The regularity of the lab was helpful as other deadlines and work meant that there were periods where we were all busy with different things. The lab meetings allowed us to catch-up and chat about how we were finding the project and whether we needed help with any sections. We tried to find a work schedule that worked for all of us: according to the project timetable laid out at the beginning of term weeks 8 and 9 should have resulted in the evaluation section of the report being done. During this time we had several overlapping deadlines for other courses so as a team we decided that this work should be split up between us for the first week of the Easter break to give us a chance to complete our other work to a high standard. We thought that this practice of assessing upcoming challenges with workflow in advance to address problems before they occur was very successful and would definitely employ this technique for future projects.
 
 ### Conclusion (10% ~500 words)
 Reflect on project as a whole. Lessons learned. Reflect on challenges. Future work.
