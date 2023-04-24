@@ -1,4 +1,4 @@
-public class CharacterAnimate extends Animate{
+public class CharacterAnimate extends Animate {
 
     int lives;
     boolean onGround, inPlace;
@@ -83,9 +83,6 @@ public class CharacterAnimate extends Animate{
             else{
                 currentImg = moveLeft;
             }
-        }
-        
+        }   
     }
-
-
 }

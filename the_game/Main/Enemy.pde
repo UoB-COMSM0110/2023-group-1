@@ -1,4 +1,4 @@
-public class Enemy extends Animate{
+public class Enemy extends Animate {
     float leftBoundary, rightBoundary;
     public Enemy(PImage img, float scale, float bLeft, float bRight){
         super(img, scale);

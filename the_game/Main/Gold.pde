@@ -1,5 +1,5 @@
-public class Gold extends Animate{
-    public Gold(PImage img, float scale){
+public class Gold extends Animate {
+    public Gold(PImage img, float scale) {
         super(img, scale);
         standMiddle = new PImage[5];
         standMiddle[0] = loadImage("../bronze_1.png");

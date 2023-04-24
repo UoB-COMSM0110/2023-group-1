@@ -17,10 +17,12 @@ final static float HEIGHT = CHARACTER_SIZE * 16;
 final static float GROUND_LEVEL = HEIGHT - CHARACTER_SIZE;
 
 CharacterAnimate playerA, playerB;
-Character flagCharacter;
+Thing flagCharacter;
 PImage bg, float_brick, grass, mushroom, button1, button2, mario, sun, gold, zombie, p1, p2, flag;
-ArrayList<Character> platforms;
-ArrayList<Character> coins;
+ArrayList<Thing> platforms;
+ArrayList<Thing> coins;
+ArrayList<ScoreTuple> highScores;
+ArrayList<Character> name;
 Enemy enemy;
 
 int scoreNum;
@@ -51,8 +53,10 @@ void setup() {
   playerB.characterX = 150;
   playerB.moveY = GROUND_LEVEL;
   twoPlayers = false;
-  platforms = new ArrayList<Character>();
-  coins = new ArrayList<Character>();
+  platforms = new ArrayList<Thing>();
+  coins = new ArrayList<Thing>();
+  highScores = new ArrayList<ScoreTuple>();
+  name = new ArrayList<Character>();
   scoreNum = 0;
   gravityDown = true;
   hardMode = true;
@@ -87,6 +91,10 @@ void draw() {
     }
   } else if (pageNum == 4) { // game won screen
     page.gameWon();
+  } else if (pageNum == 5) { // enter name for high score
+    page.enterName();
+  } else if (pageNum == 6) { // show leaderboard
+    page.leaderboard();
   }
 }
 
@@ -101,12 +109,12 @@ void displayAll() {
   }
 
   // Display the map
-  for (Character a: platforms) {
+  for (Thing a: platforms) {
     a.display();
   }
 
   // Display the remaining coins
-  for (Character c: coins) {
+  for (Thing c: coins) {
     c.display();
   }
 
@@ -140,25 +148,25 @@ void updateAll() {
   enemy.update();
   enemy.updateAnimation();
       
-  for(Character c: coins){
+  for(Thing c: coins){
     ((Animate)c).updateAnimation();
   }
 }
 
 void collectCoins() {
-  ArrayList<Character> coinListA = collisionListTest(playerA, coins);
+  ArrayList<Thing> coinListA = collisionListTest(playerA, coins);
   if (coinListA.size() > 0) {
-    for (Character coin: coinListA) {
+    for (Thing coin: coinListA) {
       scoreNum++;
       coins.remove(coin);
     }
   }
 
   if (twoPlayers) {
-    ArrayList<Character> coinListB = collisionListTest(playerB, coins);
+    ArrayList<Thing> coinListB = collisionListTest(playerB, coins);
 
     if (coinListB.size() > 0) {
-      for (Character coin: coinListB) {
+      for (Thing coin: coinListB) {
         scoreNum++;
         coins.remove(coin);
       }
@@ -215,12 +223,12 @@ void scroll() {
 }
 
 
-public void solveCollisions(Character c, ArrayList<Character> walls) {
+public void solveCollisions(Thing c, ArrayList<Thing> walls) {
   c.moveY += (gravityDown) ? GRAVITY : -GRAVITY;
   c.characterY += c.moveY;
-  ArrayList<Character> list = collisionListTest(c, walls);
+  ArrayList<Thing> list = collisionListTest(c, walls);
   if (list.size() > 0) {
-    Character collided = list.get(0);
+    Thing collided = list.get(0);
     if (c.moveY > 0) {
       c.setBottomBoundary(collided.getTopBoundary());
     }
@@ -233,7 +241,7 @@ public void solveCollisions(Character c, ArrayList<Character> walls) {
   c.characterX += c.moveX;
   list = collisionListTest(c, walls);
   if (list.size() > 0) {
-    Character collided = list.get(0);
+    Thing collided = list.get(0);
     if (c.moveX > 0) {
       c.setRightBoundary(collided.getLeftBoundary());
     }
@@ -243,7 +251,7 @@ public void solveCollisions(Character c, ArrayList<Character> walls) {
   }
 }
 
-boolean collisionTest(Character c1, Character c2) {
+boolean collisionTest(Thing c1, Thing c2) {
   boolean checkX1 = c1.getLeftBoundary() >= c2.getRightBoundary();
   boolean checkX2 = c1.getRightBoundary() <= c2.getLeftBoundary();
   boolean checkY1 = c1.getBottomBoundary() <= c2.getTopBoundary();
@@ -255,9 +263,9 @@ boolean collisionTest(Character c1, Character c2) {
   }
 }
 
-public ArrayList<Character> collisionListTest(Character c, ArrayList<Character> list) {
-  ArrayList<Character> listCollision = new ArrayList<Character>();
-  for (Character element: list) {
+public ArrayList<Thing> collisionListTest(Thing c, ArrayList<Thing> list) {
+  ArrayList<Thing> listCollision = new ArrayList<Thing>();
+  for (Thing element: list) {
     if (collisionTest(c, element)) {
       listCollision.add(element);
     }
@@ -266,9 +274,9 @@ public ArrayList<Character> collisionListTest(Character c, ArrayList<Character> 
 }
 
 //test whether on the ground to jump
-public boolean isOnGround(Character c, ArrayList<Character> walls) {
+public boolean isOnGround(Thing c, ArrayList<Thing> walls) {
   c.characterY += 5;
-  ArrayList<Character> list = collisionListTest(c, walls);
+  ArrayList<Thing> list = collisionListTest(c, walls);
   c.characterY -= 5;
   if (list.size() > 0) {
     return true;
@@ -283,23 +291,23 @@ void createPlatforms(String filename) {
     String[] values = split(lines[row], ",");
     for (int col = 0; col < values.length; col++) {
       if (values[col].equals("1")) {
-        Character s = new Character(float_brick, CHARACTER_SCALE);
+        Thing s = new Thing(float_brick, CHARACTER_SCALE);
         s.characterX = CHARACTER_SIZE/2 + col * CHARACTER_SIZE;
         s.characterY = CHARACTER_SIZE/2 + row * CHARACTER_SIZE;
         platforms.add(s);
         bottomPlatform = min(s.characterX - CHARACTER_SIZE/2, bottomPlatform); // This is needed to ensure that we know where to stop the vertical camera scrolling
       } else if (values[col].equals("2")) {
-        Character s = new Character(grass, CHARACTER_SCALE);
+        Thing s = new Thing(grass, CHARACTER_SCALE);
         s.characterX = CHARACTER_SIZE/2 + col * CHARACTER_SIZE;
         s.characterY = CHARACTER_SIZE/2 + row * CHARACTER_SIZE;
         platforms.add(s);
       } else if(values[col].equals("3")) {
-        Character s = new Character(mushroom, CHARACTER_SCALE);
+        Thing s = new Thing(mushroom, CHARACTER_SCALE);
         s.characterX = CHARACTER_SIZE/2 + col * CHARACTER_SIZE;
         s.characterY = CHARACTER_SIZE/2 + row * CHARACTER_SIZE;
         platforms.add(s);
       } else if(values[col].equals("4")) {
-        flagCharacter = new Character(flag, CHARACTER_SCALE);
+        flagCharacter = new Thing(flag, CHARACTER_SCALE);
         flagCharacter.characterX = CHARACTER_SIZE/2 + col * CHARACTER_SIZE;
         flagCharacter.characterY = CHARACTER_SIZE/2 + row * CHARACTER_SIZE;
       } else if(values[col].equals("5")) {
@@ -319,45 +327,106 @@ void createPlatforms(String filename) {
 }
 
 void keyPressed() {
-  // Player 1 controls
-  if (keyCode == RIGHT){
-    playerA.moveX = MOVE_SPEED;
-  } else if (keyCode == LEFT){
-    playerA.moveX = -MOVE_SPEED;
-  } else if (keyCode == UP && isOnGround(playerA, platforms)){
-    playerA.moveY = -JUMP_SPEED;
-  } else if (keyCode == DOWN){
-    playerA.moveY = MOVE_SPEED;
-  } 
-  
-  // Player 2 controls -- not mutually exclusive, so need to do seperate if statements
-  if (twoPlayers) {
-    if (key == 'd') {
-      playerB.moveX = MOVE_SPEED;
-    } else if (key == 'a') {
-      playerB.moveX = -MOVE_SPEED;
-    } else if (key == 'w' && isOnGround(playerB, platforms)) {
-      playerB.moveY = -JUMP_SPEED;
-    } else if (key == 's') {
-      playerB.moveY = JUMP_SPEED;
+  if (pageNum == 3) { // In game
+    // Player 1 controls
+    if (keyCode == RIGHT){
+      playerA.moveX = MOVE_SPEED;
+    } else if (keyCode == LEFT){
+      playerA.moveX = -MOVE_SPEED;
+    } else if (keyCode == UP && isOnGround(playerA, platforms)){
+      playerA.moveY = -JUMP_SPEED;
+    } else if (keyCode == DOWN){
+      playerA.moveY = MOVE_SPEED;
+    } 
+    
+    // Player 2 controls -- not mutually exclusive, so need to do seperate if statements
+    if (twoPlayers) {
+      if (key == 'd') {
+        playerB.moveX = MOVE_SPEED;
+      } else if (key == 'a') {
+        playerB.moveX = -MOVE_SPEED;
+      } else if (key == 'w' && isOnGround(playerB, platforms)) {
+        playerB.moveY = -JUMP_SPEED;
+      } else if (key == 's') {
+        playerB.moveY = JUMP_SPEED;
+      }
     }
   }
 }
 
 void keyReleased() {
-  // Player 1 controls
-  if (keyCode == RIGHT || keyCode == LEFT) {
-    playerA.moveX = 0;
-  } else if (keyCode == UP || keyCode == DOWN) {
-    playerA.moveY = 0;
+  if (pageNum == 3) {
+    // Player 1 controls
+    if (keyCode == RIGHT || keyCode == LEFT) {
+      playerA.moveX = 0;
+    } else if (keyCode == UP || keyCode == DOWN) {
+      playerA.moveY = 0;
+    }
+
+    // Player 2 controls
+    if (twoPlayers) {
+      if (key == 'w' || key == 's') {
+        playerB.moveY = 0;
+      } else if (key == 'd' || key == 'a') {
+        playerB.moveX = 0;
+      }
+    }
   }
 
-  // Player 2 controls
-  if (twoPlayers) {
-    if (key == 'w' || key == 's') {
-      playerB.moveY = 0;
-    } else if (key == 'd' || key == 'a') {
-      playerB.moveX = 0;
+  if (pageNum == 5) {
+    if ((name.size() < 3) && Character.isLetter(key)) { 
+      // Allow addition of letters to name
+      name.add(Character.toUpperCase(key));
+    }
+  }
+}
+
+void mousePressed() {
+  if (pageNum == 1 || pageNum == 2 || pageNum == 4) {
+    //1 player
+    if (mouseX > 590 && mouseX < 720 && mouseY > 600 && mouseY < 650) {
+      if (mousePressed && mouseButton == LEFT) {
+          twoPlayers = false;
+       }
+    }
+    //2 player
+    if (mouseX > 760 && mouseX < 890 && mouseY > 600 && mouseY < 650) {
+      if (mousePressed && mouseButton == LEFT) {
+          twoPlayers = true;
+      }
+    } 
+    // Hard mode
+    if (mouseX > ((WIDTH / 2) + 265) && mouseX < ((WIDTH / 2) + 385) && mouseY > 475 && mouseY < 525) {
+      if (mousePressed && mouseButton == LEFT) {
+        hardMode = !hardMode;
+      }
+    } 
+    //game start
+    if (mouseX > 550 && mouseX < 950 && mouseY > 450 && mouseY < 560) {
+      if (mousePressed && mouseButton == LEFT) {
+        // Reset the board
+        playerA = new CharacterAnimate(p1, 0.8);
+        playerA.characterX = 100;
+        playerA.moveY = GROUND_LEVEL;
+        playerB = new CharacterAnimate(p2, 0.8);
+        playerB.characterX = 150;
+        playerB.moveY = GROUND_LEVEL;
+        platforms = new ArrayList<Thing>();
+
+        scoreNum = 0;
+        gravityDown = true;
+        createPlatforms("map.csv");
+        // Start the game
+        pageNum = 3;
+      }
+    }
+  }
+
+  if (pageNum == 2 || pageNum == 4) {
+    if (mouseX > (WIDTH / 2) - 125 && mouseX < (WIDTH / 2) + 125 && mouseY > 280 && mouseY < 400) {
+      if (mousePressed && mouseButton == LEFT) {
+          pageNum = 5;
+       }
     }
   }
 }
