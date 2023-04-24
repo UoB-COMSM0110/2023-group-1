@@ -26,4 +26,14 @@ public class ScoreTuple {
     public boolean isWon() {
         return won;
     }
+
+    public void print(int x) {
+        textSize(60);
+        textAlign(LEFT);
+        fill((won) ? #FFD700 : #DCDCDC);
+        text(name, 500, x);
+        text(score, 1000, x);
+        textAlign(CENTER);
+        fill(#DCDCDC);
+    }
 }
