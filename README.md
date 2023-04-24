@@ -1,6 +1,6 @@
 # 2023-group-1
 ### Team
-Alex Cockrean, Zoe Clark,  Leon Chen, Li Hanyu, ZYJ
+Li Hanyu, ZYJ, Leon Chen, Zoe Clark, Alex Cockrean
 <img src='/images/Group-1.png'/>
 
 ### Introduction (5% ~250 words)
