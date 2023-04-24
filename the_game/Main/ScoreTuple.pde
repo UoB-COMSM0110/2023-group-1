@@ -26,4 +26,16 @@ public class ScoreTuple {
     public boolean isWon() {
         return won;
     }
+
+    @Override
+    public String toString() {
+        StringBuilder builder = new StringBuilder(name);
+        if (won) {
+            builder.append("(w)    ");
+        } else {
+            builder.append("       ");
+        }
+        builder.append(String.valueOf(score));
+        return builder.toString();
+    }
 }

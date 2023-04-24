@@ -2,10 +2,9 @@ public class Page {
 
 //page1
   public void gameStart() {
-    bg = loadImage("../map.png");
     image(bg, WIDTH / 2, HEIGHT / 2, WIDTH, HEIGHT);
     textSize(180);
-    text("T O P S Y   T U R V Y", 50, 200);
+    text("T O P S Y   T U R V Y", (WIDTH / 2), 200);
     button1 = loadImage("../pic/platformPack_tile001.png");
     button2 = loadImage("../pic/platformPack_tile004.png");
     image(button1, (WIDTH / 2), 500, 400, 110); //start
@@ -36,22 +35,21 @@ public class Page {
 
 
     textSize(60);
-    text("GAME START", 590, 535);
+    text("GAME START", (WIDTH / 2), 525);
     textSize(30);
-    text("1 Player", 600, 635);
-    text("2 Player", 800, 635);
-    text("Hard", 1036, 512);
+    text("1 Player", ((WIDTH / 2) - 100), 635);
+    text("2 Player", ((WIDTH / 2) + 100), 635);
+    text("Hard", (WIDTH / 2) + 320, 510);
     fill(240, 210, 200);
   }
 
   //page2
   public void gameOver() {
-    bg = loadImage("../map.png");
     image(bg, WIDTH / 2, HEIGHT / 2, WIDTH, HEIGHT);
     textSize(100);
-    text("UNLUCKY, YOU LOST", 325, 120);
+    text("UNLUCKY, YOU LOST", (WIDTH / 2), 120);
     textSize(80);
-    text("YOUR SCORE WAS: " + scoreNum, 410, 240);
+    text("YOUR SCORE WAS: " + scoreNum, (WIDTH / 2), 240);
     button1 = loadImage("../pic/platformPack_tile001.png");
     button2 = loadImage("../pic/platformPack_tile004.png");
     image(button2, (WIDTH / 2), 320, 250, 80); // save score
@@ -82,13 +80,13 @@ public class Page {
     strokeWeight(4);
 
     textSize(50);
-    text("save score", 642, 335);
+    text("save score", (WIDTH / 2), 330);
     textSize(60);
-    text("TRY AGAIN", 618, 535);
+    text("GAME START", (WIDTH / 2), 525);
     textSize(30);
-    text("1 Player", 600, 635);
-    text("2 Player", 800, 635);
-    text("Hard", 1036, 512);
+    text("1 Player", ((WIDTH / 2) - 100), 635);
+    text("2 Player", ((WIDTH / 2) + 100), 635);
+    text("Hard", (WIDTH / 2) + 320, 510);
     fill(240, 210, 200);
 
     // Save score
@@ -101,12 +99,11 @@ public class Page {
 
   // Page 4
   public void gameWon() {
-    bg = loadImage("../map.png");
     image(bg, WIDTH / 2, HEIGHT / 2, WIDTH, HEIGHT);
     textSize(100);
-    text("CONGRATULATIONS", 340, 120);
+    text("CONGRATULATIONS", (WIDTH / 2), 120);
     textSize(80);
-    text("YOUR SCORE WAS: " + scoreNum, 410, 240);
+    text("YOUR SCORE WAS: " + scoreNum, (WIDTH / 2), 240);
     button1 = loadImage("../pic/platformPack_tile001.png");
     button2 = loadImage("../pic/platformPack_tile004.png");
     image(button2, (WIDTH / 2), 320, 250, 80); // save score
@@ -137,22 +134,21 @@ public class Page {
     strokeWeight(4);
 
     textSize(50);
-    text("save score", 642, 335);
+    text("save score", (WIDTH / 2), 330);
     textSize(60);
-    text("PLAY AGAIN", 590, 535);
+    text("GAME START", (WIDTH / 2), 525);
     textSize(30);
-    text("1 Player", 600, 635);
-    text("2 Player", 800, 635);
-    text("Hard", 1036, 512);
+    text("1 Player", ((WIDTH / 2) - 100), 635);
+    text("2 Player", ((WIDTH / 2) + 100), 635);
+    text("Hard", (WIDTH / 2) + 320, 510);
     fill(240, 210, 200);
   }
 
   // Page 5
   public void enterName() {
-    bg = loadImage("../map.png");
     image(bg, WIDTH / 2, HEIGHT / 2, WIDTH, HEIGHT);
     textSize(180);
-    text("Enter Name", 325, 160);
+    text("Enter Name", (WIDTH / 2), 160);
 
     String letter1 = String.valueOf((name.size() < 1) ? '_' : name.get(0));
     String letter2 = String.valueOf((name.size() < 2) ? '_' : name.get(1));
@@ -160,18 +156,29 @@ public class Page {
 
     String nameString = "".concat(letter1).concat(letter2).concat(letter3);
     textSize(300);
-    text(nameString, 510, 500);
-
-
+    text(nameString, (WIDTH / 2), 500);
   }
 
   // Page 6
   public void leaderboard() {
-    bg = loadImage("../map.png");
     image(bg, WIDTH / 2, HEIGHT / 2, WIDTH, HEIGHT);
-
-
+    textSize(180);
+    text("LEADER BOARD", (WIDTH / 2), 130);
+    int scoreHeight = 320;
+    textSize(100);
+    for (int i = 0; i < min(5, highScores.size()); i++) {
+      if (i < highScores.size()) {
+        text(highScores.get(i).toString(), (WIDTH / 2), scoreHeight);
+        scoreHeight += 150;
+      }
+    }
+    if (highScores.size() > 5) {
+      if (currentScore != null && (highScores.indexOf(currentScore)) < 5) {
+        text(highScores.get(5).toString(), (WIDTH / 2), scoreHeight);
+      } else {
+        text(currentScore.toString(), (WIDTH / 2), scoreHeight);
+      }
+    }
   }
-
- }
+}
   

@@ -1,3 +1,5 @@
+import java.util.Collections;
+
 final static float MOVE_SPEED = 8;
 final static float JUMP_SPEED = 19;
 final static float CHARACTER_SCALE = 50.0/128;
@@ -22,7 +24,10 @@ PImage bg, float_brick, grass, mushroom, button1, button2, mario, sun, gold, zom
 ArrayList<Thing> platforms;
 ArrayList<Thing> coins;
 ArrayList<ScoreTuple> highScores;
+
+boolean isWon;
 ArrayList<Character> name;
+ScoreTuple currentScore;
 Enemy enemy;
 
 int scoreNum;
@@ -43,34 +48,26 @@ void setup() {
   page = new Page();
   pageNum = 1;
   
+  textAlign(CENTER);
   imageMode(CENTER);
+  bg = loadImage("../map.png");
   p1 = loadImage("../CharacterTwo/femaleAdventurer_idle.png");
   p2 = loadImage("../Character/maleAdventurer_standright.png");
-  playerA = new CharacterAnimate(p1, 0.8);
-  playerA.characterX = 100;
-  playerA.moveY = GROUND_LEVEL;
-  playerB = new CharacterAnimate(p2, 0.8);
-  playerB.characterX = 150;
-  playerB.moveY = GROUND_LEVEL;
-  twoPlayers = false;
-  platforms = new ArrayList<Thing>();
-  coins = new ArrayList<Thing>();
-  highScores = new ArrayList<ScoreTuple>();
-  name = new ArrayList<Character>();
-  scoreNum = 0;
-  gravityDown = true;
-  hardMode = true;
-  resetGravityTimer();
-  
   float_brick = loadImage("../ground_grass_small.png");
   mushroom = loadImage("../mushroom_red.png");
   grass = loadImage("../grass_brown2.png");
   sun = loadImage("../sun1.png");
-  bg = loadImage("../download1.jpg");
   flag = loadImage("../flag.png");
   gold = loadImage("../bronze_1.png");
   zombie = loadImage("../Zombie/zombie_walkl0.png");
-  createPlatforms("map.csv");
+
+  platforms = new ArrayList<Thing>();
+  coins = new ArrayList<Thing>();
+  highScores = new ArrayList<ScoreTuple>();
+  name = new ArrayList<Character>();
+
+  twoPlayers = false;
+  hardMode = true;
 }
 
 void draw() {
@@ -176,6 +173,7 @@ void collectCoins() {
   // win, got all the coins
   if (collisionTest(playerA, flagCharacter) || 
       twoPlayers && collisionTest(playerB, flagCharacter)) {
+    isWon = true;
     pageNum = 4;
   }
 }
@@ -352,6 +350,23 @@ void keyPressed() {
       }
     }
   }
+
+  if (pageNum == 1 || pageNum == 2 || pageNum == 4) {
+    // Start the game on pressing enter
+    if (keyCode == ENTER) {
+      pageNum = 3; 
+      startGame();
+    }
+  }
+
+  if (pageNum == 5) {
+    if ((name.size() < 3) && Character.isLetter(key)) { 
+      // Allow addition of letters to name
+      name.add(Character.toUpperCase(key));
+    } else if (name.size() == 3 && keyCode == ENTER) {
+      saveScore();
+    }
+  }
 }
 
 void keyReleased() {
@@ -373,12 +388,6 @@ void keyReleased() {
     }
   }
 
-  if (pageNum == 5) {
-    if ((name.size() < 3) && Character.isLetter(key)) { 
-      // Allow addition of letters to name
-      name.add(Character.toUpperCase(key));
-    }
-  }
 }
 
 void mousePressed() {
@@ -404,20 +413,7 @@ void mousePressed() {
     //game start
     if (mouseX > 550 && mouseX < 950 && mouseY > 450 && mouseY < 560) {
       if (mousePressed && mouseButton == LEFT) {
-        // Reset the board
-        playerA = new CharacterAnimate(p1, 0.8);
-        playerA.characterX = 100;
-        playerA.moveY = GROUND_LEVEL;
-        playerB = new CharacterAnimate(p2, 0.8);
-        playerB.characterX = 150;
-        playerB.moveY = GROUND_LEVEL;
-        platforms = new ArrayList<Thing>();
-
-        scoreNum = 0;
-        gravityDown = true;
-        createPlatforms("map.csv");
-        // Start the game
-        pageNum = 3;
+        startGame(); 
       }
     }
   }
@@ -440,4 +436,43 @@ void score() {
 
 void resetGravityTimer() {
   timeTillGravityChanges = (gravityDown) ? (int)random(200, 600) : (int)random(15, 40);
+}
+
+void saveScore() {
+  if (name.size() != 3) {
+    println("ERROR - tried to submit name not of length 3");
+  } else {
+    String nameString = "".concat(String.valueOf(name.get(0))).concat(String.valueOf(name.get(1))).concat(String.valueOf(name.get(2)));
+    currentScore = new ScoreTuple(nameString, scoreNum, isWon);
+    highScores.add(currentScore);
+    Collections.sort(highScores, (a, b) -> {
+      if ((a.isWon() && b.isWon()) || (!a.isWon() && !b.isWon())) {
+        return a.getScore() - b.getScore();
+      } else {
+        return (a.isWon()) ? 1 : -1;
+      }
+    });
+    pageNum = 6;
+  }
+}
+
+void startGame() {
+// Reset the board
+  playerA = new CharacterAnimate(p1, 0.8);
+  playerA.characterX = 100;
+  playerA.moveY = GROUND_LEVEL;
+  playerB = new CharacterAnimate(p2, 0.8);
+  playerB.characterX = 150;
+  playerB.moveY = GROUND_LEVEL;
+  platforms = new ArrayList<Thing>();
+  currentScore = null;
+
+  isWon = false;
+  scoreNum = 0;
+  gravityDown = true;
+  createPlatforms("map.csv");
+  resetGravityTimer();
+  // Start the game
+  pageNum = 3;
+
 }
