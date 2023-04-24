@@ -1,10 +1,10 @@
-public class Character {
+public class Thing {
   PImage image;
   float characterX, characterY;
   float moveX, moveY;
   float w, h;//width and height
   
-  public Character(String filename, float scale, float x, float y) {
+  public Thing(String filename, float scale, float x, float y) {
     image = loadImage(filename);
     w = image.width * scale;
     h = image.height * scale;
@@ -13,10 +13,10 @@ public class Character {
     moveX = 0;
     moveY = 0;
   }
-  public Character(String filename, float scale) {
+  public Thing(String filename, float scale) {
     this(filename, scale, 0, 0); 
   }
-  public Character(PImage img, float scale) {
+  public Thing(PImage img, float scale) {
     image = img;
     w = image.width * scale;
     h = image.height * scale;

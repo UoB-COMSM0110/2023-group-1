@@ -1,4 +1,4 @@
-public class Animate extends Character{
+public class Animate extends Thing {
 
     PImage[] currentImg;
     PImage[] standMiddle;
