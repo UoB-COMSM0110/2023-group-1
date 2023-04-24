@@ -327,45 +327,106 @@ void createPlatforms(String filename) {
 }
 
 void keyPressed() {
-  // Player 1 controls
-  if (keyCode == RIGHT){
-    playerA.moveX = MOVE_SPEED;
-  } else if (keyCode == LEFT){
-    playerA.moveX = -MOVE_SPEED;
-  } else if (keyCode == UP && isOnGround(playerA, platforms)){
-    playerA.moveY = -JUMP_SPEED;
-  } else if (keyCode == DOWN){
-    playerA.moveY = MOVE_SPEED;
-  } 
-  
-  // Player 2 controls -- not mutually exclusive, so need to do seperate if statements
-  if (twoPlayers) {
-    if (key == 'd') {
-      playerB.moveX = MOVE_SPEED;
-    } else if (key == 'a') {
-      playerB.moveX = -MOVE_SPEED;
-    } else if (key == 'w' && isOnGround(playerB, platforms)) {
-      playerB.moveY = -JUMP_SPEED;
-    } else if (key == 's') {
-      playerB.moveY = JUMP_SPEED;
+  if (pageNum == 3) { // In game
+    // Player 1 controls
+    if (keyCode == RIGHT){
+      playerA.moveX = MOVE_SPEED;
+    } else if (keyCode == LEFT){
+      playerA.moveX = -MOVE_SPEED;
+    } else if (keyCode == UP && isOnGround(playerA, platforms)){
+      playerA.moveY = -JUMP_SPEED;
+    } else if (keyCode == DOWN){
+      playerA.moveY = MOVE_SPEED;
+    } 
+    
+    // Player 2 controls -- not mutually exclusive, so need to do seperate if statements
+    if (twoPlayers) {
+      if (key == 'd') {
+        playerB.moveX = MOVE_SPEED;
+      } else if (key == 'a') {
+        playerB.moveX = -MOVE_SPEED;
+      } else if (key == 'w' && isOnGround(playerB, platforms)) {
+        playerB.moveY = -JUMP_SPEED;
+      } else if (key == 's') {
+        playerB.moveY = JUMP_SPEED;
+      }
     }
   }
 }
 
 void keyReleased() {
-  // Player 1 controls
-  if (keyCode == RIGHT || keyCode == LEFT) {
-    playerA.moveX = 0;
-  } else if (keyCode == UP || keyCode == DOWN) {
-    playerA.moveY = 0;
+  if (pageNum == 3) {
+    // Player 1 controls
+    if (keyCode == RIGHT || keyCode == LEFT) {
+      playerA.moveX = 0;
+    } else if (keyCode == UP || keyCode == DOWN) {
+      playerA.moveY = 0;
+    }
+
+    // Player 2 controls
+    if (twoPlayers) {
+      if (key == 'w' || key == 's') {
+        playerB.moveY = 0;
+      } else if (key == 'd' || key == 'a') {
+        playerB.moveX = 0;
+      }
+    }
   }
 
-  // Player 2 controls
-  if (twoPlayers) {
-    if (key == 'w' || key == 's') {
-      playerB.moveY = 0;
-    } else if (key == 'd' || key == 'a') {
-      playerB.moveX = 0;
+  if (pageNum == 5) {
+    if ((name.size() < 3) && Character.isLetter(key)) { 
+      // Allow addition of letters to name
+      name.add(Character.toUpperCase(key));
+    }
+  }
+}
+
+void mousePressed() {
+  if (pageNum == 1 || pageNum == 2 || pageNum == 4) {
+    //1 player
+    if (mouseX > 590 && mouseX < 720 && mouseY > 600 && mouseY < 650) {
+      if (mousePressed && mouseButton == LEFT) {
+          twoPlayers = false;
+       }
+    }
+    //2 player
+    if (mouseX > 760 && mouseX < 890 && mouseY > 600 && mouseY < 650) {
+      if (mousePressed && mouseButton == LEFT) {
+          twoPlayers = true;
+      }
+    } 
+    // Hard mode
+    if (mouseX > ((WIDTH / 2) + 265) && mouseX < ((WIDTH / 2) + 385) && mouseY > 475 && mouseY < 525) {
+      if (mousePressed && mouseButton == LEFT) {
+        hardMode = !hardMode;
+      }
+    } 
+    //game start
+    if (mouseX > 550 && mouseX < 950 && mouseY > 450 && mouseY < 560) {
+      if (mousePressed && mouseButton == LEFT) {
+        // Reset the board
+        playerA = new CharacterAnimate(p1, 0.8);
+        playerA.characterX = 100;
+        playerA.moveY = GROUND_LEVEL;
+        playerB = new CharacterAnimate(p2, 0.8);
+        playerB.characterX = 150;
+        playerB.moveY = GROUND_LEVEL;
+        platforms = new ArrayList<Thing>();
+
+        scoreNum = 0;
+        gravityDown = true;
+        createPlatforms("map.csv");
+        // Start the game
+        pageNum = 3;
+      }
+    }
+  }
+
+  if (pageNum == 2 || pageNum == 4) {
+    if (mouseX > (WIDTH / 2) - 125 && mouseX < (WIDTH / 2) + 125 && mouseY > 280 && mouseY < 400) {
+      if (mousePressed && mouseButton == LEFT) {
+          pageNum = 5;
+       }
     }
   }
 }
