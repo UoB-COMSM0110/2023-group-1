@@ -1,6 +1,6 @@
 # 2023-group-1
 ### Team
-Alex Cockrean, Zoe Clark,  Leon Chen, Li Hanyu, ...
+Alex Cockrean, Zoe Clark,  Leon Chen, Li Hanyu, ZYJ
 <img src='/images/Group-1.png'/>
 
 ### Introduction (5% ~250 words)
@@ -268,3 +268,15 @@ Reflect on project as a whole. Lessons learned. Reflect on challenges. Future wo
 Quality of report writing, presentation, use of figures and visual material (5%)
 Documentation of code (5%)
 Individual contribution. Provide a table of everyone's contribution, which may be used to weight individual grades. We expect that the contribution will be split evenly across team-members in most cases. Let us know as soon as possible if there are any issues with teamwork as soon as they are apparent.
+
+Individual contribution:
+
+Alexander Cockrean: 1.00
+
+Zoe Clark: 1.00
+
+Leon Chen: 1.00
+
+Li Hanyu: 1.00
+
+ZYJ: 1.00
