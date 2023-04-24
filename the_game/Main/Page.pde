@@ -5,8 +5,6 @@ public class Page {
     image(bg, WIDTH / 2, HEIGHT / 2, WIDTH, HEIGHT);
     textSize(180);
     text("T O P S Y   T U R V Y", (WIDTH / 2), 200);
-    button1 = loadImage("../pic/platformPack_tile001.png");
-    button2 = loadImage("../pic/platformPack_tile004.png");
     image(button1, (WIDTH / 2), 500, 400, 110); //start
     image(button2, ((WIDTH / 2) - 100), (600 + (50/2)), 130, 50); // 1 player
     image(button2, ((WIDTH / 2) + 100), (600 + (50/2)), 130, 50); // 2 player
@@ -50,8 +48,6 @@ public class Page {
     text("UNLUCKY, YOU LOST", (WIDTH / 2), 120);
     textSize(80);
     text("YOUR SCORE WAS: " + scoreNum, (WIDTH / 2), 240);
-    button1 = loadImage("../pic/platformPack_tile001.png");
-    button2 = loadImage("../pic/platformPack_tile004.png");
     image(button2, (WIDTH / 2), 320, 250, 80); // save score
     image(button1, (WIDTH / 2), 500, 400, 110); //start
     image(button2, ((WIDTH / 2) - 100), (600 + (50/2)), 130, 50); //1 player
@@ -104,8 +100,6 @@ public class Page {
     text("CONGRATULATIONS", (WIDTH / 2), 120);
     textSize(80);
     text("YOUR SCORE WAS: " + scoreNum, (WIDTH / 2), 240);
-    button1 = loadImage("../pic/platformPack_tile001.png");
-    button2 = loadImage("../pic/platformPack_tile004.png");
     image(button2, (WIDTH / 2), 320, 250, 80); // save score
     image(button1, (WIDTH / 2), 500, 400, 110); //start
     image(button2, ((WIDTH / 2) - 100), (600 + (50/2)), 130, 50); //1 player
@@ -162,23 +156,27 @@ public class Page {
   // Page 6
   public void leaderboard() {
     image(bg, WIDTH / 2, HEIGHT / 2, WIDTH, HEIGHT);
-    textSize(180);
+    textSize(150);
     text("LEADER BOARD", (WIDTH / 2), 130);
     int scoreHeight = 320;
     textSize(100);
     for (int i = 0; i < min(5, highScores.size()); i++) {
       if (i < highScores.size()) {
-        text(highScores.get(i).toString(), (WIDTH / 2), scoreHeight);
-        scoreHeight += 150;
+        highScores.get(i).print(scoreHeight);
+        scoreHeight += 70;
       }
     }
     if (highScores.size() > 5) {
       if (currentScore != null && (highScores.indexOf(currentScore)) < 5) {
-        text(highScores.get(5).toString(), (WIDTH / 2), scoreHeight);
+        highScores.get(5).print(scoreHeight);
       } else {
-        text(currentScore.toString(), (WIDTH / 2), scoreHeight);
+        currentScore.print(scoreHeight);
       }
     }
+
+    textSize(40);
+    image(button1, 100, 50, 100, 50);
+    text("Back", 100, 60);
   }
 }
   

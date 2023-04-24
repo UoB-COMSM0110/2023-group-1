@@ -27,15 +27,13 @@ public class ScoreTuple {
         return won;
     }
 
-    @Override
-    public String toString() {
-        StringBuilder builder = new StringBuilder(name);
-        if (won) {
-            builder.append("(w)    ");
-        } else {
-            builder.append("       ");
-        }
-        builder.append(String.valueOf(score));
-        return builder.toString();
+    public void print(int x) {
+        textSize(60);
+        textAlign(LEFT);
+        fill((won) ? #FFD700 : #DCDCDC);
+        text(name, 500, x);
+        text(score, 1000, x);
+        textAlign(CENTER);
+        fill(#DCDCDC);
     }
 }

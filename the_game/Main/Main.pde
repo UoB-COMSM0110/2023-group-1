@@ -60,6 +60,8 @@ void setup() {
   flag = loadImage("../flag.png");
   gold = loadImage("../bronze_1.png");
   zombie = loadImage("../Zombie/zombie_walkl0.png");
+    button1 = loadImage("../pic/platformPack_tile001.png");
+    button2 = loadImage("../pic/platformPack_tile004.png");
 
   platforms = new ArrayList<Thing>();
   coins = new ArrayList<Thing>();
@@ -366,6 +368,10 @@ void keyPressed() {
     } else if (name.size() == 3 && keyCode == ENTER) {
       saveScore();
     }
+
+    if ((name.size() > 0) && keyCode == BACKSPACE) {
+      name.remove(name.size() - 1);
+    }
   }
 }
 
@@ -394,25 +400,25 @@ void mousePressed() {
   if (pageNum == 1 || pageNum == 2 || pageNum == 4) {
     //1 player
     if (mouseX > 590 && mouseX < 720 && mouseY > 600 && mouseY < 650) {
-      if (mousePressed && mouseButton == LEFT) {
-          twoPlayers = false;
-       }
+      if (mouseButton == LEFT) {
+        twoPlayers = false;
+      }
     }
     //2 player
     if (mouseX > 760 && mouseX < 890 && mouseY > 600 && mouseY < 650) {
-      if (mousePressed && mouseButton == LEFT) {
-          twoPlayers = true;
+      if (mouseButton == LEFT) {
+        twoPlayers = true;
       }
     } 
     // Hard mode
     if (mouseX > ((WIDTH / 2) + 265) && mouseX < ((WIDTH / 2) + 385) && mouseY > 475 && mouseY < 525) {
-      if (mousePressed && mouseButton == LEFT) {
+      if (mouseButton == LEFT) {
         hardMode = !hardMode;
       }
     } 
     //game start
     if (mouseX > 550 && mouseX < 950 && mouseY > 450 && mouseY < 560) {
-      if (mousePressed && mouseButton == LEFT) {
+      if (mouseButton == LEFT) {
         startGame(); 
       }
     }
@@ -420,9 +426,17 @@ void mousePressed() {
 
   if (pageNum == 2 || pageNum == 4) {
     if (mouseX > (WIDTH / 2) - 125 && mouseX < (WIDTH / 2) + 125 && mouseY > 280 && mouseY < 400) {
-      if (mousePressed && mouseButton == LEFT) {
+      if (mouseButton == LEFT) {
           pageNum = 5;
        }
+    }
+  }
+
+  if (pageNum == 6) {
+    if ((mouseX > 50 && mouseX < 150) && (mouseY > 25 && mouseY < 755)) {
+      if (mouseButton == LEFT) {
+        pageNum = 1;
+      }
     }
   }
 }
@@ -446,10 +460,10 @@ void saveScore() {
     currentScore = new ScoreTuple(nameString, scoreNum, isWon);
     highScores.add(currentScore);
     Collections.sort(highScores, (a, b) -> {
-      if ((a.isWon() && b.isWon()) || (!a.isWon() && !b.isWon())) {
-        return a.getScore() - b.getScore();
+      if (a.isWon() == b.isWon()) {
+        return b.getScore() - a.getScore(); 
       } else {
-        return (a.isWon()) ? 1 : -1;
+        return (a.isWon()) ? -1 : 1;
       }
     });
     pageNum = 6;
