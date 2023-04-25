@@ -22,7 +22,7 @@ CharacterAnimate playerA, playerB;
 
 Thing flagCharacter;
 
-PImage bg, float_brick, grass, mushroom, button1, button2, mario, sun, gold, zombie, p1, p2, flag, wKey, aKey, sKey, dKey, emptyKey;
+PImage bg, float_brick, grass, mushroom, button1, button2, mario, sun, gold, zombie, p1, p2, flag, wKey, aKey, sKey, dKey, emptyKey, arrow;
 
 ArrayList<Thing> platforms;
 ArrayList<Thing> coins;
@@ -74,6 +74,7 @@ void setup() {
   sKey = loadImage("../assets/s-key.png");
   dKey = loadImage("../assets/d-key.png");
   emptyKey = loadImage("../assets/empty-key.png");
+  arrow = loadImage("../assets/arrow.png");
 
   platforms = new ArrayList<Thing>();
   coins = new ArrayList<Thing>();
