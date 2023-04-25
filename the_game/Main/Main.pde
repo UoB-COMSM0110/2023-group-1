@@ -23,7 +23,7 @@ CharacterAnimate playerA, playerB;
 
 Thing flagCharacter;
 
-PImage bg, float_brick, grass, mushroom, button1, button2, mario, sun, gold, zombie, p1, p2, flag, wKey, aKey, sKey, dKey, emptyKey, arrow;
+PImage bg, float_brick, grass, mushroom, button1, button2, mario, sun, gold, zombie, p1, p2, flag, wKey, aKey, sKey, dKey, emptyKey, arrow, life;
 
 ArrayList<Thing> platforms;
 ArrayList<Thing> coins;
@@ -77,6 +77,7 @@ void setup() {
   dKey = loadImage("../assets/d-key.png");
   emptyKey = loadImage("../assets/empty-key.png");
   arrow = loadImage("../assets/arrow.png");
+  life = loadImage("../assets/p_heart.png");
 
   platforms = new ArrayList<Thing>();
   coins = new ArrayList<Thing>();
@@ -139,10 +140,7 @@ void displayAll() {
   enemy.display();
 
   // Display the score and remaining lives
-  fill(255,0,0);
-  textSize(32);
-  text("Score: " + scoreNum, 50 - screenX, 50 - screenY);
-  text("Lives: " + playerA.lives, 50 - screenX, 100 - screenY);
+  displayScoreAndLives();
 }
 
 void updateAll() {
@@ -339,19 +337,21 @@ void keyPressed() {
       playerA.moveX = MOVE_SPEED;
     } else if (keyCode == LEFT){
       playerA.moveX = -MOVE_SPEED;
-    } else if (keyCode == UP && isOnGround(playerA, platforms)){
+    } 
+    if (keyCode == UP && isOnGround(playerA, platforms)){
       playerA.moveY = -JUMP_SPEED;
     } else if (keyCode == DOWN){
       playerA.moveY = MOVE_SPEED;
     } 
     
-    // Player 2 controls -- not mutually exclusive, so need to do seperate if statements
+    // Player 2 controls
     if (twoPlayers) {
       if (key == 'd') {
         playerB.moveX = MOVE_SPEED;
       } else if (key == 'a') {
         playerB.moveX = -MOVE_SPEED;
-      } else if (key == 'w' && isOnGround(playerB, platforms)) {
+      } 
+      if (key == 'w' && isOnGround(playerB, platforms)) {
         playerB.moveY = -JUMP_SPEED;
       } else if (key == 's') {
         playerB.moveY = JUMP_SPEED;
@@ -462,14 +462,6 @@ void mousePressed() {
   }
 }
 
-void score() {
-  textAlign(LEFT, TOP);
-  textSize(32);
-  fill(255, 0, 0);
-  text("Score: " + scoreNum, width-20, 40);
-}
-
-
 void saveScore() {
   if (name.size() != 3) {
     println("ERROR - tried to submit name of length other than 3");
@@ -517,20 +509,17 @@ void handleGravity() {
   // Handle gravity timer etc., if the difficulty mode is 'hard'
   if (loreNum == 4) {
     timeTillGravityChanges -= 1;
-    if (timeTillGravityChanges > 120) {
-      currentGravity = GRAVITY;
+
+    if (timeTillGravityChanges > 160) {
       displayGravometer(0.0);
     } else if (timeTillGravityChanges > 50) {
-      currentGravity = 0.6 * GRAVITY;
       displayGravometer(0.3);
     } else if (timeTillGravityChanges == 50) {
-      boolean fullFlip = (int)random(0, 100) > 50;
-      if (fullFlip) {
+      if ((int)random(0, 100) > 50) {
         resetGravityTimer(); 
       }
       displayGravometer(0.3);
     } else if (timeTillGravityChanges > 0) {
-      currentGravity = -GRAVITY;
       displayGravometer(1.0);
     } else {
       displayGravometer(1.0);
@@ -547,15 +536,16 @@ void displayGravometer(float position) {
   if (position != gravityHandPosition) {
     gravityHandPosition += 0.05 * (position - gravityHandPosition);
   }
+  currentGravity = GRAVITY - (2 * gravityHandPosition * GRAVITY);
 
   // Drawing the static clockface
   fill(#D4AF37);
-  textSize(30);
-  text("DISRUPTION", WIDTH - (120 + screenX), 248 - screenY);
+  textSize(25);
+  text("GRAVITY DISRUPTION", WIDTH - (120 + screenX), 248 - screenY);
   circle(WIDTH - (120 + screenX), 120 - screenY, 200);
   fill(#FFFFFF);
   circle(WIDTH - (120 + screenX), 120 - screenY, 184);
-  fill(#D4AF37);
+  fill(#E4BF47);
   circle(WIDTH - (38 + screenX), 120 - screenY, 20);
   stroke(#000000);
   strokeWeight(4);
@@ -569,9 +559,38 @@ void displayGravometer(float position) {
   float dialX = (float)(WIDTH - 38 - screenX - (130 * Math.sin((double)((1.21 * (1 - gravityHandPosition)) + 0.97))));
   float dialY = (float)(120 - screenY - (130 * Math.cos((double)((1.21 * (1 - gravityHandPosition)) + 0.97))));
 
-  stroke(#D4AF37);
+  stroke(#E4BF47);
   line(dialX, dialY, (WIDTH - (38 + screenX)), 120 - screenY);
+
+  // Finally, put a tint on the screen depending on the value
+  stroke(#FF7000, (gravityHandPosition >= 0.3) ? 255 : 0);
+  strokeWeight(20);
+  fill(#000000, 0);
+  rect((WIDTH / 2) - screenX, (HEIGHT / 2) - screenY, WIDTH - 20, HEIGHT - 20);
 
   // reset stroke to stop everything else looking bad
   strokeWeight(0);
+}
+
+void displayScoreAndLives() {
+  // Container
+  stroke(#D4AF37);
+  strokeWeight(4);
+  fill(#D4AF37, 25);
+  rectMode(CENTER);
+  rect(145 - screenX, 80 - screenY, 250, 120, 20);
+
+  // Score
+  textAlign(LEFT);
+  fill(#FFFFFF);
+  textSize(60);
+  text("Score: " + String.valueOf(scoreNum), 30 - screenX, 70 - screenY);
+  textAlign(CENTER);
+
+  // Life
+  int lifeX = 74;
+  for (int i = 0; i < playerA.lives; i++) {
+    image(life, lifeX - screenX, 108 - screenY, 60, 60);
+    lifeX += 70;
+  }
 }

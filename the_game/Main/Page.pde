@@ -199,7 +199,7 @@ public class Page {
           "Fortunately, a hero has emerged who has the power to cross the\ndimensional divide, and save the world.  In order to do so, you must collect\nas much gold as you can (it is the only element that can plug the\nhole), and make your way to the rupture between worlds.  Be\ncareful, though.  There are monsters in your way that will destroy you\non contact.  Also, the interdimensional energy is changing\nthe way that gravity behaves.", WIDTH / 2, 200);
         break;
       case 3:
-        text("Try to make your way to the interdimensional rupture\nKeep an eye on the disruption to gravity", WIDTH / 2, 200);
+        text("Try to make your way to the interdimensional rupture\n\nKeep an eye on the gravity disruption guage", WIDTH / 2, 200);
 
         if (twoPlayers) {
           text("Player 2 moves with WASD, Player 1 moves with the arrow keys", WIDTH / 2, 300);
@@ -231,8 +231,7 @@ public class Page {
           image(emptyKey, WIDTH / 2, 450, 60, 60);
           image(emptyKey, (WIDTH / 2) - 60, 510, 60, 60);
           image(emptyKey, WIDTH / 2, 510, 60, 60);
-          image(emptyKey, (WIDTH / 2) + 60, 510, 60, 60);
-          
+          image(emptyKey, (WIDTH / 2) + 60, 510, 60, 60);          
           image(arrow, (WIDTH / 2) + 60, 510, 30, 30);
           rotate(PI / 2);
           image(arrow, 510, -(WIDTH / 2), 30, 30);
