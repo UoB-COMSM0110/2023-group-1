@@ -154,6 +154,11 @@ void updateAll() {
   for(Thing c: coins){
     ((Animate)c).updateAnimation();
   }
+
+  playerA.updateAnimation();
+  if (twoPlayers) {
+    playerB.updateAnimation();
+  }
 }
 
 void collectCoins() {
@@ -485,6 +490,16 @@ void startGame() {
   playerA = new CharacterAnimate(p1, 0.8);
   playerA.characterX = 100;
   playerA.moveY = GROUND_LEVEL;
+  playerA.standLeft[0] = loadImage("../CharacterTwo/femaleAdventurer_idle.png");
+  playerA.standRight[0] = loadImage("../CharacterTwo/femaleAdventurer_idle.png");
+  playerA.jumpLeft[0] = loadImage("../CharacterTwo/femaleAdventurer_jumpl.png");
+  playerA.jumpRight[0] = loadImage("../CharacterTwo/femaleAdventurer_jumpr.png");
+  playerA.moveLeft[0] = loadImage("../CharacterTwo/femaleAdventurer_walkl0.png");
+  playerA.moveLeft[1] = loadImage("../CharacterTwo/femaleAdventurer_walkl1.png");
+  playerA.moveRight[0] = loadImage("../CharacterTwo/femaleAdventurer_walkr0.png");
+  playerA.moveRight[1] = loadImage("../CharacterTwo/femaleAdventurer_walkr1.png");
+
+
   playerB = new CharacterAnimate(p2, 0.8);
   playerB.characterX = 150;
   playerB.moveY = GROUND_LEVEL;
