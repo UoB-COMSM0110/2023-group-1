@@ -215,12 +215,17 @@ public class Page {
           image(emptyKey, 1050, 410, 60, 60);
           image(emptyKey, 1110, 410, 60, 60);
           
-          textSize(30);
-          text(new String(Character.toChar()), 1050, 350);
+          image(arrow, 1110, 410, 30, 30);
+          rotate(PI / 2);
+          image(arrow, 410, -1050, 30, 30);
+          rotate(PI / 2);
+          image(arrow, -990, -410, 30, 30);
+          rotate(PI / 2);
+          image(arrow, -350, 1050, 30, 30);
+          rotate(PI / 2);
         } else {
           text("use the arrow keys to move", WIDTH / 2, 300);
         }
-        textSize(40);
         break;
       default:
         break;
