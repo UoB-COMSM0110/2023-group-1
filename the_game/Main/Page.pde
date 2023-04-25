@@ -213,8 +213,7 @@ public class Page {
           image(emptyKey, 1050, 350, 60, 60);
           image(emptyKey, 990, 410, 60, 60);
           image(emptyKey, 1050, 410, 60, 60);
-          image(emptyKey, 1110, 410, 60, 60);
-          
+          image(emptyKey, 1110, 410, 60, 60);        
           image(arrow, 1110, 410, 30, 30);
           rotate(PI / 2);
           image(arrow, 410, -1050, 30, 30);
@@ -223,6 +222,10 @@ public class Page {
           rotate(PI / 2);
           image(arrow, -350, 1050, 30, 30);
           rotate(PI / 2);
+
+          // Character images
+          image(p1, 1050, 550, p1.width * 1.8, p1.height * 1.8);
+          image(p2, 420, 550, p2.width * 1.8, p2.height * 1.8);
         } else {
           text("Use the arrow keys to move", WIDTH / 2, 400);
           image(emptyKey, WIDTH / 2, 450, 60, 60);

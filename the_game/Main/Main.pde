@@ -513,7 +513,7 @@ void startGame() {
   createPlatforms("map.csv");
   resetGravityTimer();
   
-  // Start the game anda prepare instructional pop-up
+  // Start the game and prepare instructional pop-up
   loreNum = 1;
   pageNum = 3;
 }
