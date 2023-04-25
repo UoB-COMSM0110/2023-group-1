@@ -231,8 +231,7 @@ public class Page {
           image(emptyKey, WIDTH / 2, 450, 60, 60);
           image(emptyKey, (WIDTH / 2) - 60, 510, 60, 60);
           image(emptyKey, WIDTH / 2, 510, 60, 60);
-          image(emptyKey, (WIDTH / 2) + 60, 510, 60, 60);
-          
+          image(emptyKey, (WIDTH / 2) + 60, 510, 60, 60);          
           image(arrow, (WIDTH / 2) + 60, 510, 30, 30);
           rotate(PI / 2);
           image(arrow, 510, -(WIDTH / 2), 30, 30);
