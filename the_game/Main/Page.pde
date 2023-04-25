@@ -199,10 +199,28 @@ public class Page {
           "Fortunately, a hero have emerged who has the power to cross the\ndimensional divide, and save the world.  In order to do so, you must collect\nas much gold as you can (it is the only element that can plug the\nhole), and make your way to the rupture between worlds.  Be\ncareful, though.  There are monsters in your way that will destroy you\non contact.  Also, the interdimensional energy is changing\nthe way that gravity behaves.", WIDTH / 2, 200);
         break;
       case 3:
-        text("Try to make your way to the interdimensional rupture", WIDTH / 2, 200);
-        text((twoPlayers) ? 
-          "Player 1 moves with the arrow keys, Player 2 with WASD" :
-          "Move with the arrow keys", WIDTH / 2, 300);
+        text("Try to make your way to the interdimensional rupture\nDon't touch the monsters in your way", WIDTH / 2, 200);
+
+        if (twoPlayers) {
+          text("Player 2 moves with WASD, Player 1 moves with the arrow keys", WIDTH / 2, 300);
+          // Player 2 keys
+          image(wKey, 400, 350, 60, 60);
+          image(aKey, 360, 410, 60, 60);
+          image(sKey, 420, 410, 60, 60);
+          image(dKey, 480, 410, 60, 60);
+
+          // Player 1 keys
+          image(emptyKey, 1050, 350, 60, 60);
+          image(emptyKey, 990, 410, 60, 60);
+          image(emptyKey, 1050, 410, 60, 60);
+          image(emptyKey, 1110, 410, 60, 60);
+          
+          textSize(30);
+          text(new String(Character.toChar()), 1050, 350);
+        } else {
+          text("use the arrow keys to move", WIDTH / 2, 300);
+        }
+        textSize(40);
         break;
       default:
         break;
