@@ -45,10 +45,7 @@ public class Animate extends Thing {
     }
 
     public void moveToNextImg() {
-        index++;
-        if (index == currentImg.length) {
-            index = 0;
-        }
+        index = (index + 1) % currentImg.length;
         image = currentImg[index];
     }
 
