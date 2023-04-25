@@ -524,8 +524,7 @@ void handleGravity() {
       currentGravity = 0.6 * GRAVITY;
       displayGravometer(0.3);
     } else if (timeTillGravityChanges == 50) {
-      boolean fullFlip = (int)random(0, 100) > 50;
-      if (fullFlip) {
+      if ((int)random(0, 100) > 50) {
         resetGravityTimer(); 
       }
       displayGravometer(0.3);
