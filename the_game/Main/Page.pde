@@ -29,7 +29,7 @@ public class Page {
 
     // reset the colour so that the text is not messed up
     fill(#FFFFFF);
-    strokeWeight(4);
+    strokeWeight(0);
 
 
     textSize(60);
@@ -196,10 +196,10 @@ public class Page {
       case 2:
         text((twoPlayers) ? 
           "Fortunately, two heros have emerged who have the power to cross the\ndimensional divide, and save the world.  In order to do so, you must collect\nas much gold as you can (it is the only element that can plug the\nhole), and make your way to the rupture between worlds.  Be\ncareful, though.  There are monsters in your way that will destroy you\non contact.  Also, the interdimensional energy is changing\nthe way that gravity behaves." :
-          "Fortunately, a hero have emerged who has the power to cross the\ndimensional divide, and save the world.  In order to do so, you must collect\nas much gold as you can (it is the only element that can plug the\nhole), and make your way to the rupture between worlds.  Be\ncareful, though.  There are monsters in your way that will destroy you\non contact.  Also, the interdimensional energy is changing\nthe way that gravity behaves.", WIDTH / 2, 200);
+          "Fortunately, a hero has emerged who has the power to cross the\ndimensional divide, and save the world.  In order to do so, you must collect\nas much gold as you can (it is the only element that can plug the\nhole), and make your way to the rupture between worlds.  Be\ncareful, though.  There are monsters in your way that will destroy you\non contact.  Also, the interdimensional energy is changing\nthe way that gravity behaves.", WIDTH / 2, 200);
         break;
       case 3:
-        text("Try to make your way to the interdimensional rupture\nDon't touch the monsters in your way", WIDTH / 2, 200);
+        text("Try to make your way to the interdimensional rupture\nKeep an eye on the disruption to gravity", WIDTH / 2, 200);
 
         if (twoPlayers) {
           text("Player 2 moves with WASD, Player 1 moves with the arrow keys", WIDTH / 2, 300);
@@ -213,8 +213,7 @@ public class Page {
           image(emptyKey, 1050, 350, 60, 60);
           image(emptyKey, 990, 410, 60, 60);
           image(emptyKey, 1050, 410, 60, 60);
-          image(emptyKey, 1110, 410, 60, 60);
-          
+          image(emptyKey, 1110, 410, 60, 60);        
           image(arrow, 1110, 410, 30, 30);
           rotate(PI / 2);
           image(arrow, 410, -1050, 30, 30);
@@ -223,6 +222,10 @@ public class Page {
           rotate(PI / 2);
           image(arrow, -350, 1050, 30, 30);
           rotate(PI / 2);
+
+          // Character images
+          image(p1, 1050, 550, p1.width * 1.8, p1.height * 1.8);
+          image(p2, 420, 550, p2.width * 1.8, p2.height * 1.8);
         } else {
           text("Use the arrow keys to move", WIDTH / 2, 400);
           image(emptyKey, WIDTH / 2, 450, 60, 60);

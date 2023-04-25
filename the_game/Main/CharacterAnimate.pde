@@ -80,7 +80,7 @@ public class CharacterAnimate extends Animate {
             else if (!onGround) {
                 currentImg = jumpLeft;
             }
-            else{
+            else {
                 currentImg = moveLeft;
             }
         }   

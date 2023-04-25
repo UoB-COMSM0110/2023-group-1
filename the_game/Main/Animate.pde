@@ -1,5 +1,4 @@
 public class Animate extends Thing {
-
     PImage[] currentImg;
     PImage[] standMiddle;
     PImage[] moveLeft;
@@ -13,41 +12,41 @@ public class Animate extends Thing {
         index = 0;
         frame = 0;
     }
-    public void updateAnimation(){
+    public void updateAnimation() {
         frame++;
-        if(frame % 8 == 0){
+        if (frame % 8 == 0) {
             selectFacing();
             selectImg();
             moveToNextImg();
         }
     }
 
-    public void selectFacing(){
-        if(moveX > 0){
+    public void selectFacing() {
+        if (moveX > 0) {
             facing = RIGHT_FACING;
         }
         else if (moveX < 0) {
             facing = LEFT_FACING;
         }
-        else{
+        else {
             facing = MIDDLE_FACING;
         }
     }
-    public void selectImg(){
-        if(facing == RIGHT_FACING){
+    public void selectImg() {
+        if (facing == RIGHT_FACING) {
             currentImg = moveRight;
         }
         else if (facing == LEFT_FACING) {
             currentImg = moveLeft;
         }
-        else{
+        else {
             currentImg = standMiddle;
         }
     }
 
-    public void moveToNextImg(){
+    public void moveToNextImg() {
         index++;
-        if(index == currentImg.length){
+        if (index == currentImg.length) {
             index = 0;
         }
         image = currentImg[index];
