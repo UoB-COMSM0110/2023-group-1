@@ -29,7 +29,7 @@ public class Page {
 
     // reset the colour so that the text is not messed up
     fill(#FFFFFF);
-    strokeWeight(4);
+    strokeWeight(0);
 
 
     textSize(60);
@@ -196,7 +196,7 @@ public class Page {
       case 2:
         text((twoPlayers) ? 
           "Fortunately, two heros have emerged who have the power to cross the\ndimensional divide, and save the world.  In order to do so, you must collect\nas much gold as you can (it is the only element that can plug the\nhole), and make your way to the rupture between worlds.  Be\ncareful, though.  There are monsters in your way that will destroy you\non contact.  Also, the interdimensional energy is changing\nthe way that gravity behaves." :
-          "Fortunately, a hero have emerged who has the power to cross the\ndimensional divide, and save the world.  In order to do so, you must collect\nas much gold as you can (it is the only element that can plug the\nhole), and make your way to the rupture between worlds.  Be\ncareful, though.  There are monsters in your way that will destroy you\non contact.  Also, the interdimensional energy is changing\nthe way that gravity behaves.", WIDTH / 2, 200);
+          "Fortunately, a hero has emerged who has the power to cross the\ndimensional divide, and save the world.  In order to do so, you must collect\nas much gold as you can (it is the only element that can plug the\nhole), and make your way to the rupture between worlds.  Be\ncareful, though.  There are monsters in your way that will destroy you\non contact.  Also, the interdimensional energy is changing\nthe way that gravity behaves.", WIDTH / 2, 200);
         break;
       case 3:
         text("Try to make your way to the interdimensional rupture\nDon't touch the monsters in your way", WIDTH / 2, 200);

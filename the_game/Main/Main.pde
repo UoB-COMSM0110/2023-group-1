@@ -1,4 +1,5 @@
 import java.util.Collections;
+import java.lang.Math;
 
 final static float MOVE_SPEED = 8;
 final static float JUMP_SPEED = 19;
@@ -35,16 +36,17 @@ ScoreTuple currentScore;
 
 Enemy enemy;
 
+float currentGravity;
 float screenX;
 float screenY;
 float bottomPlatform = 0;
+float gravityHandPosition;
 
 int timeTillGravityChanges;
 int scoreNum;
 int pageNum;
 int loreNum;
 
-boolean gravityDown;
 boolean twoPlayers;
 boolean hardMode;
 boolean isWon;
@@ -96,13 +98,14 @@ void draw() {
     background(98, 150, 255, 255);
 
     displayAll();
-    if (pageNum == 3) {
-      updateAll();
-      collectCoins();
-      checkDeath();
-      if (!(loreNum == 4)) {
-        page.lore();
-      }
+    if (hardMode) {
+      handleGravity();
+    }
+    updateAll();
+    collectCoins();
+    checkDeath();
+    if (!(loreNum == 4)) {
+      page.lore();
     }
   } else if (pageNum == 4) { // game won screen
     page.gameWon();
@@ -114,15 +117,6 @@ void draw() {
 }
 
 void displayAll() {
-  // Handle gravity timer etc., if the difficulty mode is 'hard'
-  if (hardMode && loreNum == 4) {
-    timeTillGravityChanges -= 1;
-    if (timeTillGravityChanges == 0) {
-      gravityDown = !gravityDown;
-      resetGravityTimer(); // It is important that this function is called AFTER gravity has been flipped!
-    }
-  }
-
   // Display the map
   for (Thing a: platforms) {
     a.display();
@@ -149,10 +143,6 @@ void displayAll() {
   textSize(32);
   text("Score: " + scoreNum, 50 - screenX, 50 - screenY);
   text("Lives: " + playerA.lives, 50 - screenX, 100 - screenY);
-  if (hardMode && timeTillGravityChanges < 100) {
-    textSize(64);
-    text("!!GRAVITY ABOUT TO FLIP!!", 400 - screenX, 50 - screenY);
-  }
 }
 
 void updateAll() {
@@ -240,7 +230,7 @@ void scroll() {
 
 
 public void solveCollisions(Thing c, ArrayList<Thing> walls) {
-  c.moveY += (gravityDown) ? GRAVITY : -GRAVITY;
+  c.moveY += currentGravity;
   c.characterY += c.moveY;
   ArrayList<Thing> list = collisionListTest(c, walls);
   if (list.size() > 0) {
@@ -389,6 +379,12 @@ void keyPressed() {
       name.remove(name.size() - 1);
     }
   }
+
+  if (pageNum == 3 && loreNum < 4) {
+    if (keyCode == ENTER) {
+      loreNum++;
+    }
+  }
 }
 
 void keyReleased() {
@@ -472,9 +468,6 @@ void score() {
   text("Score: " + scoreNum, width-20, 40);
 }
 
-void resetGravityTimer() {
-  timeTillGravityChanges = (gravityDown) ? (int)random(200, 600) : (int)random(15, 40);
-}
 
 void saveScore() {
   if (name.size() != 3) {
@@ -507,13 +500,70 @@ void startGame() {
   // Reset metadata
   currentScore = null;
   name.clear();
-  isWon = false;
+  isWon = false; 
   scoreNum = 0;
-  gravityDown = true;
+  currentGravity = GRAVITY;
+  gravityHandPosition = 0.0;
   createPlatforms("map.csv");
   resetGravityTimer();
   
   // Start the game and prepare instructional pop-up
   loreNum = 1;
   pageNum = 3;
+}
+
+void handleGravity() {
+  // Handle gravity timer etc., if the difficulty mode is 'hard'
+  if (loreNum == 4) {
+    timeTillGravityChanges -= 1;
+    if (timeTillGravityChanges > 120) {
+      currentGravity = GRAVITY;
+      displayGravometer(0.0);
+    } else if (timeTillGravityChanges > 40) {
+      currentGravity = 0.6 * GRAVITY;
+      displayGravometer(0.3);
+    } else if (timeTillGravityChanges > 0) {
+      currentGravity = -GRAVITY;
+      displayGravometer(1.0);
+    } else {
+      displayGravometer(1.0);
+      resetGravityTimer(); // It is important that this function is called AFTER gravity has been flipped!
+    }
+  }
+}
+
+void resetGravityTimer() {
+  timeTillGravityChanges = (int)random(200, 600);
+}
+
+void displayGravometer(float position) {
+  if (position != gravityHandPosition) {
+    gravityHandPosition += 0.05 * (position - gravityHandPosition);
+  }
+
+  // Drawing the static clockface
+  fill(#D4AF37);
+  circle(WIDTH - (120 + screenX), 120 - screenY, 200);
+  fill(#FFFFFF);
+  circle(WIDTH - (120 + screenX), 120 - screenY, 184);
+  fill(#D4AF37);
+  circle(WIDTH - (38 + screenX), 120 - screenY, 20);
+  stroke(#000000);
+  strokeWeight(4);
+  strokeCap(SQUARE);
+  line(WIDTH - (210 + screenX), 120 - screenY, WIDTH - (200 + screenX), 120 - screenY);
+  line(WIDTH - (147 + screenX), 195 - screenY, WIDTH - (151 + screenX), 204 - screenY);
+  stroke(#FF0000);
+  line(WIDTH - (147 + screenX), 45 - screenY, WIDTH - (151 + screenX), 36 - screenY);
+
+  // Drawing dynamic dial
+  float dialX = (float)(WIDTH - 38 - screenX - (130 * Math.sin((double)((1.21 * (1 - gravityHandPosition)) + 0.97))));
+  float dialY = (float)(120 - screenY - (130 * Math.cos((double)((1.21 * (1 - gravityHandPosition)) + 0.97))));
+
+  stroke(#D4AF37);
+  line(dialX, dialY, (WIDTH - (38 + screenX)), 120 - screenY);
+
+
+  // reset stroke to stop everything else sucking
+  strokeWeight(0);
 }
