@@ -66,7 +66,7 @@ void setup() {
   mushroom = loadImage("../mushroom_red.png");
   grass = loadImage("../grass_brown2.png");
   sun = loadImage("../sun1.png");
-  flag = loadImage("../flag.png");
+  flag = loadImage("../assets/portal.png");
   gold = loadImage("../bronze_1.png");
   zombie = loadImage("../Zombie/zombie_walkl0.png");
   button1 = loadImage("../pic/platformPack_tile001.png");
