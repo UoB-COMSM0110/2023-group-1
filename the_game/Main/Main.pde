@@ -578,7 +578,7 @@ void displayGravometer(float position) {
   line(dialX, dialY, (WIDTH - (38 + screenX)), 120 - screenY);
 
   // Finally, put a tint on the screen depending on the value
-  stroke(#FF7000, (gravityHandPosition >= 0.3) ? 255 : 0);
+  stroke(#FF7000, (gravityHandPosition >= 0.15) ? 255 : 0);
   strokeWeight(20);
   fill(#000000, 0);
   rect((WIDTH / 2) - screenX, (HEIGHT / 2) - screenY, WIDTH - 20, HEIGHT - 20);
