@@ -500,7 +500,7 @@ void startGame() {
 
   // Reset metadata
   currentScore = null;
-  name.clear()
+  name.clear();
   isWon = false;
   scoreNum = 0;
   gravityDown = true;
