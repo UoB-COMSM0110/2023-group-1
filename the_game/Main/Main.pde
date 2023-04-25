@@ -359,14 +359,6 @@ void keyPressed() {
     }
   }
 
-  if (pageNum == 1 || pageNum == 2 || pageNum == 4) {
-    // Start the game on pressing enter
-    if (keyCode == ENTER) {
-      pageNum = 3; 
-      startGame();
-    }
-  }
-
   if (pageNum == 5) {
     if ((name.size() < 3) && Character.isLetter(key)) { 
       // Allow addition of letters to name
@@ -380,11 +372,6 @@ void keyPressed() {
     }
   }
 
-  if (pageNum == 3 && loreNum < 4) {
-    if (keyCode == ENTER) {
-      loreNum++;
-    }
-  }
 }
 
 void keyReleased() {
@@ -403,6 +390,20 @@ void keyReleased() {
       } else if (key == 'd' || key == 'a') {
         playerB.moveX = 0;
       }
+    }
+  }
+
+  if (pageNum == 3 && loreNum < 4) {
+    if (keyCode == ENTER) {
+      loreNum++;
+    }
+  }
+
+  if (pageNum == 1 || pageNum == 2 || pageNum == 4) {
+    // Start the game on pressing enter
+    if (keyCode == ENTER) {
+      startGame();
+      
     }
   }
 
