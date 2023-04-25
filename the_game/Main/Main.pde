@@ -19,35 +19,42 @@ final static float HEIGHT = CHARACTER_SIZE * 16;
 final static float GROUND_LEVEL = HEIGHT - CHARACTER_SIZE;
 
 CharacterAnimate playerA, playerB;
+
 Thing flagCharacter;
+
 PImage bg, float_brick, grass, mushroom, button1, button2, mario, sun, gold, zombie, p1, p2, flag;
+
 ArrayList<Thing> platforms;
 ArrayList<Thing> coins;
 ArrayList<ScoreTuple> highScores;
-
-boolean isWon;
 ArrayList<Character> name;
+
+Page page;
+
 ScoreTuple currentScore;
+
 Enemy enemy;
 
-int scoreNum;
-boolean twoPlayers;
-int pageNum;
-Page page;
 float screenX;
 float screenY;
 float bottomPlatform = 0;
 
 int timeTillGravityChanges;
+int scoreNum;
+int pageNum;
+int loreNum;
 
 boolean gravityDown;
+boolean twoPlayers;
 boolean hardMode;
+boolean isWon;
 
 void setup() {
   size(1500,800);
   page = new Page();
   pageNum = 1;
   
+  rectMode(CENTER);
   textAlign(CENTER);
   imageMode(CENTER);
   bg = loadImage("../map.png");
@@ -60,8 +67,8 @@ void setup() {
   flag = loadImage("../flag.png");
   gold = loadImage("../bronze_1.png");
   zombie = loadImage("../Zombie/zombie_walkl0.png");
-    button1 = loadImage("../pic/platformPack_tile001.png");
-    button2 = loadImage("../pic/platformPack_tile004.png");
+  button1 = loadImage("../pic/platformPack_tile001.png");
+  button2 = loadImage("../pic/platformPack_tile004.png");
 
   platforms = new ArrayList<Thing>();
   coins = new ArrayList<Thing>();
@@ -87,6 +94,9 @@ void draw() {
       updateAll();
       collectCoins();
       checkDeath();
+      if (!(loreNum == 4)) {
+        page.lore();
+      }
     }
   } else if (pageNum == 4) { // game won screen
     page.gameWon();
@@ -99,7 +109,7 @@ void draw() {
 
 void displayAll() {
   // Handle gravity timer etc., if the difficulty mode is 'hard'
-  if (hardMode) {
+  if (hardMode && loreNum == 4) {
     timeTillGravityChanges -= 1;
     if (timeTillGravityChanges == 0) {
       gravityDown = !gravityDown;
@@ -327,7 +337,7 @@ void createPlatforms(String filename) {
 }
 
 void keyPressed() {
-  if (pageNum == 3) { // In game
+  if (pageNum == 3 && loreNum == 4) { // In game
     // Player 1 controls
     if (keyCode == RIGHT){
       playerA.moveX = MOVE_SPEED;
@@ -439,6 +449,14 @@ void mousePressed() {
       }
     }
   }
+
+  if (pageNum == 3 && loreNum < 4) {
+    if ((mouseX > WIDTH - 340 && mouseX < WIDTH - 120) && (mouseY > HEIGHT - 200 && mouseY < HEIGHT - 120)) {
+      if (mouseButton == LEFT) {
+        loreNum++;
+      }
+    }
+  }
 }
 
 void score() {
@@ -454,7 +472,7 @@ void resetGravityTimer() {
 
 void saveScore() {
   if (name.size() != 3) {
-    println("ERROR - tried to submit name not of length 3");
+    println("ERROR - tried to submit name of length other than 3");
   } else {
     String nameString = "".concat(String.valueOf(name.get(0))).concat(String.valueOf(name.get(1))).concat(String.valueOf(name.get(2)));
     currentScore = new ScoreTuple(nameString, scoreNum, isWon);
@@ -479,14 +497,17 @@ void startGame() {
   playerB.characterX = 150;
   playerB.moveY = GROUND_LEVEL;
   platforms = new ArrayList<Thing>();
-  currentScore = null;
 
+  // Reset metadata
+  currentScore = null;
+  name.clear()
   isWon = false;
   scoreNum = 0;
   gravityDown = true;
   createPlatforms("map.csv");
   resetGravityTimer();
-  // Start the game
+  
+  // Start the game anda prepare instructional pop-up
+  loreNum = 1;
   pageNum = 3;
-
 }

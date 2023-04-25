@@ -24,7 +24,7 @@ public class Page {
       noFill();
       stroke(#FFFF00);
       strokeWeight(10);
-      rect((WIDTH / 2) + 250, 470, 140, 60);
+      rect((WIDTH / 2) + 320, 500, 140, 60);
     }  
 
     // reset the colour so that the text is not messed up
@@ -63,12 +63,14 @@ public class Page {
       triangle(((WIDTH / 2) - 100), 650, ((WIDTH / 2) - 90), 670, ((WIDTH / 2) -110), 670);
     }
 
+
+
     // Set up the colour for the hard mode indicator box
     if (hardMode) {
       noFill();
       stroke(#FFFF00);
       strokeWeight(10);
-      rect((WIDTH / 2) + 250, 470, 140, 60);
+      rect((WIDTH / 2) + 320, 500, 140, 60);
     }  
 
     // reset the colour so that the text is not messed up
@@ -120,7 +122,7 @@ public class Page {
       noFill();
       stroke(#FFFF00);
       strokeWeight(10);
-      rect((WIDTH / 2) + 250, 470, 140, 60);
+      rect((WIDTH / 2) + 320, 500, 140, 60);
     }  
 
     // reset the colour so that the text is not messed up
@@ -177,6 +179,32 @@ public class Page {
     textSize(40);
     image(button1, 100, 50, 100, 50);
     text("Back", 100, 60);
+  }
+
+  public void lore() {
+    fill(#DCDCDC);
+    rect(WIDTH / 2, HEIGHT / 2, WIDTH - 200, HEIGHT - 200, 28);
+
+    textSize(40);
+    textLeading(50);
+    fill(#000000);
+
+    switch (loreNum) {
+      case 1:
+        text("The world you inhabit has been on the brink of an energy crisis for the\npast decade.  In order to save your people, the great alchemist Elphaba\nwas tasked with finding a new source of energy.  Miraculously, they\nmanaged to identified a well of interdimensional energy on the\nplanet and planned to draw energy from it.  Unfortunately, in their\nhubris, they drilled too far into this well and tore a hole between\ndimensions.  Through this hole, monsters have passed and the very\nfabric of our reality is fraying!", WIDTH / 2, 200);
+      case 2:
+        text("The world you inhabit has been on the brink of an energy crisis for the\npast decade.  In order to save your people, the great alchemist Elphaba\nwas tasked with finding a new source of energy.  Miraculously, they\nmanaged to identified a well of interdimensional energy on the\nplanet and planned to draw energy from it.  Unfortunately, in their\nhubris, they drilled too far into this well and tore a hole between\ndimensions.  Through this hole, monsters have passed and the very\nfabric of our reality is fraying!", WIDTH / 2, 200);
+        break;
+      case 3:
+        text("The world you inhabit has been on the brink of an energy crisis for the\npast decade.  In order to save your people, the great alchemist Elphaba\nwas tasked with finding a new source of energy.  Miraculously, they\nmanaged to identified a well of interdimensional energy on the\nplanet and planned to draw energy from it.  Unfortunately, in their\nhubris, they drilled too far into this well and tore a hole between\ndimensions.  Through this hole, monsters have passed and the very\nfabric of our reality is fraying!", WIDTH / 2, 200);
+        break;
+      default:
+        break;
+    }
+    fill(#DCDCDC);
+    rect(WIDTH - 230, HEIGHT - 160, 220, 80, 20);
+    fill(#0F0F0F);
+    text("continue...", WIDTH - 230, HEIGHT - 148);
   }
 }
   
