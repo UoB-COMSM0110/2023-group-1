@@ -519,8 +519,14 @@ void handleGravity() {
     if (timeTillGravityChanges > 120) {
       currentGravity = GRAVITY;
       displayGravometer(0.0);
-    } else if (timeTillGravityChanges > 40) {
+    } else if (timeTillGravityChanges > 50) {
       currentGravity = 0.6 * GRAVITY;
+      displayGravometer(0.3);
+    } else if (timeTillGravityChanges == 50) {
+      boolean fullFlip = (int)random(0, 100) > 50;
+      if (fullFlip) {
+        resetGravityTimer(); 
+      }
       displayGravometer(0.3);
     } else if (timeTillGravityChanges > 0) {
       currentGravity = -GRAVITY;
@@ -533,7 +539,7 @@ void handleGravity() {
 }
 
 void resetGravityTimer() {
-  timeTillGravityChanges = (int)random(200, 600);
+  timeTillGravityChanges = (int)random(200, 800);
 }
 
 void displayGravometer(float position) {
@@ -543,6 +549,8 @@ void displayGravometer(float position) {
 
   // Drawing the static clockface
   fill(#D4AF37);
+  textSize(30);
+  text("DISRUPTION", WIDTH - (120 + screenX), 248 - screenY);
   circle(WIDTH - (120 + screenX), 120 - screenY, 200);
   fill(#FFFFFF);
   circle(WIDTH - (120 + screenX), 120 - screenY, 184);
@@ -556,14 +564,13 @@ void displayGravometer(float position) {
   stroke(#FF0000);
   line(WIDTH - (147 + screenX), 45 - screenY, WIDTH - (151 + screenX), 36 - screenY);
 
-  // Drawing dynamic dial
+  // Drawing dynamic dial - requires some gnarly trigonometry
   float dialX = (float)(WIDTH - 38 - screenX - (130 * Math.sin((double)((1.21 * (1 - gravityHandPosition)) + 0.97))));
   float dialY = (float)(120 - screenY - (130 * Math.cos((double)((1.21 * (1 - gravityHandPosition)) + 0.97))));
 
   stroke(#D4AF37);
   line(dialX, dialY, (WIDTH - (38 + screenX)), 120 - screenY);
 
-
-  // reset stroke to stop everything else sucking
+  // reset stroke to stop everything else looking bad
   strokeWeight(0);
 }
