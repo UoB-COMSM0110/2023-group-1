@@ -23,12 +23,12 @@ CharacterAnimate playerA, playerB;
 
 Thing flagCharacter;
 
-PImage bg, float_brick, grass, mushroom, button1, button2, mario, sun, gold, zombie, p1, p2, flag, wKey, aKey, sKey, dKey, emptyKey, arrow, life;
+PImage bg, float_brick, grass, mushroom, button1, button2, mario, sun, gold, zombie, p1, p2, flag, wKey, aKey, sKey, dKey, emptyKey, arrow, life, trophy;
 
 ArrayList<Thing> platforms;
 ArrayList<Thing> coins;
-ArrayList<ScoreTuple> highScores;
 ArrayList<Character> name;
+ArrayList<ScoreTuple> highScores;
 
 Page page;
 
@@ -78,11 +78,17 @@ void setup() {
   emptyKey = loadImage("../assets/empty-key.png");
   arrow = loadImage("../assets/arrow.png");
   life = loadImage("../assets/p_heart.png");
+  trophy = loadImage("../assets/trophy.png");
 
   platforms = new ArrayList<Thing>();
   coins = new ArrayList<Thing>();
-  highScores = new ArrayList<ScoreTuple>();
   name = new ArrayList<Character>();
+  highScores = new ArrayList<ScoreTuple>();
+
+  // Add some initial high score values
+  highScores.add(new ScoreTuple("ZOE", 7, true));
+  highScores.add(new ScoreTuple("LEO", 10, false));
+  highScores.add(new ScoreTuple("OLI", 4, false));
 
   twoPlayers = false;
   hardMode = true;
@@ -462,6 +468,14 @@ void mousePressed() {
     if ((mouseX > WIDTH - 340 && mouseX < WIDTH - 120) && (mouseY > HEIGHT - 200 && mouseY < HEIGHT - 120)) {
       if (mouseButton == LEFT) {
         loreNum++;
+      }
+    }
+  }
+
+  if (pageNum == 1) {
+    if ((mouseX > WIDTH - 120 && mouseX < WIDTH - 20) && (mouseY > 20 && mouseY < 120)) {
+      if (mouseButton == LEFT) {
+        pageNum = 6;
       }
     }
   }
