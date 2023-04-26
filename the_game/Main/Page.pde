@@ -195,12 +195,14 @@ public class Page {
         text("The world you inhabit has been on the brink of an energy crisis for the\npast decade.  In order to save your people, the great alchemist Elphaba\nwas tasked with finding a new source of energy.  Miraculously, they\nmanaged to identified a well of interdimensional energy on the\nplanet and planned to draw energy from it.  Unfortunately, in their\nhubris, they drilled too far into this well and tore a hole between\ndimensions.  Through this hole, monsters have passed and the very\nfabric of our reality is fraying!", WIDTH / 2, 200);
         break;
       case 2:
+        String difficultyString = (hardMode) ? "  Also, the interdimensional energy is changing\nthe way that gravity behaves." : "";
         text((twoPlayers) ? 
-          "Fortunately, two heros have emerged who have the power to cross the\ndimensional divide, and save the world.  In order to do so, you must collect\nas much gold as you can (it is the only element that can plug the\nhole), and make your way to the rupture between worlds.  Be\ncareful, though.  There are monsters in your way that will destroy you\non contact.  Also, the interdimensional energy is changing\nthe way that gravity behaves." :
-          "Fortunately, a hero has emerged who has the power to cross the\ndimensional divide, and save the world.  In order to do so, you must collect\nas much gold as you can (it is the only element that can plug the\nhole), and make your way to the rupture between worlds.  Be\ncareful, though.  There are monsters in your way that will destroy you\non contact.  Also, the interdimensional energy is changing\nthe way that gravity behaves.", WIDTH / 2, 200);
+          "Fortunately, two heros have emerged who have the power to cross the\ndimensional divide, and save the world.  In order to do so, you must collect\nas much gold as you can (it is the only element that can plug the\nhole), and make your way to the rupture between worlds.  Be\ncareful, though.  There are monsters in your way that will destroy you\non contact." + difficultyString :
+          "Fortunately, a hero has emerged who has the power to cross the\ndimensional divide, and save the world.  In order to do so, you must collect\nas much gold as you can (it is the only element that can plug the\nhole), and make your way to the rupture between worlds.  Be\ncareful, though.  There are monsters in your way that will destroy you\non contact." + difficultyString, WIDTH / 2, 200);
         break;
       case 3:
-        text("Try to make your way to the interdimensional rupture\n\nKeep an eye on the gravity disruption guage", WIDTH / 2, 200);
+        String gravityWarning = (hardMode) ? ((twoPlayers) ? "\nKeep an eye on the gravity disruption guage" : "\n\nKeep an eye on the gravity disruption guage") : "";
+        text("Try to make your way to the interdimensional rupture" + gravityWarning, WIDTH / 2, 200);
 
         if (twoPlayers) {
           text("Player 2 moves with WASD, Player 1 moves with the arrow keys", WIDTH / 2, 300);
