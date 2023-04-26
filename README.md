@@ -84,13 +84,20 @@ We made the decision to only allow the user to move the sprite left, right, and 
 ### Design (15% ~750 words)
 
 **Class diagram**
-To assist us in organissing our ideas, and planning the work that we would need to do, we developed a [class diagram](ReportMaterial/classDiagram.pdf) for our game.  This diagram gave us a plan of what we needed to implement, and how we could sensibly divvy up the work.  In the end, our program deviated from it when we became more familiar with Processing, and the requirements that it imposes, and carried out evaluation steps on our intermediate products in order to determine how to improve it.  However, the backbone that is illustrated by our class diagram is still evident in out final product.
+
+To assist us in organissing our ideas, and planning the work that we would need to do, we developed a [class diagram](ReportMaterial/classDiagram.pdf) for our game.  This diagram gave us a plan of what we needed to implement, and how we could sensibly divvy up the work.  In the end, our code deviated from it when we became more familiar with Processing, and the requirements that it imposes, and carried out evaluation steps on our intermediate products in order to determine how to improve it.  However, the backbone that is illustrated by our class diagram is still evident in out final product.
 
 **Modelling behaviour - Communication diagrams**
 
+We also prepared a Communication diagram to emphasise the organisation of the objects, as laid out in the class diagram, that participate in a given interaction.  
 
 **Modelling behaviour - Sequence diagrams**
 
+
+
+**Design conclusion**
+
+Because we adopted the Agile methodology in our team, we necessarily had to change the the parameters of our design as we released prototypes and gathered feedback from them.  Therefore, the original design documents that we prepared before our first sprint became outdated.  Rather we took
 
 [System architecture. Class diagrams, behavioural diagrams.]
 
@@ -218,35 +225,77 @@ For the game itself, we had the survey completed at only one point (adter the sp
 >
 >The first quantitative evaluation was carried out between 12/3/2023 and 14/3/2023. 
 >
->>***Evaluation 1***
+>>***Evaluation 1 - 12/3/2023***
 >>
 >>*Scores*
 >>| Participant Number | Mental demand | Physical demand | Temporal demand | Performance | Effort | Frustration | 
 >>| ----------- | ------- | ------- | ------- | ------- | ------- | ------- |
->>| 1 |
->>| 2 |
->>| 3 |
->>| 4 |
->>| 5 |
->>| 6 |
->>| 7 |
->>| 8 |
->>| 9 |
->>| 10 |
+>>| 1 | 20 | 10 | 40 | 15 | 40 | 5 |
+>>| 2 | 50 | 5 | 50 | 40 | 65 | 25 |
+>>| 3 | 25 | 15 | 70 | 20 | 45 | 30 |
+>>| 4 | 35 | 10 | 40 | 35 | 35 | 25 |
+>>| 5 | 15 | 10 | 40 | 65 | 40 | 45 |
+>>| 6 | 55 | 5 | 55 | 40 | 50 | 15 |
+>>| 7 | 45 | 5 | 45 | 20 | 55 | 15 |
+>>| 8 | 20 | 0 | 25 | 60 | 40 | 45 |
+>>| 9 | 20 | 5 | 60 | 55 | 50 | 25 |
+>>| 10 | 40 | 5 | 45 | 15 | 35 | 10 |
 >>
 >>*Dimension weighting*
 >>| Participant Number | Mental demand | Physical demand | Temporal demand | Performance | Effort | Frustration | 
 >>| ----------- | ------- | ------- | ------- | ------- | ------- | ------- |
->>| 1 |
->>| 2 |
->>| 3 |
->>| 4 |
->>| 5 |
->>| 6 |
->>| 7 |
->>| 8 |
->>| 9 |
->>| 10 |
+>>| 1 | 2 | 0 | 2 | 4 | 5 | 2 |
+>>| 2 | 4 | 0 | 2 | 4 | 4 | 1 |
+>>| 3 | 2 | 0 | 1 | 4 | 3 | 5 |
+>>| 4 | 3 | 0 | 2 | 3 | 3 | 4 |
+>>| 5 | 2 | 0 | 2 | 3 | 5 | 3 |
+>>| 6 | 2 | 0 | 3 | 5 | 4 | 1 |
+>>| 7 | 2 | 0 | 3 | 4 | 5 | 1 |
+>>| 8 | 3 | 0 | 1 | 5 | 5 | 1 |
+>>| 9 | 4 | 0 | 2 | 3 | 3 | 3 |
+>>| 10 | 2 | 0 | 2 | 4 | 5 | 2 |
+>>
+>>*Final Scores*
+>>| Score Type | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 |
+>>| ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | 
+>>| raw | 22 | 39 | 34 | 30 | 36 | 37 | 31 | 35 | 36 | 25 |
+>>| weighted | 26 | 50 | 32 | 33 | 47 | 46 | 40 | 42 | 39 | 28 |
+>
+>>***Evaluation 2 - 14/3/2023***
+>>
+>>*Scores*
+>>| Participant Number | Mental demand | Physical demand | Temporal demand | Performance | Effort | Frustration | 
+>>| ----------- | ------- | ------- | ------- | ------- | ------- | ------- |
+>>| 1 | 20 | 10 | 40 | 15 | 40 | 5 |
+>>| 2 | 50 | 5 | 50 | 40 | 65 | 25 |
+>>| 3 | 25 | 15 | 70 | 20 | 45 | 30 |
+>>| 4 | 35 | 10 | 40 | 35 | 35 | 25 |
+>>| 5 | 15 | 10 | 40 | 65 | 40 | 45 |
+>>| 6 | 55 | 5 | 55 | 40 | 50 | 15 |
+>>| 7 | 45 | 5 | 45 | 20 | 55 | 15 |
+>>| 8 | 20 | 0 | 25 | 60 | 40 | 45 |
+>>| 9 | 20 | 5 | 60 | 55 | 50 | 25 |
+>>| 10 | 40 | 5 | 45 | 15 | 35 | 10 |
+>>
+>>*Dimension weighting*
+>>| Participant Number | Mental demand | Physical demand | Temporal demand | Performance | Effort | Frustration | 
+>>| ----------- | ------- | ------- | ------- | ------- | ------- | ------- |
+>>| 1 | 2 | 0 | 2 | 4 | 5 | 2 |
+>>| 2 | 4 | 0 | 2 | 4 | 4 | 1 |
+>>| 3 | 2 | 0 | 1 | 4 | 3 | 5 |
+>>| 4 | 3 | 0 | 2 | 3 | 3 | 4 |
+>>| 5 | 2 | 0 | 2 | 3 | 5 | 3 |
+>>| 6 | 2 | 0 | 3 | 5 | 4 | 1 |
+>>| 7 | 2 | 0 | 3 | 4 | 5 | 1 |
+>>| 8 | 3 | 0 | 1 | 5 | 5 | 1 |
+>>| 9 | 4 | 0 | 2 | 3 | 3 | 3 |
+>>| 10 | 2 | 0 | 2 | 4 | 5 | 2 |
+>>
+>>*Final Scores*
+>>| Score Type | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 |
+>>| ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | 
+>>| raw | 22 | 39 | 34 | 30 | 36 | 37 | 31 | 35 | 36 | 25 |
+>>| weighted | 26 | 50 | 32 | 33 | 47 | 46 | 40 | 42 | 39 | 28 |
 >
 ><br>
 
