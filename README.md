@@ -102,7 +102,29 @@ Because we adopted the Agile methodology in our team, we necessarily had to chan
 [System architecture. Class diagrams, behavioural diagrams.]
 
 ### Implementation (15% ~750 words)
-Describe implementation of your game, in particular highlighting the three areas of challenge in developing your game.
+
+The three areas of challenge that we identified while planning our game were: 1) creating a physics engine that allows for fluctuating gravity; 2) making a multi-player mode where two players could each control their individual character; and 3) creating a highscores record, which can be viewed on a seperate page.  Interestingly, these three challenges actually spanned the gamet of actual challenge, as will be documented below.
+
+**1) Making a physics engine -**
+This proved to be the most challenging of our three challenges because it went beyond simply applying gravity to objects.  We also needed a way for objects to interact with one another so that our characters would not go through walls etc.  This was implemented with an iterative check of the borders of sprites before every frame.  As the only sprites that move in a non-pre-deteremined way are the character sprites (the enemey sprite follows a known path and so we don't need to check it), we designed a function to check whether these sprites were overlapping with any of the platform sprites.  If they were, then we reset the character sprite positions to be just outside the offending platform unit, and set their velocity in the direction into the platform to 0.
+
+For gravity itself, we used a constant value to set what gravity should be, and then a variable to track what gravity is at any given point in time.  The current gravity variable was then applied to the character sprites as a downward acceleration on every frame (when gravity is going up, the current gravity variable is negative).  The current gravity variable is controlled according to a hidden counter variable.  This counter variable is decremented by 1 every frame, and is reset to a random value in a range when it gets to 0.  When the counter is above a first value, the current gravity variable is the gravity constant.  When the counter is below the first value but above a second value, the current gravity variable is a fraction of the gravity constant.  When the counter is below this second value, the current gravity variable is - the gravity constant.  
+
+Jumping directly between current gravity values was quite jarring, so instead we had a handler function, that more gradually moved the current gravity value towards the desired factor of gravity constants.  
+
+Further, to make the gravity changes less predictable, we made it such that when the counter gets to the second value, there is a 50% chance that the counter will be reset there, thus not entering negative gravity on that cycle.
+
+**2) multi-player -**
+This challenge was not actually particularly challenging.  Once we had made the one-player game, it was simply a matter of finding a way for player two to input their controls, and then making another object of the same class as the one-player character, though with different images.  We chose WASD as the directional inputs for player 2, which meant that player one could continue to use the arrow keys.  The ease of this challenge is a testiment to the benefits of OOP, as we just had to fire up another instance of a class.
+
+**3) leaderboard -**
+Aside from making another page to view the leaderboard on, the main challenge here was finding a datastructure to store the scores in.  We ended up with a tuple data structure.  Though, annoyingly, Java does not have this datastructure in its standard libraries so we had to make our own.  We decided that the information that was needed to display the scores properly were: i) the player(s) name (we opted to limit this to three letters, as an homage to early arcade games, which were the dawn of this type of 2D platformer); ii) the score value; and iii) whether the game had been won, or the player had died.  
+
+we then stored these tuples in an arraylist, which we sorted everytime a new score was added.  the ordering was not simple, so we had to use a custom lambda-function to sort it.  The lack of simplicity is because we wanted games that were won to be a 'higher score' than games that were lost, regardless of their actual score.
+
+When a player was adding their score to the leaderboard but it fell out of the top-5, we nonetheless showed it below the top-5.  If it was naturally in the top-5, then the leaderboard displayed the top-6.
+
+[Describe implementation of your game, in particular highlighting the three areas of challenge in developing your game.]
 
 ### Evaluation (15% ~750 words)
 
