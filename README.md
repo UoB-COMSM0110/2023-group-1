@@ -217,15 +217,181 @@ In our second stage qualitative evaluations we recieved more positive feedback t
 
 We carried out a bifurcated quantitative evaluation of our product - one evaluation of the navigability and usability of the naviagation pages around our game (e.g., the welcome screen and the game over screen), and one of the difficulty of the game.  The reason for this is that the aim of navigation pages is always for them to be usable, and so minimising the difficulty of these pages is always a good thing.  Whereas for the gameplay of our game, we do want there to be a degree of difficulty (there is no fun in a game that a child could complete on its first attempt).  Therefore, it made sense to quantitatively evaluate these separately to avoid cross-contamination of results, and the loss of information.  
 
-For both furcations of the evaluation we used weighted NASA TLX scores.  For the navigation page, we had the survey complete by ten different people at two different points of development - the first being after we had developed a minimum viable product, and the second being after our sprints in Easter when the product was in a more final state.  We compared these two sets of results using the Wilcoxon Signed Rank Test to see if the changes we had made to the navigation pages had made a meaningful difference to their usability.  
+For both furcations of the evaluation we used weighted NASA TLX scores.  For the navigation page, we had the survey completed by ten different people at two different points of development - the first being after we had developed a minimum viable product, and the second being after our sprints in Easter when the product was in a more final state.  We compared these two sets of results using the Wilcoxon Signed Rank Test to see if the changes we had made to the navigation pages had made a meaningful difference to their usability.  Before completing the survey, we had the participants use the navigation pages to select 1-player and 2-player modes, select easy mode and hard mode, view the leaderboard, add a score the leaderboard, and return to the main menu.
 
-For the game itself, we had the survey completed at only one point (adter the sprtins in easter), but we had it completed in relation to both the hard and easy difficulty settings of our game.  Again, we compared the results of these two difficulty settings to see if the differences in the two settings made the game meangingfully nore difficult.  The results for both evaluations are provided below, and the calculations shown.
+For the game itself, we had the survey completed at only one point (after the sprints in easter), but we had it completed in relation to both the hard and easy difficulty settings of our game.  Again, we compared the results of these two difficulty settings to see if the differences in the two settings made the game meangingfully nore difficult.  before completing the survey, we had the participants play two complete games (either to winning, or to running out of lives).  One of these games was in 1-player mode, and the other was in two-player mode with a volunteer who was neither the participant or the survey collector playing as the second player.
+
+The results for both evaluations are provided below, and the calculations for the first Wilcoxon sing-ranked test shown.
+
+>**Evaluating the gameplay**
+>
+>Both of the quantitative evaluations of the gameplay were carried out between 17/4/2023 and 19/4/2023.  
+>
+>>***Evaluation 1 - 'Easy' mode***
+>>
+>>*Scores*
+>>| Participant Number | Mental demand | Physical demand | Temporal demand | Performance | Effort | Frustration | 
+>>| ----------- | ------- | ------- | ------- | ------- | ------- | ------- |
+>>| 1 | 15 | 10 | 20 | 20 | 35 | 10 |
+>>| 2 | 30 | 0 | 35 | 35 | 45 | 20 |
+>>| 3 | 25 | 15 | 50 | 40 | 20 | 30 |
+>>| 4 | 30 | 10 | 40 | 40 | 30 | 15 |
+>>| 5 | 15 | 15 | 35 | 55 | 35 | 40 |
+>>| 6 | 40 | 5 | 40 | 40 | 40 | 25 |
+>>| 7 | 40 | 5 | 40 | 25 | 50 | 5 |
+>>| 8 | 25 | 0 | 25 | 65 | 20 | 25 |
+>>| 9 | 15 | 0 | 60 | 55 | 35 | 15 |
+>>| 10 | 30 | 5 | 30 | 20 | 45 | 10 |
+>>
+>>*Dimension weighting*
+>>| Participant Number | Mental demand | Physical demand | Temporal demand | Performance | Effort | Frustration | 
+>>| ----------- | ------- | ------- | ------- | ------- | ------- | ------- |
+>>| 1 | 2 | 0 | 2 | 4 | 5 | 2 |
+>>| 2 | 3 | 0 | 2 | 5 | 3 | 2 |
+>>| 3 | 2 | 0 | 2 | 4 | 4 | 5 |
+>>| 4 | 2 | 0 | 2 | 3 | 3 | 5 |
+>>| 5 | 2 | 0 | 2 | 4 | 4 | 3 |
+>>| 6 | 1 | 0 | 3 | 4 | 5 | 2 |
+>>| 7 | 2 | 0 | 3 | 4 | 5 | 1 |
+>>| 8 | 2 | 0 | 1 | 5 | 4 | 3 |
+>>| 9 | 4 | 0 | 2 | 2 | 4 | 2 |
+>>| 10 | 2 | 0 | 2 | 4 | 5 | 2 |
+>>
+>>*Final Scores*
+>>| Score Type | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 |
+>>| ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | 
+>>| raw | 18 | 28 | 27 | 28 | 33 | 32 | 28 | 27 | 30 | 23 |
+>>| weighted | 23 | 34 | 36 | 34 | 44 | 38 | 37 | 37 | 31 | 30 |
+>
+>>***Evaluation 2 - 'Hard' mode***
+>>
+>>*Scores*
+>>| Participant Number | Mental demand | Physical demand | Temporal demand | Performance | Effort | Frustration | 
+>>| ----------- | ------- | ------- | ------- | ------- | ------- | ------- |
+>>| 1 | 20 | 10 | 40 | 15 | 40 | 5 |
+>>| 2 | 50 | 5 | 50 | 40 | 65 | 25 |
+>>| 3 | 25 | 15 | 70 | 20 | 45 | 30 |
+>>| 4 | 35 | 10 | 40 | 35 | 35 | 25 |
+>>| 5 | 15 | 10 | 40 | 65 | 40 | 45 |
+>>| 6 | 55 | 5 | 55 | 40 | 50 | 15 |
+>>| 7 | 45 | 5 | 45 | 20 | 55 | 15 |
+>>| 8 | 20 | 0 | 25 | 60 | 40 | 45 |
+>>| 9 | 20 | 5 | 60 | 55 | 50 | 25 |
+>>| 10 | 40 | 5 | 45 | 15 | 35 | 10 |
+>>
+>>*Dimension weighting*
+>>| Participant Number | Mental demand | Physical demand | Temporal demand | Performance | Effort | Frustration | 
+>>| ----------- | ------- | ------- | ------- | ------- | ------- | ------- |
+>>| 1 | 2 | 0 | 2 | 4 | 5 | 2 |
+>>| 2 | 4 | 0 | 2 | 4 | 4 | 1 |
+>>| 3 | 2 | 0 | 1 | 4 | 3 | 5 |
+>>| 4 | 3 | 0 | 2 | 3 | 3 | 4 |
+>>| 5 | 2 | 0 | 2 | 3 | 5 | 3 |
+>>| 6 | 2 | 0 | 3 | 5 | 4 | 1 |
+>>| 7 | 2 | 0 | 3 | 4 | 5 | 1 |
+>>| 8 | 3 | 0 | 1 | 4 | 5 | 2 |
+>>| 9 | 4 | 0 | 2 | 3 | 3 | 3 |
+>>| 10 | 2 | 0 | 2 | 4 | 5 | 2 |
+>>
+>>*Final Scores*
+>>| Score Type | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 |
+>>| ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | 
+>>| raw | 22 | 39 | 34 | 30 | 36 | 37 | 31 | 35 | 36 | 25 |
+>>| weighted | 26 | 50 | 34 | 33 | 47 | 46 | 40 | 42 | 39 | 28 |
+>
+>>**Statistical analysis of different difficulties**
+>>
+>>To evaluate the statistical significance of our results for the NASA TLX we used the Wilxocon sign-ranked test.  We used this test on both the raw and the weighted results.  However, before carrying out the analysis, we decided that the weighted results would be the primary end-point, with the raw results being only a secondary end-point.  Further, we decided that we would require a p value of 0.10 for us to deem statistical significance - in a Wilcoxon signed-rank test with 10 data, this requires a W value of below 10.  The full analysis of the weighted results is provided below (the raw results were also analysed, but the method is the same so it is not repeated, rather only the results are given):
+>>
+>>*Wilcoxon sign-ranked test*
+>>
+>>Step 1: replace the paris of data with their difference
+>>
+>>| 'easy' score | 'hard' score | difference |
+>>| ----- | ----- | ----- |
+>>| 23 | 26 | -3 |
+>>| 34 | 50 | -16 |
+>>| 36 | 34 | 2 |
+>>| 34 | 33 | 1 |
+>>| 44 | 47 | -3 |
+>>| 38 | 46 | -8 |
+>>| 37 | 40 | -3 |
+>>| 37 | 42 | -5 |
+>>| 31 | 39 | -8 |
+>>| 30 | 28 | 2 |
+>>
+>>Step 2: sort these differences by their absolute value, and then assign ranks to these differences accordingly
+>>
+>>| Difference |  Rank | Signed Rank |
+>>| ---- | ---- | ---- |
+>>| 1 | 1 | 1 |
+>>| 2 | 2 | 2 |
+>>| 2 | 3 | 3 |
+>>| -3 | 4 | -4 |
+>>| -3 | 5 | -5 |
+>>| -3 | 6 | -6 |
+>>| -5 | 7 | -7 |
+>>| -8 | 8 | -8 |
+>>| -8 | 9 | -9 |
+>>| -16 | 10 | -10 |
+>>
+>>There are some ties here - ranks 2-3, 4-6 and 8-9 are the same values.  We dodge a bullet because the ties are of the same sign, so the result of the test is not affected by the way that the ties are handled.  If the ties had included ties of different signs, we would have had to use the mid-rank for all of them (as endorsed by William Conover in Journal of the American Statistical Association , Dec., 1973, Vol. 68, No. 344 (Dec., 1973), pp. 985-988).
+>>
+>>The positive-rank sum is 6, and the negative-rank sum is 49, and therefore a W value of 6 (the W value is simply the smaller of the positive-rank sum and the negative-rank sum).  This is well below the W value of 9 required for statistical sinificance.  In fact, a W value of 6 is statistically significant to a p value of 0.05.
+>>
+>> These results confirm that the increase in difficulty of the 'hard' mode of our game relative to the 'easy' mode is statistically significant.  
+>>
+>>The W value for the raw results was 0, which is good for a p value of 0.005.  This is reassuring, as it is a further indication that our 'hard' mode is meaningfully more difficult.
+>
+<br>
 
 >**Evaluating the navigation pages**
 >
 >The first quantitative evaluation was carried out between 12/3/2023 and 14/3/2023. 
 >
->>***Evaluation 1 - 12/3/2023***
+>>***Evaluation 1***
+>>
+>>*Scores*
+>>| Participant Number | Mental demand | Physical demand | Temporal demand | Performance | Effort | Frustration | 
+>>| ----------- | ------- | ------- | ------- | ------- | ------- | ------- |
+>>| 1 | 10 | 5 | 15 | 30 | 45 | 55 |
+>>| 2 | 25 | 5 | 20 | 25 | 65 | 70 |
+>>| 3 | 15 | 10 | 10 | 20 | 40 | 35 |
+>>| 4 | 10 | 10 | 10 | 45 | 30 | 55 |
+>>| 5 | 15 | 0 | 20 | 20 | 45 | 80 |
+>>| 6 | 25 | 15 | 5 | 30 | 65 | 85 |
+>>| 7 | 5 | 5 | 5 | 20 | 30 | 75 |
+>>| 8 | 15 | 10 | 15 | 45 | 40 | 40 |
+>>| 9 | 20 | 0 | 10 | 10 | 50 | 35 |
+>>| 10 | 20 | 0 | 5 | 15 | 45 | 65 |
+
+
+_________ DONE THE ABOVE, NOT THE BELOW!!!!!!!!! ______________
+
+
+>>*Dimension weighting*
+>>| Participant Number | Mental demand | Physical demand | Temporal demand | Performance | Effort | Frustration | 
+>>| ----------- | ------- | ------- | ------- | ------- | ------- | ------- |
+>>| 1 | 2 | 0 | 1 | 4 | 5 | 2 |
+>>| 2 | 4 | 0 | 1 | 4 | 4 | 2 |
+>>| 3 | 2 | 0 | 1 | 4 | 3 | 5 |
+>>| 4 | 3 | 1 | 0 | 3 | 3 | 4 |
+>>| 5 | 2 | 0 | 1 | 3 | 5 | 3 |
+>>| 6 | 2 | 0 | 1 | 5 | 4 | 1 |
+>>| 7 | 2 | 1 | 0 | 4 | 5 | 1 |
+>>| 8 | 3 | 1 | 0 | 4 | 5 | 1 |
+>>| 9 | 4 | 0 | 1 | 3 | 3 | 3 |
+>>| 10 | 2 | 0 | 1 | 4 | 5 | 2 |
+>>
+>>*Final Scores*
+>>| Score Type | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 |
+>>| ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | 
+>>| raw | 22 | 39 | 34 | 30 | 36 | 37 | 31 | 35 | 36 | 25 |
+>>| weighted | 26 | 50 | 32 | 33 | 47 | 46 | 40 | 42 | 39 | 28 |
+>>
+>
+>The second quantitative evaluation was carried out between 17/4/2023 and 19/4/2023
+>>***Evaluation 2***
 >>
 >>*Scores*
 >>| Participant Number | Mental demand | Physical demand | Temporal demand | Performance | Effort | Frustration | 
@@ -260,44 +426,16 @@ For the game itself, we had the survey completed at only one point (adter the sp
 >>| ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | 
 >>| raw | 22 | 39 | 34 | 30 | 36 | 37 | 31 | 35 | 36 | 25 |
 >>| weighted | 26 | 50 | 32 | 33 | 47 | 46 | 40 | 42 | 39 | 28 |
+>>
+>>**Statistical analysis of the navigation pages**
+>>Because the methodology of the Wilcoxon signed rank test was laid out in relation to the evaluation of the difficulty levels of our game, I will not repeat it here.  The W values of this test are __ for the weighted results, and __ for the raw results.  Again, we had decided on a p value of 0.1 for statistical significance ahead of time.  
+>>
+>>
+>>This result is encouraging because it confirms that the changes we made to the navigation pages in our sprints over the Easter holidays made a significant, and positive impact on the usability of our game.
+>>
+>>
 >
->>***Evaluation 2 - 14/3/2023***
->>
->>*Scores*
->>| Participant Number | Mental demand | Physical demand | Temporal demand | Performance | Effort | Frustration | 
->>| ----------- | ------- | ------- | ------- | ------- | ------- | ------- |
->>| 1 | 20 | 10 | 40 | 15 | 40 | 5 |
->>| 2 | 50 | 5 | 50 | 40 | 65 | 25 |
->>| 3 | 25 | 15 | 70 | 20 | 45 | 30 |
->>| 4 | 35 | 10 | 40 | 35 | 35 | 25 |
->>| 5 | 15 | 10 | 40 | 65 | 40 | 45 |
->>| 6 | 55 | 5 | 55 | 40 | 50 | 15 |
->>| 7 | 45 | 5 | 45 | 20 | 55 | 15 |
->>| 8 | 20 | 0 | 25 | 60 | 40 | 45 |
->>| 9 | 20 | 5 | 60 | 55 | 50 | 25 |
->>| 10 | 40 | 5 | 45 | 15 | 35 | 10 |
->>
->>*Dimension weighting*
->>| Participant Number | Mental demand | Physical demand | Temporal demand | Performance | Effort | Frustration | 
->>| ----------- | ------- | ------- | ------- | ------- | ------- | ------- |
->>| 1 | 2 | 0 | 2 | 4 | 5 | 2 |
->>| 2 | 4 | 0 | 2 | 4 | 4 | 1 |
->>| 3 | 2 | 0 | 1 | 4 | 3 | 5 |
->>| 4 | 3 | 0 | 2 | 3 | 3 | 4 |
->>| 5 | 2 | 0 | 2 | 3 | 5 | 3 |
->>| 6 | 2 | 0 | 3 | 5 | 4 | 1 |
->>| 7 | 2 | 0 | 3 | 4 | 5 | 1 |
->>| 8 | 3 | 0 | 1 | 5 | 5 | 1 |
->>| 9 | 4 | 0 | 2 | 3 | 3 | 3 |
->>| 10 | 2 | 0 | 2 | 4 | 5 | 2 |
->>
->>*Final Scores*
->>| Score Type | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 |
->>| ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | 
->>| raw | 22 | 39 | 34 | 30 | 36 | 37 | 31 | 35 | 36 | 25 |
->>| weighted | 26 | 50 | 32 | 33 | 47 | 46 | 40 | 42 | 39 | 28 |
->
-><br>
+<br>
 
 
 
