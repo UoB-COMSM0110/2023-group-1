@@ -4,7 +4,8 @@ public class Page {
   public void gameStart() {
     image(bg, WIDTH / 2, HEIGHT / 2, WIDTH, HEIGHT);
     textSize(180);
-    text("T O P S Y   T U R V Y", (WIDTH / 2), 200);
+    text("T O P S Y   T U R V Y", (WIDTH / 2), 260);
+    image(button2, WIDTH - 70, 70, 100, 100); // leaderboard
     image(button1, (WIDTH / 2), 500, 400, 110); //start
     image(button2, ((WIDTH / 2) - 100), (600 + (50/2)), 130, 50); // 1 player
     image(button2, ((WIDTH / 2) + 100), (600 + (50/2)), 130, 50); // 2 player
@@ -31,7 +32,7 @@ public class Page {
     fill(#FFFFFF);
     strokeWeight(0);
 
-
+    image(trophy, WIDTH - 70, 70, 100, 100);
     textSize(60);
     text("GAME START", (WIDTH / 2), 525);
     textSize(30);
