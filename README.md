@@ -364,30 +364,26 @@ The results for both evaluations are provided below, and the calculations for th
 >>| 8 | 15 | 10 | 15 | 45 | 40 | 40 |
 >>| 9 | 20 | 0 | 10 | 10 | 50 | 35 |
 >>| 10 | 20 | 0 | 5 | 15 | 45 | 65 |
-
-
-_________ DONE THE ABOVE, NOT THE BELOW!!!!!!!!! ______________
-
-
+>>
 >>*Dimension weighting*
 >>| Participant Number | Mental demand | Physical demand | Temporal demand | Performance | Effort | Frustration | 
 >>| ----------- | ------- | ------- | ------- | ------- | ------- | ------- |
->>| 1 | 2 | 0 | 1 | 4 | 5 | 2 |
->>| 2 | 4 | 0 | 1 | 4 | 4 | 2 |
->>| 3 | 2 | 0 | 1 | 4 | 3 | 5 |
->>| 4 | 3 | 1 | 0 | 3 | 3 | 4 |
->>| 5 | 2 | 0 | 1 | 3 | 5 | 3 |
->>| 6 | 2 | 0 | 1 | 5 | 4 | 1 |
->>| 7 | 2 | 1 | 0 | 4 | 5 | 1 |
->>| 8 | 3 | 1 | 0 | 4 | 5 | 1 |
->>| 9 | 4 | 0 | 1 | 3 | 3 | 3 |
->>| 10 | 2 | 0 | 1 | 4 | 5 | 2 |
+>>| 1 | 2 | 0 | 1 | 3 | 4 | 5 |
+>>| 2 | 2 | 0 | 1 | 4 | 4 | 4 |
+>>| 3 | 3 | 0 | 1 | 4 | 2 | 5 |
+>>| 4 | 3 | 1 | 0 | 2 | 4 | 5 |
+>>| 5 | 2 | 0 | 1 | 3 | 5 | 4 |
+>>| 6 | 2 | 0 | 1 | 5 | 3 | 4 |
+>>| 7 | 3 | 1 | 0 | 4 | 2 | 5 |
+>>| 8 | 3 | 1 | 0 | 2 | 4 | 5 |
+>>| 9 | 2 | 0 | 1 | 5 | 4 | 3 |
+>>| 10 | 3 | 0 | 1 | 3 | 5 | 3 |
 >>
 >>*Final Scores*
 >>| Score Type | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 |
 >>| ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | 
->>| raw | 22 | 39 | 34 | 30 | 36 | 37 | 31 | 35 | 36 | 25 |
->>| weighted | 26 | 50 | 32 | 33 | 47 | 46 | 40 | 42 | 39 | 28 |
+>>| raw | 27 | 35 | 22 | 27 | 30 | 38 | 23 | 28 | 21 | 25 |
+>>| weighted | 39 | 47 | 26 | 35 | 43 | 49 | 36 | 34 | 27 | 35 |
 >>
 >
 >The second quantitative evaluation was carried out between 17/4/2023 and 19/4/2023
@@ -396,39 +392,39 @@ _________ DONE THE ABOVE, NOT THE BELOW!!!!!!!!! ______________
 >>*Scores*
 >>| Participant Number | Mental demand | Physical demand | Temporal demand | Performance | Effort | Frustration | 
 >>| ----------- | ------- | ------- | ------- | ------- | ------- | ------- |
->>| 1 | 20 | 10 | 40 | 15 | 40 | 5 |
->>| 2 | 50 | 5 | 50 | 40 | 65 | 25 |
->>| 3 | 25 | 15 | 70 | 20 | 45 | 30 |
->>| 4 | 35 | 10 | 40 | 35 | 35 | 25 |
->>| 5 | 15 | 10 | 40 | 65 | 40 | 45 |
->>| 6 | 55 | 5 | 55 | 40 | 50 | 15 |
->>| 7 | 45 | 5 | 45 | 20 | 55 | 15 |
->>| 8 | 20 | 0 | 25 | 60 | 40 | 45 |
->>| 9 | 20 | 5 | 60 | 55 | 50 | 25 |
->>| 10 | 40 | 5 | 45 | 15 | 35 | 10 |
+>>| 1 | 10 | 10 | 10 | 20 | 30 | 20 |
+>>| 2 | 20 | 15 | 20 | 30 | 45 | 15 |
+>>| 3 | 10 | 15 | 10 | 15 | 15 | 30 |
+>>| 4 | 10 | 10 | 15 | 40 | 25 | 20 |
+>>| 5 | 5 | 5 | 15 | 20 | 25 | 10 |
+>>| 6 | 15 | 10 | 10 | 30 | 35 | 15 |
+>>| 7 | 5 | 5 | 5 | 10 | 35 | 25 |
+>>| 8 | 20 | 20 | 20 | 40 | 35 | 25 |
+>>| 9 | 20 | 15 | 20 | 20 | 40 | 35 |
+>>| 10 | 25 | 15 | 15 | 10 | 40 | 20 |
 >>
 >>*Dimension weighting*
 >>| Participant Number | Mental demand | Physical demand | Temporal demand | Performance | Effort | Frustration | 
 >>| ----------- | ------- | ------- | ------- | ------- | ------- | ------- |
->>| 1 | 2 | 0 | 2 | 4 | 5 | 2 |
->>| 2 | 4 | 0 | 2 | 4 | 4 | 1 |
->>| 3 | 2 | 0 | 1 | 4 | 3 | 5 |
->>| 4 | 3 | 0 | 2 | 3 | 3 | 4 |
->>| 5 | 2 | 0 | 2 | 3 | 5 | 3 |
->>| 6 | 2 | 0 | 3 | 5 | 4 | 1 |
->>| 7 | 2 | 0 | 3 | 4 | 5 | 1 |
->>| 8 | 3 | 0 | 1 | 5 | 5 | 1 |
->>| 9 | 4 | 0 | 2 | 3 | 3 | 3 |
->>| 10 | 2 | 0 | 2 | 4 | 5 | 2 |
+>>| 1 | 0 | 3 | 1 | 4 | 5 | 2 |
+>>| 2 | 2 | 2 | 2 | 4 | 4 | 1 |
+>>| 3 | 1 | 0 | 3 | 4 | 4 | 3 |
+>>| 4 | 3 | 1 | 1 | 3 | 5 | 2 |
+>>| 5 | 4 | 2 | 1 | 3 | 4 | 1 |
+>>| 6 | 3 | 0 | 1 | 4 | 5 | 2 |
+>>| 7 | 4 | 2 | 0 | 5 | 3 | 1 |
+>>| 8 | 4 | 1 | 3 | 1 | 5 | 1 |
+>>| 9 | 2 | 0 | 2 | 4 | 5 | 2 |
+>>| 10 | 3 | 0 | 3 | 2 | 4 | 3 |
 >>
 >>*Final Scores*
 >>| Score Type | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 |
 >>| ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | 
->>| raw | 22 | 39 | 34 | 30 | 36 | 37 | 31 | 35 | 36 | 25 |
->>| weighted | 26 | 50 | 32 | 33 | 47 | 46 | 40 | 42 | 39 | 28 |
->>
+>>| raw | 17 | 24 | 16 | 20 | 13 | 19 | 14 | 27 | 25 | 21 |
+>>| weighted | 21 | 27 | 17 | 23 | 14 | 25 | 11 | 27 | 29 | 21 |
+>
 >>**Statistical analysis of the navigation pages**
->>Because the methodology of the Wilcoxon signed rank test was laid out in relation to the evaluation of the difficulty levels of our game, I will not repeat it here.  The W values of this test are __ for the weighted results, and __ for the raw results.  Again, we had decided on a p value of 0.1 for statistical significance ahead of time.  
+>>Because the methodology of the Wilcoxon signed rank test was laid out in relation to the evaluation of the difficulty levels of our game, I will not repeat it here.  The W values of this test are 1 for the weighted results, and 2.5 for the raw results (raw results had tied ranks and so the mid-tier was used).  Again, we had decided on a p value of 0.1 for statistical significance ahead of time.  Both these W values met the predetermined threshold for statistical significance.
 >>
 >>
 >>This result is encouraging because it confirms that the changes we made to the navigation pages in our sprints over the Easter holidays made a significant, and positive impact on the usability of our game.
