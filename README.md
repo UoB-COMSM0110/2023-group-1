@@ -1,4 +1,7 @@
 # 2023-group-1
+### Game Video 
+Watch our game video [here](https://youtu.be/lba99nXIenA)!
+
 ### Team
 Li Hanyu, ZYJ, Leon Chen, Zoe Clark, Alex Cockrean
 <img src='/images/Group-1.png'/>
@@ -472,7 +475,7 @@ We learned a lot during this process about the use and application of different 
 If we had the time and resources to develop the game further the next immediate features we would want to add are: a universal leaderboard, multiple levels and independent lives for multiplayer games. If we were to go even further then we would want to expand the story so that each level contributes to the overall plot and add items that you can collect and use throughout the levels.
 
 
-####Individual contribution:
+###Individual contribution:
 
 Alexander Cockrean: 1.00
 
