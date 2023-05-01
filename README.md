@@ -183,7 +183,7 @@ These stood out because they were all raised multiple times but other issues sto
 
 We also conducted a short focus group at this stage. [Research suggested](http://dx.doi.org/10.1109/ISESE.2004.1334914) this would be a resource-effective approach to collecting qualitative feedback especially with accessible software such as a game.
 
-<img src="/ReportMaterial/FocusGroup">
+<img src=ReportMaterial/FocusGroup.png>
 
 
 After these initial evaluations we had some clear goals for the next stages of development. Firstly, the map needed to be changed as it was too small and very difficult. The design feedback was generally good apart from our start and end screens. Finally, we needed to add features to interact with other game elements (to collect objects or be damaged or blocked by them). It was clear that people liked our idea but that at the moment the execution was not delivering what the game promised.
