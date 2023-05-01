@@ -1,11 +1,14 @@
 # 2023-group-1
+### Game Video 
+Watch our game video [here](https://youtu.be/lba99nXIenA)!
+
 ### Team
 Li Hanyu, ZYJ, Leon Chen, Zoe Clark, Alex Cockrean
 <img src='/images/Group-1.png'/>
 
 ### Introduction (5% ~250 words)
-Our game is a one or two player platform game inspired by Super Mario Bros. Our twist on this classic game was to add the feature of gravity flipping at intervals of time to increase the difficulty of the game. 
-[Describe your game, what is based on, what makes it novel?]
+Our game is a one or two player platform game with an added twist. It was inspired by platform games that we loved like Super Mario Bros. Our twist on these classic games was to add the feature of gravity flipping at intervals of time to increase the difficulty of the game. We developed our own game storyline and lore to immerse the player in the experience invest them in the outcome of the game. Throughout the game development process we tried out many different development techniques in order to find what worked for us as a team. For this reason, it made sense to use an agile workflow throughout so that we could reflect on our progress and repeat cycles of development to make the most of different techniques that worked well for us.
+
 
 ### Requirements (15% ~750 words)
 
@@ -85,7 +88,7 @@ We made the decision to only allow the user to move the sprite left, right, and 
 
 **Class diagram**
 
-To assist us in organissing our ideas, and planning the work that we would need to do, we developed a [class diagram](ReportMaterial/classDiagram.pdf) for our game.  This diagram gave us a plan of what we needed to implement, and how we could sensibly divvy up the work.  In the end, our code deviated from it when we became more familiar with Processing, and the requirements that it imposes, and carried out evaluation steps on our intermediate products in order to determine how to improve it.  However, the backbone that is illustrated by our class diagram is still evident in out final product.
+To assist us in organising our ideas, and planning the work that we would need to do, we developed a [class diagram](ReportMaterial/classDiagram.pdf) for our game.  This diagram gave us a plan of what we needed to implement, and how we could sensibly divvy up the work.  In the end, our code deviated from it when we became more familiar with Processing, and the requirements that it imposes, and carried out evaluation steps on our intermediate products in order to determine how to improve it.  However, the backbone that is illustrated by our class diagram is still evident in out final product.
 
 <img src=ReportMaterial/classDiagram.pdf>
 
@@ -105,7 +108,7 @@ Because we adopted the Agile methodology in our team, we necessarily had to chan
 The three areas of challenge that we identified while planning our game were: 1) creating a physics engine that allows for fluctuating gravity; 2) making a multi-player mode where two players could each control their individual character; and 3) creating a highscores record, which can be viewed on a seperate page.  Interestingly, these three challenges actually spanned the gamet of actual challenge, as will be documented below.
 
 **1) Making a physics engine -**
-This proved to be the most challenging of our three challenges because it went beyond simply applying gravity to objects.  We also needed a way for objects to interact with one another so that our characters would not go through walls etc.  This was implemented with an iterative check of the borders of sprites before every frame.  As the only sprites that move in a non-pre-deteremined way are the character sprites (the enemey sprite follows a known path and so we don't need to check it), we designed a function to check whether these sprites were overlapping with any of the platform sprites.  If they were, then we reset the character sprite positions to be just outside the offending platform unit, and set their velocity in the direction into the platform to 0.
+This proved to be the most challenging of our three challenges because it went beyond simply applying gravity to objects.  We also needed a way for objects to interact with one another so that our characters would not go through walls etc.  This was implemented with an iterative check of the borders of sprites before every frame.  As the only sprites that move in a non-pre-deteremined way are the character sprites (the enemy sprite follows a known path and so we don't need to check it), we designed a function to check whether these sprites were overlapping with any of the platform sprites.  If they were, then we reset the character sprite positions to be just outside the offending platform unit, and set their velocity in the direction into the platform to 0.
 
 For gravity itself, we used a constant value to set what gravity should be, and then a variable to track what gravity is at any given point in time.  The current gravity variable was then applied to the character sprites as a downward acceleration on every frame (when gravity is going up, the current gravity variable is negative).  The current gravity variable is controlled according to a hidden counter variable.  This counter variable is decremented by 1 every frame, and is reset to a random value in a range when it gets to 0.  When the counter is above a first value, the current gravity variable is the gravity constant.  When the counter is below the first value but above a second value, the current gravity variable is a fraction of the gravity constant.  When the counter is below this second value, the current gravity variable is - the gravity constant.  
 
@@ -113,22 +116,24 @@ Jumping directly between current gravity values was quite jarring, so instead we
 
 Further, to make the gravity changes less predictable, we made it such that when the counter gets to the second value, there is a 50% chance that the counter will be reset there, thus not entering negative gravity on that cycle.
 
-**2) multi-player -**
+<img src="/ReportMaterial/antigrav.gif">
+
+**2) Multi-player -**
 This challenge was not actually particularly challenging.  Once we had made the one-player game, it was simply a matter of finding a way for player two to input their controls, and then making another object of the same class as the one-player character, though with different images.  We chose WASD as the directional inputs for player 2, which meant that player one could continue to use the arrow keys.  The ease of this challenge is a testiment to the benefits of OOP, as we just had to fire up another instance of a class.
 
-**3) leaderboard -**
+<img src="/ReportMaterial/2player.gif">
+
+**3) Leaderboard -**
 Aside from making another page to view the leaderboard on, the main challenge here was finding a datastructure to store the scores in.  We ended up with a tuple data structure.  Though, annoyingly, Java does not have this datastructure in its standard libraries so we had to make our own.  We decided that the information that was needed to display the scores properly were: i) the player(s) name (we opted to limit this to three letters, as an homage to early arcade games, which were the dawn of this type of 2D platformer); ii) the score value; and iii) whether the game had been won, or the player had died.  
 
 we then stored these tuples in an arraylist, which we sorted everytime a new score was added.  the ordering was not simple, so we had to use a custom lambda-function to sort it.  The lack of simplicity is because we wanted games that were won to be a 'higher score' than games that were lost, regardless of their actual score.
 
 When a player was adding their score to the leaderboard but it fell out of the top-5, we nonetheless showed it below the top-5.  If it was naturally in the top-5, then the leaderboard displayed the top-6.
 
-[Describe implementation of your game, in particular highlighting the three areas of challenge in developing your game.]
+<img src="/ReportMaterial/leaderboard.gif">
+
 
 ### Evaluation (15% ~750 words)
-
-NEED TO ADD: Description of how code was tested.
-
 
 **Think Aloud and Heuristic Evaluations**  
 We collected think aloud evaluations at two stages in the development process. These drove our next stages of development as we worked to improve areas that were highlighted as problems by different users. Our final stage evaluations helped us spot some final changes to be made and allowed us to hone in on the finished product.
@@ -468,12 +473,13 @@ We split up different features between ourselves so that we could work independe
 We found that meeting up in person was an invaluable tool through the development process. We would meet for a short period of time after our Software Engineering lab to check in on the project and make sure we all knew what the next sections to focus on were. The regularity of the lab was helpful as other deadlines and work meant that there were periods where we were all busy with different things. The lab meetings allowed us to catch-up and chat about how we were finding the project and whether we needed help with any sections. We tried to find a work schedule that worked for all of us: according to the project timetable laid out at the beginning of term weeks 8 and 9 should have resulted in the evaluation section of the report being done. During this time we had several overlapping deadlines for other courses so as a team we decided that this work should be split up between us for the first week of the Easter break to give us a chance to complete our other work to a high standard. We thought that this practice of assessing upcoming challenges with workflow in advance to address problems before they occur was very successful and would definitely employ this technique for future projects.
 
 ### Conclusion (10% ~500 words)
-Reflect on project as a whole. Lessons learned. Reflect on challenges. Future work.
-Quality of report writing, presentation, use of figures and visual material (5%)
-Documentation of code (5%)
-Individual contribution. Provide a table of everyone's contribution, which may be used to weight individual grades. We expect that the contribution will be split evenly across team-members in most cases. Let us know as soon as possible if there are any issues with teamwork as soon as they are apparent.
+We learned a lot during this process about the use and application of different development techniques. Reflecting on the process, we managed the evaluation section of development well and by using a wide range of techniques we gained valuable insight into the state of our game at each moment and clear direction about where we needed to focus our efforts. Our game changed radically throughout the process and many of the design specifics that made sense to us as we progressed were not ideas we came up with initially. We thoroughly benefited from the flexibility of the agile development cycles. For future projects we think that it will be worth taking into consideration other projects and deadlines that the team have at the beginning of the development process. We overestimated the amount we could get done in some weeks and underestimated in others. This was not a huge problem as we had time to make adjustments to our plans and reallocate work throughout however on a larger project we think this is definitely something to consider. 
 
-Individual contribution:
+
+If we had the time and resources to develop the game further the next immediate features we would want to add are: a universal leaderboard, multiple levels and independent lives for multiplayer games. If we were to go even further then we would want to expand the story so that each level contributes to the overall plot and add items that you can collect and use throughout the levels.
+
+
+###Individual contribution:
 
 Alexander Cockrean: 1.00
 
