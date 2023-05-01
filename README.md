@@ -183,31 +183,7 @@ These stood out because they were all raised multiple times but other issues sto
 
 We also conducted a short focus group at this stage. [Research suggested](http://dx.doi.org/10.1109/ISESE.2004.1334914) this would be a resource-effective approach to collecting qualitative feedback especially with accessible software such as a game.
 
->*Focus Group Evaluation: 25/03/23 (5 Participants 1 Facilitator)*
->     
-> How did you find playing the game?  
-> P1: “I found the game quite frustrating as it was really difficult to get beyond the first few platform levels."   
-> P2: “yeah I agree."    
-> P4: “yeah same, the jumping was super frustrating I just couldn’t make that jump to the diagonal platform really near the start.”   
-> P5: “yeah I did end up doing it but the platforms stopped really shortly after that and there just wasn’t anymore of the level from there.”   
->    
-> Is there anything you found confusing about the game?    
-> P3: “I mean it doesn’t specifically say which keys to use but I guess we all just guess correctly because they use the same keys on like every platform game.”     
-> P2: “I found it quite strange that the start page had buttons which firstly didn’t align with where you had to click and secondly there was buttons for 1 or 2 players but you couldn’t actually click them the only one which worked was start game.”    
-> P1: “Oh yeah I didn’t like the start screen buttons the text was also off centre from the button background which looked kind of weird.”   
->     
-> What could be better about the visual design of the game?    
-> P4: “There is no background it’s just plain white which is a bit boring.”  
-> P3:  “I think once there is a background and the buttons actually line up with the text it will look quite good.”    
-> P2: “Yeah I agree, I guess also it still needs an end screen.”   
->    
-> What one thing would you change about the game?      
-> P1: “It would be cool if the 2 player function actually worked.”   
-> P5: “Yeah and also you have to be able to collect points otherwise there doesn’t seem to be much point to the game and the level needs to be longer.”   
->       
-> What thing do you like about the game that you think makes it stand out from other games?    
-> P2: “I really like the concept of gravity flipping but that doesn’t work yet, but when it does that would be cool.”    
-> P1: “Yeah I don’t think I have heard of another game like that but right now it doesn’t really have much that sets it apart from similar platform games”
+<img src="ReportMaterial/FocusGroup">
 
 
 After these initial evaluations we had some clear goals for the next stages of development. Firstly, the map needed to be changed as it was too small and very difficult. The design feedback was generally good apart from our start and end screens. Finally, we needed to add features to interact with other game elements (to collect objects or be damaged or blocked by them). It was clear that people liked our idea but that at the moment the execution was not delivering what the game promised.
