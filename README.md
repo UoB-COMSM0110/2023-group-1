@@ -1,4 +1,4 @@
-# 2023-group-1
+# 2023-group-1 (total word count = 5237)
 ### Game Video 
 Watch our game video [here](https://youtu.be/lba99nXIenA)!
 
@@ -6,11 +6,11 @@ Watch our game video [here](https://youtu.be/lba99nXIenA)!
 Li Hanyu, ZYJ, Leon Chen, Zoe Clark, Alex Cockrean
 <img src='/images/Group-1.png'/>
 
-### Introduction (5% ~250 words)
+### Introduction (135 words)
 Our game is a one or two player platform game with an added twist. It was inspired by platform games that we loved like Super Mario Bros. Our twist on these classic games was to add the feature of gravity flipping at intervals of time to increase the difficulty of the game. We developed our own game storyline and lore to immerse the player in the experience invest them in the outcome of the game. Throughout the game development process we tried out many different development techniques in order to find what worked for us as a team. For this reason, it made sense to use an agile workflow throughout so that we could reflect on our progress and repeat cycles of development to make the most of different techniques that worked well for us.
 
 
-### Requirements (15% ~750 words)
+### Requirements (1449 words)
 
 **Ideation, Use-Cases and User Stories**  
 To start the ideation process, we had an in-person brain-storming session.  In this session we came up with a short list of six games that we thought we could make.  With a vote, we trimmed this to two games (a connect-four game where the rows are sometimes destroyed, and a platformer game where gravity inverts).  For both of these games we gathered initial requirements by preparing a [use-case diagram](#use-case-diagram), [use-case specifications](#use-case-specifications) and [user stories](#user-stories).  We then used these reasources to mock-up paper prototypes for both games.  We used these paper prototypes to prepared videos demonstrations of how both the [Connect4](https://youtu.be/wAT3H2MjvIE) and the [MarioStyle](https://youtu.be/0fppWHDHL3Y) games should work.
@@ -84,7 +84,7 @@ We made the decision to only allow the user to move the sprite left, right, and 
 
 
 
-### Design (15% ~750 words)
+### Design (299 words)
 
 **Class diagram**
 
@@ -103,7 +103,7 @@ We realised early on in planning that a difficult part of our games mechanics wo
 Because we adopted the Agile methodology in our team, we necessarily had to change the the parameters of our design as we released prototypes and gathered feedback from them.  Therefore, the original design documents that we prepared before our first sprint became outdated.  In fact, this quick outdating of design documents, and inability to update them due to quick turnaround of iterations of the product are a good casestudy in some of the shortcomings of an Agile workflow - the push for quickly developing further releases of a product mean that changes and design decision necessarily become reactionary, and overlooks the important process of thoughtful planning as it cannot be repeatedly crammed into a densly packed sprint.  Indeed, this criticism of Agile is shared by many in the field (e.g., this Harvard Business review article: https://hbr.org/2021/04/have-we-taken-agile-too-far).
 
 
-### Implementation (15% ~750 words)
+### Implementation (742 words)
 
 The three areas of challenge that we identified while planning our game were: 1) creating a physics engine that allows for fluctuating gravity; 2) making a multi-player mode where two players could each control their individual character; and 3) creating a highscores record, which can be viewed on a seperate page.  Interestingly, these three challenges actually spanned the gamet of actual challenge, as will be documented below.
 
@@ -133,7 +133,7 @@ When a player was adding their score to the leaderboard but it fell out of the t
 <img src="/ReportMaterial/leaderboard.gif">
 
 
-### Evaluation (15% ~750 words)
+### Evaluation (1647 words)
 
 **Think Aloud and Heuristic Evaluations**  
 We collected think aloud evaluations at two stages in the development process. These drove our next stages of development as we worked to improve areas that were highlighted as problems by different users. Our final stage evaluations helped us spot some final changes to be made and allowed us to hone in on the finished product.
@@ -461,7 +461,7 @@ The results for both evaluations are provided below, and the calculations for th
 
 
 
-### Process (15% ~750 words)
+### Process (720 words)
 Our team worked together effectively throughout the design process.  We used [Kanban boards](ReportMaterial/KanbanBoards) to keep a track of the outstanding tasks (We used Atlassian to host these, but saved PDFs of the board at various stages of development for our report). We used GitHub to host our work, as was required by the unit.  However, the way we used it developed throughout the project. 
 
 Throughout the project we continually delegated tasks between ourselves. We used WhatsApp to stay connected and updated with any changes or concerns we ran into through the development process. This allowed us to address anything which was a "quick fix" over message without the need to organise a scheduled team meeting. We found this helped us work efficiently and with a greater degree of freedom. However, this meant that sometimes our Kanban boards got quite out of sync with what needed doing at any given time as we would organise ourselves over WhatsApp. Reflecting on this — for future projects we thought it would be worth designating someone to be in charge of updating and maintaining the Kansan boards so that everyone has access to a clear view of what needs doing and which tasks have been assigned to which person. 
@@ -472,14 +472,14 @@ We split up different features between ourselves so that we could work independe
 
 We found that meeting up in person was an invaluable tool through the development process. We would meet for a short period of time after our Software Engineering lab to check in on the project and make sure we all knew what the next sections to focus on were. The regularity of the lab was helpful as other deadlines and work meant that there were periods where we were all busy with different things. The lab meetings allowed us to catch-up and chat about how we were finding the project and whether we needed help with any sections. We tried to find a work schedule that worked for all of us: according to the project timetable laid out at the beginning of term weeks 8 and 9 should have resulted in the evaluation section of the report being done. During this time we had several overlapping deadlines for other courses so as a team we decided that this work should be split up between us for the first week of the Easter break to give us a chance to complete our other work to a high standard. We thought that this practice of assessing upcoming challenges with workflow in advance to address problems before they occur was very successful and would definitely employ this technique for future projects.
 
-### Conclusion (10% ~500 words)
+### Conclusion (245 words)
 We learned a lot during this process about the use and application of different development techniques. Reflecting on the process, we managed the evaluation section of development well and by using a wide range of techniques we gained valuable insight into the state of our game at each moment and clear direction about where we needed to focus our efforts. Our game changed radically throughout the process and many of the design specifics that made sense to us as we progressed were not ideas we came up with initially. We thoroughly benefited from the flexibility of the agile development cycles. For future projects we think that it will be worth taking into consideration other projects and deadlines that the team have at the beginning of the development process. We overestimated the amount we could get done in some weeks and underestimated in others. This was not a huge problem as we had time to make adjustments to our plans and reallocate work throughout however on a larger project we think this is definitely something to consider. 
 
 
 If we had the time and resources to develop the game further the next immediate features we would want to add are: a universal leaderboard, multiple levels and independent lives for multiplayer games. If we were to go even further then we would want to expand the story so that each level contributes to the overall plot and add items that you can collect and use throughout the levels.
 
 
-###Individual contribution:
+### Individual contribution:
 
 Alexander Cockrean: 1.00
 
