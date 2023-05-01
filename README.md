@@ -90,19 +90,18 @@ We made the decision to only allow the user to move the sprite left, right, and 
 
 To assist us in organising our ideas, and planning the work that we would need to do, we developed a [class diagram](ReportMaterial/classDiagram.pdf) for our game.  This diagram gave us a plan of what we needed to implement, and how we could sensibly divvy up the work.  In the end, our code deviated from it when we became more familiar with Processing, and the requirements that it imposes, and carried out evaluation steps on our intermediate products in order to determine how to improve it.  However, the backbone that is illustrated by our class diagram is still evident in out final product.
 
+<img src=ReportMaterial/classDiagram.pdf>
+
 **Modelling behaviour - Communication diagrams**
 
-We also prepared a Communication diagram to emphasise the organisation of the objects, as laid out in the class diagram, that participate in a given interaction.  
+We realised early on in planning that a difficult part of our games mechanics would be how we handle collisions.  Therefore, we decided it was sensible to put together a communication diagram for the process of the user controlling a character (which encompasses collision mechanics).  This diagram is here:
 
-**Modelling behaviour - Sequence diagrams**
-
-
+<img src=ReportMaterial/communication.png>
 
 **Design conclusion**
 
-Because we adopted the Agile methodology in our team, we necessarily had to change the the parameters of our design as we released prototypes and gathered feedback from them.  Therefore, the original design documents that we prepared before our first sprint became outdated.  Rather we took
+Because we adopted the Agile methodology in our team, we necessarily had to change the the parameters of our design as we released prototypes and gathered feedback from them.  Therefore, the original design documents that we prepared before our first sprint became outdated.  In fact, this quick outdating of design documents, and inability to update them due to quick turnaround of iterations of the product are a good casestudy in some of the shortcomings of an Agile workflow - the push for quickly developing further releases of a product mean that changes and design decision necessarily become reactionary, and overlooks the important process of thoughtful planning as it cannot be repeatedly crammed into a densly packed sprint.  Indeed, this criticism of Agile is shared by many in the field (e.g., this Harvard Business review article: https://hbr.org/2021/04/have-we-taken-agile-too-far).
 
-[System architecture. Class diagrams, behavioural diagrams.]
 
 ### Implementation (15% ~750 words)
 
