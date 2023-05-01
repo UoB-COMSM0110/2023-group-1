@@ -90,7 +90,7 @@ We made the decision to only allow the user to move the sprite left, right, and 
 
 To assist us in organising our ideas, and planning the work that we would need to do, we developed a [class diagram](ReportMaterial/classDiagram.pdf) for our game.  This diagram gave us a plan of what we needed to implement, and how we could sensibly divvy up the work.  In the end, our code deviated from it when we became more familiar with Processing, and the requirements that it imposes, and carried out evaluation steps on our intermediate products in order to determine how to improve it.  However, the backbone that is illustrated by our class diagram is still evident in out final product.
 
-<img src=ReportMaterial/classDiagram.pdf>
+<img src=ReportMaterial/class.png>
 
 **Modelling behaviour - Communication diagrams**
 
