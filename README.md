@@ -1,5 +1,5 @@
-# 2023-group-1
-### Game Video 
+# 2023-group-1 (total word count = 5237)
+### Game Video
 Watch our game video [here](https://youtu.be/lba99nXIenA)!
 
 ### Team
@@ -10,7 +10,7 @@ Li Hanyu, ZYJ, Leon Chen, Zoe Clark, Alex Cockrean
 Our game is a one or two player platform game with an added twist. It was inspired by platform games that we loved like Super Mario Bros. Our twist on classic games like this was to add the feature of gravity flipping at intervals of time, in order to increase the difficulty of the game. We developed our own game storyline and lore to immerse the player in the experience invest them in the outcome of the game. Throughout the game development process we tried out many different development techniques in order to find what worked for us as a team. For this reason, it made sense to use an agile workflow throughout so that we could reflect on our progress and repeat cycles of development to make the most of different techniques that worked well for us.
 
 
-### Requirements (15% ~750 words)
+### Requirements (1449 words)
 
 **Ideation, Use-Cases and User Stories**  
 To start the ideation process, we had an in-person brain-storming session.  In this session we came up with a short list of six games that we thought we could make.  With a vote, we trimmed this to two games (a connect-four game where the rows are sometimes destroyed, and a platformer game where gravity inverts).  For both of these games we gathered initial requirements by preparing a use-case diagram, use-case specifications and user stories.  We then used these resources to mock-up paper prototypes for both games.  We used these paper prototypes to prepare videos demonstrations of how both the [Connect4](https://youtu.be/wAT3H2MjvIE) and the [MarioStyle](https://youtu.be/0fppWHDHL3Y) games would work. After this we sat down and decided on the platform game as our final idea.
@@ -34,8 +34,8 @@ To start the ideation process, we had an in-person brain-storming session.  In t
 | 2. | The user collects coins and increases the score number | Both users collect coins to add to their combined score count. They work together to navigate the level |
 | 3. | The user navigates all the way through the map to the flag where the game is won | The users navigate all the way through the map to the flag where the game is won |
 | Alternative Flow: | Collision with enemy or falling off the map leads to loss of life and end of game | Collision with enemy or falling off the map leads to loss of life and end of game |
-| 1. | User presses the left, right and up keys to run accross platforms and jump from one to the next | Both users use the keyboard (player one: left, right and up, player two: A, D and W) to run accross platforms and jump from one to the next|
-| 2. | The user falls off a platform and loses a life. They are returned to the begining of the map | One of the players falls off the platofrms and the number of remaining lives decreases |
+| 1. | User presses the left, right and up keys to run accross platforms and jump from one to the next | Both users use the keyboard (player one: left, right and up, player two: A, D and W) to run across platforms and jump from one to the next|
+| 2. | The user falls off a platform and loses a life. They are returned to the beginning of the map | One of the players falls off the platforms and the number of remaining lives decreases |
 | 3. | The user falls off two more times or touches a zombie while attempting to complete the map | One of the two players falls off and the life number decreases and then this happens again |
 | 4. | The user has lost all of their lives and the game over screen is shown with the option to try again | The life number drops to zero and the game over screen is shown with the option to play again |
 
@@ -46,21 +46,21 @@ To start the ideation process, we had an in-person brain-storming session.  In t
 | Use-Case Section | Single Player Game | Two Player Game |
 | ---------------- | ------------------ | ----------------|
 | Description      |  A run through of the game on hard mode where gravity flips occasionally with one player |  A run through of the game on hard mode where gravity flips occasionally with two players |    
-| Basic Flow:   |  The player completes the map unharmed by the periodic gravity flips | The players use the gravity flips to their advantage and are able to complete the map succesfully |
+| Basic Flow:   |  The player completes the map unharmed by the periodic gravity flips | The players use the gravity flips to their advantage and are able to complete the map successfully |
 | 1.  | The user navigates around the map using the left, right and up arrow keys | The two players navigate the map using the up, right and left keys and W, D, and A keys  |
-| 2. | The gravity warning appears and the user tries to make sure they are under another platform to be protected, gravity flips and the character flies up into the sky, then they are returned to normal gravity | The gravity warning appears and both players must find somewhere safe before gravit flips and they fly up into the sky, the players use gravity to their advantage and are able to collect more coins using the gravity flip assist in jumping |
+| 2. | The gravity warning appears and the user tries to make sure they are under another platform to be protected, gravity flips and the character flies up into the sky, then they are returned to normal gravity | The gravity warning appears and both players must find somewhere safe before gravity flips and they fly up into the sky, the players use gravity to their advantage and are able to collect more coins using the gravity flip assist in jumping |
 | 3. |  The user navigates through the map collecting coins until they get to the flag to end the game | The two players work together to collect coins and navigate the map until they cross the finish flag - both players must survive in order to reach the end |
 | Alternative Flow: | The gravity flip leads to the player losing a life | One of both players loses lives through the gravity flip but they are returned and bale to try again |
 | 1. | The user navigates through the map using the keys | Both players use their respective keys to navigate through the map |
 | 2. | The gravity warning appears but the player is not ready they fly up into the sky mid jump and are knocked off the platforms losing a life | One of both of the players does not prepare for the gravity flip and loses a life, both players are returned to the start of the map |
-| 3. | The player loses all of their lives and the game is over | Although one or both of the players lose a life they survive with their remaining life and make it all the way to the flag | 
+| 3. | The player loses all of their lives and the game is over | Although one or both of the players lose a life they survive with their remaining life and make it all the way to the flag |
 
 
 <br>
 
 **User Stories**
 
->“As a player, I want to be able to play a satisfyingly challenging game that requires some skill so that I feel engaged, interested and entertained.” 
+>“As a player, I want to be able to play a satisfyingly challenging game that requires some skill so that I feel engaged, interested and entertained.”
 
 >“As a second player, I want to be able to have fun racing against my friend to complete a level so that I can have just as much fun or more playing with two players than on my own.”
 
@@ -83,16 +83,16 @@ We put together a statement of services in order to get clear on our game requir
 The user can use the keyboard to interact with the game. Using left and right keys will move the character (and the screen view) to move through the map. The user can jump using the up arrow (W as the second player), always being pulled back to the ground. In hard mode when the gravity is affected the sprite will "feel" the reduced effects of gravity. Jumnping won't bring the character back to the ground immediately. The character will remain in the air until the gravity is brought back. They must safely navigate their landing to survive. The level is completed when the user navigates the sprite to the flag at the end of the level. The user has three lives which are lost if the sprite falls off the platforms in the map or if the sprite touches a zombie character. After losing a life the user is returned to the start of the level to try again, unless they have lost their last life when the screen will show the end game screen and they will have the option to play again and save their score.
 
 **Constraints**   
-We made the decision to only allow the user to move the sprite left, right, and up, but not down. This is because one of the highlights of our game is the element of gravity which should do all of the downwards motion that is available to a character. Characters cannot move totally freely around the screen for precisely this reason, they will always be constrained by gravity. 
+We made the decision to only allow the user to move the sprite left, right, and up, but not down. This is because one of the highlights of our game is the element of gravity which should do all of the downwards motion that is available to a character. Characters cannot move totally freely around the screen for precisely this reason, they will always be constrained by gravity.
 
 
 
-### Design (15% ~750 words)
+### Design (299 words)
 
 **Class diagram**
 To assist us in organising our ideas, and planning the work that we would need to do, we developed a [class diagram](ReportMaterial/classDiagram.pdf) for our game.  This diagram gave us a plan of what we needed to implement, and how we could sensibly divide up the work.  In the end, our code deviated from this when we became more familiar with Processing, and carried out evaluation steps on our intermediate products in order to determine how to improve it.  However, the backbone that is illustrated by our class diagram is still evident in our final product.
 
-<img src=ReportMaterial/classDiagram.pdf>
+<img src=ReportMaterial/class.png>
 
 **Modelling behaviour - Communication diagrams**
 
@@ -105,12 +105,12 @@ We realised early on in planning that a difficult part of our games mechanics wo
 Adopting the Agile methodology in our team, we necessarily had to change the the parameters of our design as we released prototypes and gathered feedback from them.  Therefore, the original design documents that we prepared before our first sprint became outdated.  In fact, this quick outdating of design documents, and inability to update them due to quick turnaround of iterations of the product are a good casestudy in some of the shortcomings of an Agile workflow - the push for quickly developing further releases of a product mean that changes and design decision necessarily become reactionary, and overlooks the important process of thoughtful planning as it cannot be repeatedly crammed into a densly packed sprint.  Indeed, this criticism of Agile is shared by many in the field (e.g., this [Harvard Business review article](https://hbr.org/2021/04/have-we-taken-agile-too-far).
 
 
-### Implementation (15% ~750 words)
+### Implementation (742 words)
 
-The three areas of challenge that we identified while planning our game were: 1) creating a physics engine that allows for fluctuating gravity; 2) making a multi-player mode where two players could each control their individual character; and 3) creating a highscores record, which can be viewed on a seperate page.  Interestingly, these three challenges actually spanned the gamet of actual challenge, as will be documented below.
+The three areas of challenge that we identified while planning our game were: 1) creating a physics engine that allows for fluctuating gravity; 2) making a multi-player mode where two players could each control their individual character; and 3) creating a highscores record, which can be viewed on a separate page.  Interestingly, these three challenges actually spanned the gamut of actual challenge, as will be documented below.
 
 **1) Making a physics engine -**
-This proved to be the most challenging of our three challenges because it went beyond simply applying gravity to objects.  We also needed a way for objects to interact with one another so that our characters would not go through walls etc.  This was implemented with an iterative check of the borders of sprites before every frame.  As the only sprites that move in a non-pre-deteremined way are the character sprites (the enemy sprite follows a known path and so we don't need to check it), we designed a function to check whether these sprites were overlapping with any of the platform sprites.  If they were, then we reset the character sprite positions to be just outside the offending platform unit, and set their velocity in the direction into the platform to 0.
+This proved to be the most challenging of our three challenges because it went beyond simply applying gravity to objects.  We also needed a way for objects to interact with one another so that our characters would not go through walls etc.  This was implemented with an iterative check of the borders of sprites before every frame.  As the only sprites that move in a non-pre-determined way are the character sprites (the enemy sprite follows a known path and so we don't need to check it), we designed a function to check whether these sprites were overlapping with any of the platform sprites.  If they were, then we reset the character sprite positions to be just outside the offending platform unit, and set their velocity in the direction into the platform to 0.
 
 For gravity itself, we used a constant value to set what gravity should be, and then a variable to track what gravity is at any given point in time.  The current gravity variable was then applied to the character sprites as a downward acceleration on every frame (when gravity is going up, the current gravity variable is negative).  The current gravity variable is controlled according to a hidden counter variable.  This counter variable is decremented by 1 every frame, and is reset to a random value in a range when it gets to 0.  When the counter is above a first value, the current gravity variable is the gravity constant.  When the counter is below the first value but above a second value, the current gravity variable is a fraction of the gravity constant.  When the counter is below this second value, the current gravity variable is - the gravity constant.  
 
@@ -121,7 +121,7 @@ Further, to make the gravity changes less predictable, we made it such that when
 <img src="/ReportMaterial/antigrav.gif">
 
 **2) Multi-player -**
-This challenge was not actually particularly challenging.  Once we had made the one-player game, it was simply a matter of finding a way for player two to input their controls, and then making another object of the same class as the one-player character, though with different images.  We chose WASD as the directional inputs for player 2, which meant that player one could continue to use the arrow keys.  The ease of this challenge is a testiment to the benefits of OOP, as we just had to fire up another instance of a class.
+This challenge was not actually particularly challenging.  Once we had made the one-player game, it was simply a matter of finding a way for player two to input their controls, and then making another object of the same class as the one-player character, though with different images.  We chose WASD as the directional inputs for player 2, which meant that player one could continue to use the arrow keys.  The ease of this challenge is a testament to the benefits of OOP, as we just had to fire up another instance of a class.
 
 <img src="/ReportMaterial/2player.gif">
 
@@ -135,7 +135,7 @@ When a player was adding their score to the leaderboard but it fell out of the t
 <img src="/ReportMaterial/leaderboard.gif">
 
 
-### Evaluation (15% ~750 words)
+### Evaluation (1647 words)
 
 **Think Aloud and Heuristic Evaluations**  
 We collected think aloud evaluations at two stages in the development process. These drove our next stages of development as we worked to improve areas that were highlighted as problems by different users. Our final stage evaluations helped us spot some final changes to be made and allowed us to hone in on the finished product.
@@ -145,23 +145,23 @@ We collected think aloud evaluations at two stages in the development process. T
 **Stage 1 Qualitative Evaluations:**
 
 >*Think Aloud Evaluation 1: 13/03/23*   
->>Postitives:
->> The character design is good. The character has a realistic jumping and falling motion 
->> 
+>>Positives:
+>> The character design is good. The character has a realistic jumping and falling motion
+>>
 >> Negatives:
 >> The level design makes the game quite hard to play. The character cannot yet collect the boost items though the items still appear on the screen blocking the character's movements. There are also no background graphics yet.    
-  
-     
-  
+
+
+
 >*Think Aloud Evaluation 2: 13/03/23*    
->>Postitives:
->> The graphics are generally good. 
->> 
+>>Positives:
+>> The graphics are generally good.
+>>
 >> Negatives:
 >> The map is very small and some parts are too hard to navigate. The buttons on the start screen do not align with the places you have to click which is confusing i.e. you have to click the text rather than the buttons. And, you cannot die, you just fall off the map and fall indefinitely.
 
-   
-     
+
+
 >*Heuristic Evaluation 1: 13/03/23*    
 >>| Interface | Issue | Heuristic | Frequency | Impact | Persistence | Severity |
 >>|---------- |------- | --------- | --------------- | ------------ | ----------------- | -------------------- |
@@ -175,13 +175,13 @@ We collected think aloud evaluations at two stages in the development process. T
 <br>
 Sorting the results from our first stage think alouds and heuristic evaluation into categories we saw that some key areas of focus stood out:
 
- * The map/level design made the game very hard 
- *  Start screen buttons need redesigning 
- *  You cannot collect items/there is no score 
+ * The map/level design made the game very hard
+ *  Start screen buttons need redesigning
+ *  You cannot collect items/there is no score
 
-These stood out because they were all raised multiple times but other issues stood out because of the emphasis placed on them during the evaluations. A concern was raised about a lack of documentation around which keys to use and this was given a 4/4 score for frequency of the issue. As was the inability to view the score throughout the game. This suggested to us that these areas should be key areas to focus on. 
+These stood out because they were all raised multiple times but other issues stood out because of the emphasis placed on them during the evaluations. A concern was raised about a lack of documentation around which keys to use and this was given a 4/4 score for frequency of the issue. As was the inability to view the score throughout the game. This suggested to us that these areas should be key areas to focus on.
 
-We also conducted a short focus group at this stage. [Research suggested](http://dx.doi.org/10.1109/ISESE.2004.1334914) this would be a resource-effective approach to collecting qualitative feedback especially with accessible software such as a game. 
+We also conducted a short focus group at this stage. [Research suggested](http://dx.doi.org/10.1109/ISESE.2004.1334914) this would be a resource-effective approach to collecting qualitative feedback especially with accessible software such as a game.
 
 >*Focus Group Evaluation: 25/03/23 (5 Participants 1 Facilitator)*
 >     
@@ -219,35 +219,35 @@ After these initial evaluations we had some clear goals for the next stages of d
 
 >*Think Aloud Evaluation 3: 12/04/23*
 >
->Postitives:
+>Positives:
 > The start screen looks good. You can collect points by collecting coins and lose lives when you fall off the map. The map is challenging but possible to complete. You can play with two players and when the game is over you have the option to play again.
-> 
+>
 > Negatives:
-> There is a delay sometimes when clicking buttons and their responses. 
+> There is a delay sometimes when clicking buttons and their responses.
 <br>
 
-<br> 
- 
+<br>
+
 >*Think Aloud Evaluation 4: 12/04/23*
 >   
->Postitives: The game is much clearer in its layout and the feedback you get as a user. You can see the score and how many lives you have left. You can play with two players now. 
-> 
-> 
+>Positives: The game is much clearer in its layout and the feedback you get as a user. You can see the score and how many lives you have left. You can play with two players now.
+>
+>
 > Negatives:
 > There is one small part of the map which is impossible to access. Maybe there should be instructions about which keys to use for the second player.
 <br>
 
 <br>
 
-In our second stage qualitative evaluations we recieved more positive feedback than negative. A month after our initital evaluations, we had worked on improving our game in the areas suggested by the prior evaluations. It was encouraging to see that many of the points raised in the first stage evaluations had been addressed. The concerns in the second stage evaluations also required much smaller changes than those raised in the first stage. We were able to address some of the negatives very easily making sure to fix the map so that platforms which should be accesible are and that the response times between button presses and reactions was faster. 
+In our second stage qualitative evaluations we recieved more positive feedback than negative. A month after our initial evaluations, we had worked on improving our game in the areas suggested by the prior evaluations. It was encouraging to see that many of the points raised in the first stage evaluations had been addressed. The concerns in the second stage evaluations also required much smaller changes than those raised in the first stage. We were able to address some of the negatives very easily making sure to fix the map so that platforms which should be accessible are and that the response times between button presses and reactions was faster.
 
 **Quantitative evaluation - NASA TLX**
 
-We carried out a bifurcated quantitative evaluation of our product - one evaluation of the navigability and usability of the naviagation pages around our game (e.g., the welcome screen and the game over screen), and one of the difficulty of the game.  The reason for this is that the aim of navigation pages is always for them to be usable, and so minimising the difficulty of these pages is always a good thing.  Whereas for the gameplay of our game, we do want there to be a degree of difficulty (there is no fun in a game that a child could complete on its first attempt).  Therefore, it made sense to quantitatively evaluate these separately to avoid cross-contamination of results, and the loss of information.  
+We carried out a bifurcated quantitative evaluation of our product - one evaluation of the navigability and usability of the navigation pages around our game (e.g., the welcome screen and the game over screen), and one of the difficulty of the game.  The reason for this is that the aim of navigation pages is always for them to be usable, and so minimising the difficulty of these pages is always a good thing.  Whereas for the gameplay of our game, we do want there to be a degree of difficulty (there is no fun in a game that a child could complete on its first attempt).  Therefore, it made sense to quantitatively evaluate these separately to avoid cross-contamination of results, and the loss of information.  
 
 For both furcations of the evaluation we used weighted NASA TLX scores.  For the navigation page, we had the survey completed by ten different people at two different points of development - the first being after we had developed a minimum viable product, and the second being after our sprints in Easter when the product was in a more final state.  We compared these two sets of results using the Wilcoxon Signed Rank Test to see if the changes we had made to the navigation pages had made a meaningful difference to their usability.  Before completing the survey, we had the participants use the navigation pages to select 1-player and 2-player modes, select easy mode and hard mode, view the leaderboard, add a score the leaderboard, and return to the main menu.
 
-For the game itself, we had the survey completed at only one point (after the sprints in easter), but we had it completed in relation to both the hard and easy difficulty settings of our game.  Again, we compared the results of these two difficulty settings to see if the differences in the two settings made the game meangingfully nore difficult.  before completing the survey, we had the participants play two complete games (either to winning, or to running out of lives).  One of these games was in 1-player mode, and the other was in two-player mode with a volunteer who was neither the participant or the survey collector playing as the second player.
+For the game itself, we had the survey completed at only one point (after the sprints in easter), but we had it completed in relation to both the hard and easy difficulty settings of our game.  Again, we compared the results of these two difficulty settings to see if the differences in the two settings made the game meaningfully more difficult.  before completing the survey, we had the participants play two complete games (either to winning, or to running out of lives).  One of these games was in 1-player mode, and the other was in two-player mode with a volunteer who was neither the participant or the survey collector playing as the second player.
 
 The results for both evaluations are provided below, and the calculations for the first Wilcoxon sing-ranked test shown.
 
@@ -258,7 +258,7 @@ The results for both evaluations are provided below, and the calculations for th
 >>***Evaluation 1 - 'Easy' mode***
 >>
 >>*Scores*
->>| Participant Number | Mental demand | Physical demand | Temporal demand | Performance | Effort | Frustration | 
+>>| Participant Number | Mental demand | Physical demand | Temporal demand | Performance | Effort | Frustration |
 >>| ----------- | ------- | ------- | ------- | ------- | ------- | ------- |
 >>| 1 | 15 | 10 | 20 | 20 | 35 | 10 |
 >>| 2 | 30 | 0 | 35 | 35 | 45 | 20 |
@@ -272,7 +272,7 @@ The results for both evaluations are provided below, and the calculations for th
 >>| 10 | 30 | 5 | 30 | 20 | 45 | 10 |
 >>
 >>*Dimension weighting*
->>| Participant Number | Mental demand | Physical demand | Temporal demand | Performance | Effort | Frustration | 
+>>| Participant Number | Mental demand | Physical demand | Temporal demand | Performance | Effort | Frustration |
 >>| ----------- | ------- | ------- | ------- | ------- | ------- | ------- |
 >>| 1 | 2 | 0 | 2 | 4 | 5 | 2 |
 >>| 2 | 3 | 0 | 2 | 5 | 3 | 2 |
@@ -287,14 +287,14 @@ The results for both evaluations are provided below, and the calculations for th
 >>
 >>*Final Scores*
 >>| Score Type | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 |
->>| ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | 
+>>| ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ |
 >>| raw | 18 | 28 | 27 | 28 | 33 | 32 | 28 | 27 | 30 | 23 |
 >>| weighted | 23 | 34 | 36 | 34 | 44 | 38 | 37 | 37 | 31 | 30 |
 >
 >>***Evaluation 2 - 'Hard' mode***
 >>
 >>*Scores*
->>| Participant Number | Mental demand | Physical demand | Temporal demand | Performance | Effort | Frustration | 
+>>| Participant Number | Mental demand | Physical demand | Temporal demand | Performance | Effort | Frustration |
 >>| ----------- | ------- | ------- | ------- | ------- | ------- | ------- |
 >>| 1 | 20 | 10 | 40 | 15 | 40 | 5 |
 >>| 2 | 50 | 5 | 50 | 40 | 65 | 25 |
@@ -308,7 +308,7 @@ The results for both evaluations are provided below, and the calculations for th
 >>| 10 | 40 | 5 | 45 | 15 | 35 | 10 |
 >>
 >>*Dimension weighting*
->>| Participant Number | Mental demand | Physical demand | Temporal demand | Performance | Effort | Frustration | 
+>>| Participant Number | Mental demand | Physical demand | Temporal demand | Performance | Effort | Frustration |
 >>| ----------- | ------- | ------- | ------- | ------- | ------- | ------- |
 >>| 1 | 2 | 0 | 2 | 4 | 5 | 2 |
 >>| 2 | 4 | 0 | 2 | 4 | 4 | 1 |
@@ -323,7 +323,7 @@ The results for both evaluations are provided below, and the calculations for th
 >>
 >>*Final Scores*
 >>| Score Type | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 |
->>| ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | 
+>>| ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ |
 >>| raw | 22 | 39 | 34 | 30 | 36 | 37 | 31 | 35 | 36 | 25 |
 >>| weighted | 26 | 50 | 34 | 33 | 47 | 46 | 40 | 42 | 39 | 28 |
 >
@@ -365,7 +365,7 @@ The results for both evaluations are provided below, and the calculations for th
 >>
 >>There are some ties here - ranks 2-3, 4-6 and 8-9 are the same values.  We dodge a bullet because the ties are of the same sign, so the result of the test is not affected by the way that the ties are handled.  If the ties had included ties of different signs, we would have had to use the mid-rank for all of them (as endorsed by William Conover in Journal of the American Statistical Association , Dec., 1973, Vol. 68, No. 344 (Dec., 1973), pp. 985-988).
 >>
->>The positive-rank sum is 6, and the negative-rank sum is 49, and therefore a W value of 6 (the W value is simply the smaller of the positive-rank sum and the negative-rank sum).  This is well below the W value of 9 required for statistical sinificance.  In fact, a W value of 6 is statistically significant to a p value of 0.05.
+>>The positive-rank sum is 6, and the negative-rank sum is 49, and therefore a W value of 6 (the W value is simply the smaller of the positive-rank sum and the negative-rank sum).  This is well below the W value of 9 required for statistical significance.  In fact, a W value of 6 is statistically significant to a p value of 0.05.
 >>
 >> These results confirm that the increase in difficulty of the 'hard' mode of our game relative to the 'easy' mode is statistically significant.  
 >>
@@ -375,12 +375,12 @@ The results for both evaluations are provided below, and the calculations for th
 
 >**Evaluating the navigation pages**
 >
->The first quantitative evaluation was carried out between 12/3/2023 and 14/3/2023. 
+>The first quantitative evaluation was carried out between 12/3/2023 and 14/3/2023.
 >
 >>***Evaluation 1***
 >>
 >>*Scores*
->>| Participant Number | Mental demand | Physical demand | Temporal demand | Performance | Effort | Frustration | 
+>>| Participant Number | Mental demand | Physical demand | Temporal demand | Performance | Effort | Frustration |
 >>| ----------- | ------- | ------- | ------- | ------- | ------- | ------- |
 >>| 1 | 10 | 5 | 15 | 30 | 45 | 55 |
 >>| 2 | 25 | 5 | 20 | 25 | 65 | 70 |
@@ -394,7 +394,7 @@ The results for both evaluations are provided below, and the calculations for th
 >>| 10 | 20 | 0 | 5 | 15 | 45 | 65 |
 >>
 >>*Dimension weighting*
->>| Participant Number | Mental demand | Physical demand | Temporal demand | Performance | Effort | Frustration | 
+>>| Participant Number | Mental demand | Physical demand | Temporal demand | Performance | Effort | Frustration |
 >>| ----------- | ------- | ------- | ------- | ------- | ------- | ------- |
 >>| 1 | 2 | 0 | 1 | 3 | 4 | 5 |
 >>| 2 | 2 | 0 | 1 | 4 | 4 | 4 |
@@ -409,7 +409,7 @@ The results for both evaluations are provided below, and the calculations for th
 >>
 >>*Final Scores*
 >>| Score Type | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 |
->>| ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | 
+>>| ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ |
 >>| raw | 27 | 35 | 22 | 27 | 30 | 38 | 23 | 28 | 21 | 25 |
 >>| weighted | 39 | 47 | 26 | 35 | 43 | 49 | 36 | 34 | 27 | 35 |
 >>
@@ -418,7 +418,7 @@ The results for both evaluations are provided below, and the calculations for th
 >>***Evaluation 2***
 >>
 >>*Scores*
->>| Participant Number | Mental demand | Physical demand | Temporal demand | Performance | Effort | Frustration | 
+>>| Participant Number | Mental demand | Physical demand | Temporal demand | Performance | Effort | Frustration |
 >>| ----------- | ------- | ------- | ------- | ------- | ------- | ------- |
 >>| 1 | 10 | 10 | 10 | 20 | 30 | 20 |
 >>| 2 | 20 | 15 | 20 | 30 | 45 | 15 |
@@ -432,7 +432,7 @@ The results for both evaluations are provided below, and the calculations for th
 >>| 10 | 25 | 15 | 15 | 10 | 40 | 20 |
 >>
 >>*Dimension weighting*
->>| Participant Number | Mental demand | Physical demand | Temporal demand | Performance | Effort | Frustration | 
+>>| Participant Number | Mental demand | Physical demand | Temporal demand | Performance | Effort | Frustration |
 >>| ----------- | ------- | ------- | ------- | ------- | ------- | ------- |
 >>| 1 | 0 | 3 | 1 | 4 | 5 | 2 |
 >>| 2 | 2 | 2 | 2 | 4 | 4 | 1 |
@@ -447,7 +447,7 @@ The results for both evaluations are provided below, and the calculations for th
 >>
 >>*Final Scores*
 >>| Score Type | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 |
->>| ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | 
+>>| ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ |
 >>| raw | 17 | 24 | 16 | 20 | 13 | 19 | 14 | 27 | 25 | 21 |
 >>| weighted | 21 | 27 | 17 | 23 | 14 | 25 | 11 | 27 | 29 | 21 |
 >
@@ -463,25 +463,25 @@ The results for both evaluations are provided below, and the calculations for th
 
 
 
-### Process (15% ~750 words)
-Our team worked together effectively throughout the design process.  We used [Kanban boards](ReportMaterial/KanbanBoards) to keep a track of the outstanding tasks (We used Atlassian to host these, but saved PDFs of the board at various stages of development for our report). We used GitHub to host our work, as was required by the unit.  However, the way we used it developed throughout the project. 
+### Process (720 words)
+Our team worked together effectively throughout the design process.  We used [Kanban boards](ReportMaterial/KanbanBoards) to keep a track of the outstanding tasks (We used Atlassian to host these, but saved PDFs of the board at various stages of development for our report). We used GitHub to host our work, as was required by the unit.  However, the way we used it developed throughout the project.
 
-Throughout the project we continually delegated tasks between ourselves. We used WhatsApp to stay connected and updated with any changes or concerns we ran into through the development process. This allowed us to address anything which was a "quick fix" over message without the need to organise a scheduled team meeting. We found this helped us work efficiently and with a greater degree of freedom. However, this meant that sometimes our Kanban boards got quite out of sync with what needed doing at any given time as we would organise ourselves over WhatsApp. Reflecting on this — for future projects we thought it would be worth designating someone to be in charge of updating and maintaining the Kansan boards so that everyone has access to a clear view of what needs doing and which tasks have been assigned to which person. 
+Throughout the project we continually delegated tasks between ourselves. We used WhatsApp to stay connected and updated with any changes or concerns we ran into through the development process. This allowed us to address anything which was a "quick fix" over message without the need to organise a scheduled team meeting. We found this helped us work efficiently and with a greater degree of freedom. However, this meant that sometimes our Kanban boards got quite out of sync with what needed doing at any given time as we would organise ourselves over WhatsApp. Reflecting on this — for future projects we thought it would be worth designating someone to be in charge of updating and maintaining the Kansan boards so that everyone has access to a clear view of what needs doing and which tasks have been assigned to which person.
 
 We had a game-jam in reading week.  This was a whole-day affair, and was the first significant chunk of time we spent as a team developing the game.  While we were using GitHub to keep a track of our changes, we ran into problems because we had not formalised an agreed-upon workflow.  Therefore, no-one was using branches.  Rather we we committing straight to 'main', or even dropping files directly into the GitHub repo via the gui.  This lead to the situation where people were making great features on their local copy of the repo, but that this was completely different to everyone else's local copy.  Therefore, even though we had managed to make a minimum-viable-product locally, this was not reflected on the GitHub, and took a lot of work to fix (many thanks to Ollie, the TA for helping us untangle the knots).  Fortunately, we were able to recover our work, and this mishap prompted us to use a standardised Git workflow.  Everyone had a personal branch.  When they were ready with a feature, they had to checkout their local main, pull from origin, checkout their personal branch, merge with main, and only when all conflicts were resolved could they push.  When pushed they had to make a pull request to get their changes into main.  This system worked for us, and we didn't have any other Git mishaps.
 
-We split up different features between ourselves so that we could work independently. Though, during our game-jam we found the practice of pair-programming helpful to get started on setting up the foundations of the game. Working together in one room allowed us to talk about and share code so that we all understood and were in agreement about what the first key features of the game should be. 
+We split up different features between ourselves so that we could work independently. Though, during our game-jam we found the practice of pair-programming helpful to get started on setting up the foundations of the game. Working together in one room allowed us to talk about and share code so that we all understood and were in agreement about what the first key features of the game should be.
 
 We found that meeting up in person was an invaluable tool through the development process. We would meet for a short period of time after our Software Engineering lab to check in on the project and make sure we all knew what the next sections to focus on were. The regularity of the lab was helpful as other deadlines and work meant that there were periods where we were all busy with different things. The lab meetings allowed us to catch-up and chat about how we were finding the project and whether we needed help with any sections. We tried to find a work schedule that worked for all of us: according to the project timetable laid out at the beginning of term weeks 8 and 9 should have resulted in the evaluation section of the report being done. During this time we had several overlapping deadlines for other courses so as a team we decided that this work should be split up between us for the first week of the Easter break to give us a chance to complete our other work to a high standard. We thought that this practice of assessing upcoming challenges with workflow in advance to address problems before they occur was very successful and would definitely employ this technique for future projects.
 
-### Conclusion (10% ~500 words)
-We learned a lot during this process about the use and application of different development techniques. Reflecting on the process, we managed the evaluation section of development well and by using a wide range of techniques we gained valuable insight into the state of our game at each moment and clear direction about where we needed to focus our efforts. Our game changed radically throughout the process and many of the design specifics that made sense to us as we progressed were not ideas we came up with initially. We thoroughly benefited from the flexibility of the agile development cycles. For future projects we think that it will be worth taking into consideration other projects and deadlines that the team have at the beginning of the development process. We overestimated the amount we could get done in some weeks and underestimated in others. This was not a huge problem as we had time to make adjustments to our plans and reallocate work throughout however on a larger project we think this is definitely something to consider. 
+### Conclusion (245 words)
+We learned a lot during this process about the use and application of different development techniques. Reflecting on the process, we managed the evaluation section of development well and by using a wide range of techniques we gained valuable insight into the state of our game at each moment and clear direction about where we needed to focus our efforts. Our game changed radically throughout the process and many of the design specifics that made sense to us as we progressed were not ideas we came up with initially. We thoroughly benefited from the flexibility of the agile development cycles. For future projects we think that it will be worth taking into consideration other projects and deadlines that the team have at the beginning of the development process. We overestimated the amount we could get done in some weeks and underestimated in others. This was not a huge problem as we had time to make adjustments to our plans and reallocate work throughout however on a larger project we think this is definitely something to consider.
 
 
 If we had the time and resources to develop the game further the next immediate features we would want to add are: a universal leaderboard, multiple levels and independent lives for multiplayer games. If we were to go even further then we would want to expand the story so that each level contributes to the overall plot and add items that you can collect and use throughout the levels.
 
 
-###Individual contribution:
+### Individual contribution:
 
 Alexander Cockrean: 1.00
 
