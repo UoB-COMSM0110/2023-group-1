@@ -7,13 +7,13 @@ Li Hanyu, ZYJ, Leon Chen, Zoe Clark, Alex Cockrean
 <img src='/images/Group-1.png'/>
 
 ### Introduction (5% ~250 words)
-Our game is a one or two player platform game with an added twist. It was inspired by platform games that we loved like Super Mario Bros. Our twist on these classic games was to add the feature of gravity flipping at intervals of time to increase the difficulty of the game. We developed our own game storyline and lore to immerse the player in the experience invest them in the outcome of the game. Throughout the game development process we tried out many different development techniques in order to find what worked for us as a team. For this reason, it made sense to use an agile workflow throughout so that we could reflect on our progress and repeat cycles of development to make the most of different techniques that worked well for us.
+Our game is a one or two player platform game with an added twist. It was inspired by platform games that we loved like Super Mario Bros. Our twist on classic games like this was to add the feature of gravity flipping at intervals of time, in order to increase the difficulty of the game. We developed our own game storyline and lore to immerse the player in the experience invest them in the outcome of the game. Throughout the game development process we tried out many different development techniques in order to find what worked for us as a team. For this reason, it made sense to use an agile workflow throughout so that we could reflect on our progress and repeat cycles of development to make the most of different techniques that worked well for us.
 
 
 ### Requirements (15% ~750 words)
 
 **Ideation, Use-Cases and User Stories**  
-To start the ideation process, we had an in-person brain-storming session.  In this session we came up with a short list of six games that we thought we could make.  With a vote, we trimmed this to two games (a connect-four game where the rows are sometimes destroyed, and a platformer game where gravity inverts).  For both of these games we gathered initial requirements by preparing a [use-case diagram](#use-case-diagram), [use-case specifications](#use-case-specifications) and [user stories](#user-stories).  We then used these reasources to mock-up paper prototypes for both games.  We used these paper prototypes to prepared videos demonstrations of how both the [Connect4](https://youtu.be/wAT3H2MjvIE) and the [MarioStyle](https://youtu.be/0fppWHDHL3Y) games should work.
+To start the ideation process, we had an in-person brain-storming session.  In this session we came up with a short list of six games that we thought we could make.  With a vote, we trimmed this to two games (a connect-four game where the rows are sometimes destroyed, and a platformer game where gravity inverts).  For both of these games we gathered initial requirements by preparing a use-case diagram, use-case specifications and user stories.  We then used these resources to mock-up paper prototypes for both games.  We used these paper prototypes to prepare videos demonstrations of how both the [Connect4](https://youtu.be/wAT3H2MjvIE) and the [MarioStyle](https://youtu.be/0fppWHDHL3Y) games would work. After this we sat down and decided on the platform game as our final idea.
 <br>
 
 
@@ -74,12 +74,15 @@ To start the ideation process, we had an in-person brain-storming session.  In t
 <br>
 
 **Statement of Services**  
-We intend our game to provide one or two players with platform-style game play, navigating a sprite through a game map in order to complete the level. The user will initially, upon loading the game, be able to select whether to play with one or two players or to view the leaderboard. Gameplay consists of using the arrow keys or WASD (as the second player) to jump between platforms collecting coins and avoiding obstacles. Our 'twist' —which is active when playing on the more difficult mode— flips the gravity of the game. The sprite will have to navigate the map upside down.
+We put together a statement of services in order to get clear on our game requirements.
+>We intend our game to provide one or two players with platform-style game play, navigating a sprite through a game map in order to complete the level. The user will initially, upon loading the game, be able to select whether to play with one or two players or to view the leaderboard. Gameplay consists of using the arrow keys or WASD (as the second player) to jump between platforms collecting coins and avoiding obstacles. Our 'twist' —which is active when playing on the more difficult mode— flips the gravity of the game at random intervals.  
 
+
+<br>
 **Inputs and Situations**    
-The user can use the keyboard to interact with the game. Using left and right keys will move the character (and the screen view) so that the sprite can move through the map. The user can jump using the up arrow (W as the second player), always being pulled back to the ground. When gravity is flipped the character's orientation will change and pressing the up arrow (or W) will 'jump' the character down on the screen before they are pulled back up by the reverse gravity. The level is completed when the user navigates the sprite to the flag at the end of the level. The user has three lives which are lost if the sprite falls off the platforms in the map or if the sprite touches a zombie character. After losing a life the user is returned to the start of the level to try again, unless they have lost their last life when the screen will read 'game over'.
+The user can use the keyboard to interact with the game. Using left and right keys will move the character (and the screen view) to move through the map. The user can jump using the up arrow (W as the second player), always being pulled back to the ground. In hard mode when the gravity is affected the sprite will "feel" the reduced effects of gravity. Jumnping won't bring the character back to the ground immediately. The character will remain in the air until the gravity is brought back. They must safely navigate their landing to survive. The level is completed when the user navigates the sprite to the flag at the end of the level. The user has three lives which are lost if the sprite falls off the platforms in the map or if the sprite touches a zombie character. After losing a life the user is returned to the start of the level to try again, unless they have lost their last life when the screen will show the end game screen and they will have the option to play again and save their score.
 
-**Constraints**  
+**Constraints**   
 We made the decision to only allow the user to move the sprite left, right, and up, but not down. This is because one of the highlights of our game is the element of gravity which should do all of the downwards motion that is available to a character. Characters cannot move totally freely around the screen for precisely this reason, they will always be constrained by gravity. 
 
 
@@ -87,8 +90,7 @@ We made the decision to only allow the user to move the sprite left, right, and 
 ### Design (15% ~750 words)
 
 **Class diagram**
-
-To assist us in organising our ideas, and planning the work that we would need to do, we developed a [class diagram](ReportMaterial/classDiagram.pdf) for our game.  This diagram gave us a plan of what we needed to implement, and how we could sensibly divvy up the work.  In the end, our code deviated from it when we became more familiar with Processing, and the requirements that it imposes, and carried out evaluation steps on our intermediate products in order to determine how to improve it.  However, the backbone that is illustrated by our class diagram is still evident in out final product.
+To assist us in organising our ideas, and planning the work that we would need to do, we developed a [class diagram](ReportMaterial/classDiagram.pdf) for our game.  This diagram gave us a plan of what we needed to implement, and how we could sensibly divide up the work.  In the end, our code deviated from this when we became more familiar with Processing, and carried out evaluation steps on our intermediate products in order to determine how to improve it.  However, the backbone that is illustrated by our class diagram is still evident in our final product.
 
 <img src=ReportMaterial/classDiagram.pdf>
 
@@ -100,7 +102,7 @@ We realised early on in planning that a difficult part of our games mechanics wo
 
 **Design conclusion**
 
-Because we adopted the Agile methodology in our team, we necessarily had to change the the parameters of our design as we released prototypes and gathered feedback from them.  Therefore, the original design documents that we prepared before our first sprint became outdated.  In fact, this quick outdating of design documents, and inability to update them due to quick turnaround of iterations of the product are a good casestudy in some of the shortcomings of an Agile workflow - the push for quickly developing further releases of a product mean that changes and design decision necessarily become reactionary, and overlooks the important process of thoughtful planning as it cannot be repeatedly crammed into a densly packed sprint.  Indeed, this criticism of Agile is shared by many in the field (e.g., this Harvard Business review article: https://hbr.org/2021/04/have-we-taken-agile-too-far).
+Adopting the Agile methodology in our team, we necessarily had to change the the parameters of our design as we released prototypes and gathered feedback from them.  Therefore, the original design documents that we prepared before our first sprint became outdated.  In fact, this quick outdating of design documents, and inability to update them due to quick turnaround of iterations of the product are a good casestudy in some of the shortcomings of an Agile workflow - the push for quickly developing further releases of a product mean that changes and design decision necessarily become reactionary, and overlooks the important process of thoughtful planning as it cannot be repeatedly crammed into a densly packed sprint.  Indeed, this criticism of Agile is shared by many in the field (e.g., this [Harvard Business review article](https://hbr.org/2021/04/have-we-taken-agile-too-far).
 
 
 ### Implementation (15% ~750 words)
