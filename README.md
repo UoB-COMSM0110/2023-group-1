@@ -1,4 +1,4 @@
-# 2023-group-1 (total word count = 5237)
+# 2023-group-1
 ### Game Video
 Watch our game video [here](https://youtu.be/lba99nXIenA)!
 
@@ -6,14 +6,19 @@ Watch our game video [here](https://youtu.be/lba99nXIenA)!
 Li Hanyu, ZYJ, Leon Chen, Zoe Clark, Alex Cockrean
 <img src='/images/Group-1.png'/>
 
-### Introduction (5% ~250 words)
+### Introduction
 Our game is a one or two player platform game with an added twist. It was inspired by platform games that we loved like Super Mario Bros. Our twist on classic games like this was to add the feature of gravity flipping at intervals of time, in order to increase the difficulty of the game. We developed our own game storyline and lore to immerse the player in the experience invest them in the outcome of the game. Throughout the game development process we tried out many different development techniques in order to find what worked for us as a team. For this reason, it made sense to use an agile workflow throughout so that we could reflect on our progress and repeat cycles of development to make the most of different techniques that worked well for us.
 
+---
 
-### Requirements (1449 words)
+### Requirements
 
 **Ideation, Use-Cases and User Stories**  
 To start the ideation process, we had an in-person brain-storming session.  In this session we came up with a short list of six games that we thought we could make.  With a vote, we trimmed this to two games (a connect-four game where the rows are sometimes destroyed, and a platformer game where gravity inverts).  For both of these games we gathered initial requirements by preparing a use-case diagram, use-case specifications and user stories.  We then used these resources to mock-up paper prototypes for both games.  We used these paper prototypes to prepare videos demonstrations of how both the [Connect4](https://youtu.be/wAT3H2MjvIE) and the [MarioStyle](https://youtu.be/0fppWHDHL3Y) games would work. After this we sat down and decided on the platform game as our final idea.
+<br>
+
+<img src="/ReportMaterial/paperPrototype.gif">
+
 <br>
 
 
@@ -21,39 +26,19 @@ To start the ideation process, we had an in-person brain-storming session.  In t
 
 <img src='/ReportMaterial/Use-Case-Diagram.jpg'/>
 
+<br>
 
 **Use-Case Specifications**
 
 *Easy Mode: No Gravity Flips*
 
-| Use-Case Section | Single Player Game | Two Player Game |
-| ---------------- | ------------------ | ----------------|
-| Description      |  A run through of the game on normal (non-hard) mode with one player  | A run through of the game on normal (non-hard) mode with two players |    
-| Basic Flow:      | Complete the level with no loss of life | Complete the level with no loss of life |
-| 1.  | User presses the left, right and up keys to run accross platforms and jump from one to the next | Both users use the keyboard (player one: left, right and up, player two: A, D and W) to run accross platforms and jump from one to the next |
-| 2. | The user collects coins and increases the score number | Both users collect coins to add to their combined score count. They work together to navigate the level |
-| 3. | The user navigates all the way through the map to the flag where the game is won | The users navigate all the way through the map to the flag where the game is won |
-| Alternative Flow: | Collision with enemy or falling off the map leads to loss of life and end of game | Collision with enemy or falling off the map leads to loss of life and end of game |
-| 1. | User presses the left, right and up keys to run accross platforms and jump from one to the next | Both users use the keyboard (player one: left, right and up, player two: A, D and W) to run across platforms and jump from one to the next|
-| 2. | The user falls off a platform and loses a life. They are returned to the beginning of the map | One of the players falls off the platforms and the number of remaining lives decreases |
-| 3. | The user falls off two more times or touches a zombie while attempting to complete the map | One of the two players falls off and the life number decreases and then this happens again |
-| 4. | The user has lost all of their lives and the game over screen is shown with the option to try again | The life number drops to zero and the game over screen is shown with the option to play again |
+<img src=ReportMaterial/UseCaseEasyMode>
 
 <br>
 
 *Difficult Mode: Gravity Flips*
 
-| Use-Case Section | Single Player Game | Two Player Game |
-| ---------------- | ------------------ | ----------------|
-| Description      |  A run through of the game on hard mode where gravity flips occasionally with one player |  A run through of the game on hard mode where gravity flips occasionally with two players |    
-| Basic Flow:   |  The player completes the map unharmed by the periodic gravity flips | The players use the gravity flips to their advantage and are able to complete the map successfully |
-| 1.  | The user navigates around the map using the left, right and up arrow keys | The two players navigate the map using the up, right and left keys and W, D, and A keys  |
-| 2. | The gravity warning appears and the user tries to make sure they are under another platform to be protected, gravity flips and the character flies up into the sky, then they are returned to normal gravity | The gravity warning appears and both players must find somewhere safe before gravity flips and they fly up into the sky, the players use gravity to their advantage and are able to collect more coins using the gravity flip assist in jumping |
-| 3. |  The user navigates through the map collecting coins until they get to the flag to end the game | The two players work together to collect coins and navigate the map until they cross the finish flag - both players must survive in order to reach the end |
-| Alternative Flow: | The gravity flip leads to the player losing a life | One of both players loses lives through the gravity flip but they are returned and bale to try again |
-| 1. | The user navigates through the map using the keys | Both players use their respective keys to navigate through the map |
-| 2. | The gravity warning appears but the player is not ready they fly up into the sky mid jump and are knocked off the platforms losing a life | One of both of the players does not prepare for the gravity flip and loses a life, both players are returned to the start of the map |
-| 3. | The player loses all of their lives and the game is over | Although one or both of the players lose a life they survive with their remaining life and make it all the way to the flag |
+<img src=ReportMaterial/UseCaseHardMode>
 
 
 <br>
@@ -71,45 +56,52 @@ To start the ideation process, we had an in-person brain-storming session.  In t
 >"As a player, I want a warning before gravity flips in the game, so that I can prepare and make progress in the game"
 
 <br>
-<br>
+
 
 **Statement of Services**  
-We put together a statement of services in order to get clear on our game requirements.
->We intend our game to provide one or two players with platform-style game play, navigating a sprite through a game map in order to complete the level. The user will initially, upon loading the game, be able to select whether to play with one or two players or to view the leaderboard. Gameplay consists of using the arrow keys or WASD (as the second player) to jump between platforms collecting coins and avoiding obstacles. Our 'twist' —which is active when playing on the more difficult mode— flips the gravity of the game at random intervals.  
-
+>We intend our game to provide one or two players with platform-style game play, navigating a sprite through a game map in order to complete the level. The user will initially, upon loading the game, be able to select whether to play with one or two players or to view the leaderboard. Gameplay consists of using the arrow keys or WASD (as the second player) to jump between platforms collecting coins and avoiding obstacles. Our 'twist' —which is active when playing on the more difficult mode— flips the gravity of the game at random intervals.    
 
 <br>
+
 **Inputs and Situations**    
 The user can use the keyboard to interact with the game. Using left and right keys will move the character (and the screen view) to move through the map. The user can jump using the up arrow (W as the second player), always being pulled back to the ground. In hard mode when the gravity is affected the sprite will "feel" the reduced effects of gravity. Jumnping won't bring the character back to the ground immediately. The character will remain in the air until the gravity is brought back. They must safely navigate their landing to survive. The level is completed when the user navigates the sprite to the flag at the end of the level. The user has three lives which are lost if the sprite falls off the platforms in the map or if the sprite touches a zombie character. After losing a life the user is returned to the start of the level to try again, unless they have lost their last life when the screen will show the end game screen and they will have the option to play again and save their score.
+
+<br>
 
 **Constraints**   
 We made the decision to only allow the user to move the sprite left, right, and up, but not down. This is because one of the highlights of our game is the element of gravity which should do all of the downwards motion that is available to a character. Characters cannot move totally freely around the screen for precisely this reason, they will always be constrained by gravity.
 
 
+---
 
-### Design (299 words)
 
-**Class diagram**
+### Design
+
+**Class diagram**   
 To assist us in organising our ideas, and planning the work that we would need to do, we developed a [class diagram](ReportMaterial/classDiagram.pdf) for our game.  This diagram gave us a plan of what we needed to implement, and how we could sensibly divide up the work.  In the end, our code deviated from this when we became more familiar with Processing, and carried out evaluation steps on our intermediate products in order to determine how to improve it.  However, the backbone that is illustrated by our class diagram is still evident in our final product.
 
 <img src=ReportMaterial/class.png>
 
-**Modelling behaviour - Communication diagrams**
+<br>
 
+
+**Modelling behaviour: Communication diagrams**    
 We realised early on in planning that a difficult part of our games mechanics would be how we handle collisions.  Therefore, we decided it was sensible to put together a communication diagram for the process of the user controlling a character (which encompasses collision mechanics).  This diagram is here:
 
 <img src=ReportMaterial/communication.png>
 
-**Design conclusion**
+<br>
 
-Adopting the Agile methodology in our team, we necessarily had to change the the parameters of our design as we released prototypes and gathered feedback from them.  Therefore, the original design documents that we prepared before our first sprint became outdated.  In fact, this quick outdating of design documents, and inability to update them due to quick turnaround of iterations of the product are a good casestudy in some of the shortcomings of an Agile workflow - the push for quickly developing further releases of a product mean that changes and design decision necessarily become reactionary, and overlooks the important process of thoughtful planning as it cannot be repeatedly crammed into a densly packed sprint.  Indeed, this criticism of Agile is shared by many in the field (e.g., this [Harvard Business review article](https://hbr.org/2021/04/have-we-taken-agile-too-far).
+**Design conclusion**     
+Adopting the Agile methodology in our team, we necessarily had to change the the parameters of our design as we released prototypes and gathered feedback from them.  Therefore, the original design documents that we prepared before our first sprint became outdated.  In fact, this quick outdating of design documents, and inability to update them due to quick turnaround of iterations of the product are a good casestudy in some of the shortcomings of an Agile workflow - the push for quickly developing further releases of a product mean that changes and design decision necessarily become reactionary, and overlooks the important process of thoughtful planning as it cannot be repeatedly crammed into a densly packed sprint.  Indeed, this criticism of Agile is shared by many in the field (e.g., this [Harvard Business review article](https://hbr.org/2021/04/have-we-taken-agile-too-far)).
 
+---
 
 ### Implementation (742 words)
 
 The three areas of challenge that we identified while planning our game were: 1) creating a physics engine that allows for fluctuating gravity; 2) making a multi-player mode where two players could each control their individual character; and 3) creating a highscores record, which can be viewed on a separate page.  Interestingly, these three challenges actually spanned the gamut of actual challenge, as will be documented below.
 
-**1) Making a physics engine -**
+**1) Making a physics engine:**
 This proved to be the most challenging of our three challenges because it went beyond simply applying gravity to objects.  We also needed a way for objects to interact with one another so that our characters would not go through walls etc.  This was implemented with an iterative check of the borders of sprites before every frame.  As the only sprites that move in a non-pre-determined way are the character sprites (the enemy sprite follows a known path and so we don't need to check it), we designed a function to check whether these sprites were overlapping with any of the platform sprites.  If they were, then we reset the character sprite positions to be just outside the offending platform unit, and set their velocity in the direction into the platform to 0.
 
 For gravity itself, we used a constant value to set what gravity should be, and then a variable to track what gravity is at any given point in time.  The current gravity variable was then applied to the character sprites as a downward acceleration on every frame (when gravity is going up, the current gravity variable is negative).  The current gravity variable is controlled according to a hidden counter variable.  This counter variable is decremented by 1 every frame, and is reset to a random value in a range when it gets to 0.  When the counter is above a first value, the current gravity variable is the gravity constant.  When the counter is below the first value but above a second value, the current gravity variable is a fraction of the gravity constant.  When the counter is below this second value, the current gravity variable is - the gravity constant.  
@@ -120,12 +112,12 @@ Further, to make the gravity changes less predictable, we made it such that when
 
 <img src="/ReportMaterial/antigrav.gif">
 
-**2) Multi-player -**
+**2) Multi-player:**
 This challenge was not actually particularly challenging.  Once we had made the one-player game, it was simply a matter of finding a way for player two to input their controls, and then making another object of the same class as the one-player character, though with different images.  We chose WASD as the directional inputs for player 2, which meant that player one could continue to use the arrow keys.  The ease of this challenge is a testament to the benefits of OOP, as we just had to fire up another instance of a class.
 
 <img src="/ReportMaterial/2player.gif">
 
-**3) Leaderboard -**
+**3) Leaderboard:**
 Aside from making another page to view the leaderboard on, the main challenge here was finding a datastructure to store the scores in.  We ended up with a tuple data structure.  Though, annoyingly, Java does not have this datastructure in its standard libraries so we had to make our own.  We decided that the information that was needed to display the scores properly were: i) the player(s) name (we opted to limit this to three letters, as an homage to early arcade games, which were the dawn of this type of 2D platformer); ii) the score value; and iii) whether the game had been won, or the player had died.  
 
 we then stored these tuples in an arraylist, which we sorted everytime a new score was added.  the ordering was not simple, so we had to use a custom lambda-function to sort it.  The lack of simplicity is because we wanted games that were won to be a 'higher score' than games that were lost, regardless of their actual score.
@@ -134,8 +126,9 @@ When a player was adding their score to the leaderboard but it fell out of the t
 
 <img src="/ReportMaterial/leaderboard.gif">
 
+---
 
-### Evaluation (1647 words)
+### Evaluation
 
 **Think Aloud and Heuristic Evaluations**  
 We collected think aloud evaluations at two stages in the development process. These drove our next stages of development as we worked to improve areas that were highlighted as problems by different users. Our final stage evaluations helped us spot some final changes to be made and allowed us to hone in on the finished product.
@@ -438,8 +431,9 @@ The results for both evaluations are provided below, and the calculations for th
 <br>
 
 
+---
 
-### Process (720 words)
+### Process
 Our team worked together effectively throughout the design process.  We used [Kanban boards](ReportMaterial/KanbanBoards) to keep a track of the outstanding tasks (We used Atlassian to host these, but saved PDFs of the board at various stages of development for our report). We used GitHub to host our work, as was required by the unit.  However, the way we used it developed throughout the project.
 
 Throughout the project we continually delegated tasks between ourselves. We used WhatsApp to stay connected and updated with any changes or concerns we ran into through the development process. This allowed us to address anything which was a "quick fix" over message without the need to organise a scheduled team meeting. We found this helped us work efficiently and with a greater degree of freedom. However, this meant that sometimes our Kanban boards got quite out of sync with what needed doing at any given time as we would organise ourselves over WhatsApp. Reflecting on this — for future projects we thought it would be worth designating someone to be in charge of updating and maintaining the Kansan boards so that everyone has access to a clear view of what needs doing and which tasks have been assigned to which person.
@@ -450,7 +444,9 @@ We split up different features between ourselves so that we could work independe
 
 We found that meeting up in person was an invaluable tool through the development process. We would meet for a short period of time after our Software Engineering lab to check in on the project and make sure we all knew what the next sections to focus on were. The regularity of the lab was helpful as other deadlines and work meant that there were periods where we were all busy with different things. The lab meetings allowed us to catch-up and chat about how we were finding the project and whether we needed help with any sections. We tried to find a work schedule that worked for all of us: according to the project timetable laid out at the beginning of term weeks 8 and 9 should have resulted in the evaluation section of the report being done. During this time we had several overlapping deadlines for other courses so as a team we decided that this work should be split up between us for the first week of the Easter break to give us a chance to complete our other work to a high standard. We thought that this practice of assessing upcoming challenges with workflow in advance to address problems before they occur was very successful and would definitely employ this technique for future projects.
 
-### Conclusion (245 words)
+---
+
+### Conclusion
 We learned a lot during this process about the use and application of different development techniques. Reflecting on the process, we managed the evaluation section of development well and by using a wide range of techniques we gained valuable insight into the state of our game at each moment and clear direction about where we needed to focus our efforts. Our game changed radically throughout the process and many of the design specifics that made sense to us as we progressed were not ideas we came up with initially. We thoroughly benefited from the flexibility of the agile development cycles. For future projects we think that it will be worth taking into consideration other projects and deadlines that the team have at the beginning of the development process. We overestimated the amount we could get done in some weeks and underestimated in others. This was not a huge problem as we had time to make adjustments to our plans and reallocate work throughout however on a larger project we think this is definitely something to consider.
 
 
