@@ -208,7 +208,7 @@ After these initial evaluations we had some clear goals for the next stages of d
 
 <br>
 
-In our second stage qualitative evaluations we recieved more positive feedback than negative. A month after our initial evaluations, we had worked on improving our game in the areas suggested by the prior evaluations. It was encouraging to see that many of the points raised in the first stage evaluations had been addressed. The concerns in the second stage evaluations also required much smaller changes than those raised in the first stage. We were able to address some of the negatives very easily making sure to fix the map so that platforms which should be accessible are and that the response times between button presses and reactions was faster.
+In our second stage qualitative evaluations we recieved more positive feedback than negative. A month after our initial evaluations, we had worked on improving our game in the areas suggested by the prior evaluations. It was encouraging to see that many of the points raised in the first stage evaluations had been addressed. The concerns in the second stage evaluations also required much smaller changes than those raised in the first stage. We were able to address some of the negatives very easily making sure to fix the map so that platforms which should be accessible are and that the response times between button presses and reactions was faster. At this stage we also added instructions and backstory.
 
 **Quantitative evaluation - NASA TLX**
 
