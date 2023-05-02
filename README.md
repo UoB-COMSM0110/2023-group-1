@@ -32,13 +32,13 @@ To start the ideation process, we had an in-person brain-storming session.  In t
 
 *Easy Mode: No Gravity Flips*
 
-<img src=ReportMaterial/UseCaseEasyMode>
+<img src="/ReportMaterial/UseCaseEasyMode.png">
 
 <br>
 
 *Difficult Mode: Gravity Flips*
 
-<img src=ReportMaterial/UseCaseHardMode>
+<img src="/ReportMaterial/UseCaseHardMode.png">
 
 
 <br>
