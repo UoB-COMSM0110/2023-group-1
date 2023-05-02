@@ -1,6 +1,6 @@
 # 2023-group-1
 ### Game Video
-Watch our game video [here](https://youtu.be/lba99nXIenA)!
+Watch our game video [here](https://youtu.be/8dYYDsnezjE)!
 
 ### Team
 Li Hanyu, ZYJ, Leon Chen, Zoe Clark, Alex Cockrean
