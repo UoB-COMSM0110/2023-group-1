@@ -66,7 +66,7 @@ To start the ideation process, we had an in-person brain-storming session.  In t
 <br>
 
 **Inputs and Situations**    
-The user can use the keyboard to interact with the game. Using left and right keys will move the character (and the screen view) to move through the map. The user can jump using the up arrow (W as the second player), always being pulled back to the ground. In hard mode when the gravity is affected the sprite will "feel" the reduced effects of gravity. Jumnping won't bring the character back to the ground immediately. The character will remain in the air until the gravity is brought back. They must safely navigate their landing to survive. The level is completed when the user navigates the sprite to the flag at the end of the level. The user has three lives which are lost if the sprite falls off the platforms in the map or if the sprite touches a zombie character. After losing a life the user is returned to the start of the level to try again, unless they have lost their last life when the screen will show the end game screen and they will have the option to play again and save their score.
+The user can use the keyboard to interact with the game. Using left and right keys will move the character (and the screen view) to move through the map. The user can jump using the up arrow (W as the second player), always being pulled back to the ground. In hard mode when gravity is affected the sprite will "feel" the reduced effects of gravity. Jumnping won't bring the character back to the ground immediately. The character will remain in the air until gravity returns to noraml. They must safely navigate their landing to survive. The level is completed when the user navigates the sprite to the wormhole at the end of the level. The user has three lives which are lost if the sprite falls off the platforms in the map or if the sprite touches a zombie character. After losing a life the user is returned to the start of the level to try again, unless they have lost their last life when the screen will show the end game screen and they will have the option to play again and save their score.
 
 <br>
 
@@ -133,7 +133,7 @@ When a player was adding their score to the leaderboard but it fell out of the t
 ### Evaluation
 
 **Think Aloud and Heuristic Evaluations**  
-We collected think aloud evaluations at two stages in the development process. These drove our next stages of development as we worked to improve areas that were highlighted as problems by different users. Our final stage evaluations helped us spot some final changes to be made and allowed us to hone in on the finished product.
+We collected qualitative evaluations at two stages in the development process. These drove our next stages of development as we worked to improve areas that were highlighted as problems by different users. Our final stage evaluations helped us spot some final changes to be made and allowed us to hone in on the finished product.
 <br>
 <br>
 
