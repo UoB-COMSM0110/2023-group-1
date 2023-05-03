@@ -23,7 +23,7 @@ CharacterAnimate playerA, playerB;
 
 Thing flagCharacter;
 
-PImage bg, float_brick, grass, mushroom, button1, button2, mario, sun, gold, zombie, p1, p2, flag, wKey, aKey, sKey, dKey, emptyKey, arrow, life, trophy;
+PImage bg, float_brick, button1, button2, gold, zombie, p1, p2, flag, wKey, aKey, sKey, dKey, emptyKey, arrow, life, trophy;
 
 ArrayList<Thing> platforms;
 ArrayList<Thing> coins;
@@ -59,15 +59,12 @@ void setup() {
   rectMode(CENTER);
   textAlign(CENTER);
   imageMode(CENTER);
-  bg = loadImage("../map.png");
+  bg = loadImage("../assets/map.png");
   p1 = loadImage("../CharacterTwo/femaleAdventurer_idle.png");
   p2 = loadImage("../Character/maleAdventurer_standright.png");
-  float_brick = loadImage("../ground_grass_small.png");
-  mushroom = loadImage("../mushroom_red.png");
-  grass = loadImage("../grass_brown2.png");
-  sun = loadImage("../sun1.png");
   flag = loadImage("../assets/portal.png");
-  gold = loadImage("../bronze_1.png");
+  float_brick = loadImage("../assets/ground_grass_small.png");
+  gold = loadImage("../assets/bronze_1.png");
   zombie = loadImage("../Zombie/zombie_walkl0.png");
   button1 = loadImage("../pic/platformPack_tile001.png");
   button2 = loadImage("../pic/platformPack_tile004.png");
@@ -311,16 +308,6 @@ void createPlatforms(String filename) {
         s.characterY = CHARACTER_SIZE/2 + row * CHARACTER_SIZE;
         platforms.add(s);
         bottomPlatform = min(s.characterX - CHARACTER_SIZE/2, bottomPlatform); // This is needed to ensure that we know where to stop the vertical camera scrolling
-      } else if (values[col].equals("2")) {
-        Thing s = new Thing(grass, CHARACTER_SCALE);
-        s.characterX = CHARACTER_SIZE/2 + col * CHARACTER_SIZE;
-        s.characterY = CHARACTER_SIZE/2 + row * CHARACTER_SIZE;
-        platforms.add(s);
-      } else if(values[col].equals("3")) {
-        Thing s = new Thing(mushroom, CHARACTER_SCALE);
-        s.characterX = CHARACTER_SIZE/2 + col * CHARACTER_SIZE;
-        s.characterY = CHARACTER_SIZE/2 + row * CHARACTER_SIZE;
-        platforms.add(s);
       } else if(values[col].equals("4")) {
         flagCharacter = new Thing(flag, CHARACTER_SCALE);
         flagCharacter.characterX = CHARACTER_SIZE/2 + col * CHARACTER_SIZE;
